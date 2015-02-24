@@ -49,29 +49,22 @@
 
               <div class="row">
                      
-                  <div class="col-lg-9 main-chart">
+                  <div class="col-lg-12 main-chart">
                       
-                <div class="col-lg-12">
+                <div class="col-md-12">
 					<div class="pull-right">
 				           
-						
-							<div class="form-group">
-						        <table>
-						        <tr>
-						        <td>
+							
 								<form action="insertMeeting.do" method="post">
 				                    <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">모임 추가</button>
-                                </form> 
-						       </td>
-						 
-                                </tr>
-                                </table>						
+                              </form>					
 							</div>
 						
 					</div>
 				</div>
                           
                   	<div class="row mtbox">
+                  	<div class="col-md-12">
                   	    <c:forEach items="${requestScope.list}" var="spend">
                   		
                   		<div class="col-md-2 col-sm-2  box0">
@@ -114,7 +107,9 @@
                   
               </div>                 			
                   	</div><!-- /row mt -->	
+                  	
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
+                 
 		     </div>
      	</section>
      </section>

@@ -42,14 +42,14 @@
                   	 
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i>모임을 추가해 주세요.</h4>
                               
-                              	<div>
-									<label class="col-sm-2 col-sm-2 control-label">유형</label>
-									<select class="form-control" name="meetingType" id="meetingType">
-										<option value="1">행사</option>
-										<option value="2">회식</option>
-									</select>
-								</div>
-								
+                   			<label class="col-sm-2 col-sm-2 control-label">유형</label>
+								<div class="col-sm-10">
+							<select class="form-control"  name="meetingType" id="meetingType">
+								<option value="1">행사</option>
+								<option value="2">회식</option>
+							</select>
+							</div>
+								<br><br><br>
                               <label class="col-sm-2 col-sm-2 control-label">모임명</label>
                               <div class="col-sm-10">
                                   <input type="text" class="form-control" name="meetName" id="meetName" placeholder="모임명이 무엇인가요."><br/><br/>

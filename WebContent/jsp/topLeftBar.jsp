@@ -87,7 +87,7 @@
                   <li class="mt">
                       <a href="#" data-toggle="modal" data-target="#myModal">
                           <i class="fa fa-dashboard"></i>
-                          <span>도움말</span>
+                          <span>회원 관리</span>
                       </a>
                   </li>
 
