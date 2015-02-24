@@ -15,15 +15,5 @@ public interface MemberDAO {
 	MemberDTO isPwValid(MemberDTO dto);
 	List<MemberDTO> memPicSelect(int memno);//upload
 	int updatePicture(MemberDTO dto);
-<<<<<<< HEAD
 	//지윤이가 만든 멤버
-=======
-	int updatePhone(MemberDTO dto);
-	int updateName(MemberDTO dto);
-	//지윤이가 만든 멤버
-	int updatePassWord(MemberDTO dto);
-	int updateCardPassWord(MemberDTO dto);
-	int updateAccount(MemberDTO dto);
-	int updateDeviceId(MemberDTO dto);
->>>>>>> master
 }

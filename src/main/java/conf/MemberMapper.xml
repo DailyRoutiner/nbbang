@@ -26,44 +26,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from member where email = #{email} and mempw = #{mempw} 
 	</select>
 	<insert id ="insertMember" parameterType = "memDTO">
-<<<<<<< HEAD
   		insert into member(memno, memname, mempw, email, deviceid, phonenumber) values(#{memno}, #{memname}, #{mempw}, #{email},#{deviceid}, #{phonenumber})
-=======
-  		insert into member(memno, memname, mempw, email, deviceid, phonenumber) values(((select max(memno)from member)+1),#{memname}, #{mempw}, #{email},#{deviceid}, #{phonenumber})
->>>>>>> master
   	</insert>
   	
   	<update id = "updatePhone" parameterType = "memDTO">
   		update member set phonenumber=#{phonenumber} where email=#{email}
   	</update>
-<<<<<<< HEAD
-=======
-  	
-  	<update id = "updatePicture" parameterType = "memDTO">
-  		update member set mempic=#{mempic} where memno = #{memno}
-  	</update>
-  	
-  	<update id = "updateName" parameterType = "memDTO">
-  		update member set memname=#{memname} where email=#{email}
-  	</update>
-  	
-  	<update id = "updatePassWord" parameterType = "memDTO">
-  		update member set mempw=#{mempw} where email = #{email}
-  	</update>
-  	
-  	<update id = "updateCardPassWord" parameterType = "memDTO">
-  		update member set cardpw=#{cardpw} where email = #{email}
-  	</update>
-  	
-  	<update id = "updateAccount" parameterType = "memDTO">
-  		update member set account=#{account} where email = #{email}
-  	</update>
-  	
-  	<update id = "updateDeviceId" parameterType = "memDTO">
-  		update member set deviceid=#{deviceid} where email = #{email}
-  	</update>
-  	 <delete id = "deleteMember" parameterType = "memDTO">
-  		delete from member where email=#{email}
-  	</delete>
->>>>>>> master
 </mapper>

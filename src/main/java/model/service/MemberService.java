@@ -15,14 +15,5 @@ public interface MemberService {
 	MemberDTO isPwValid(MemberDTO dto);
 	List<MemberDTO> memPicSelect(int memno);//upload
 	int updatePicture(MemberDTO dto);
-<<<<<<< HEAD
-=======
-	int updatePhone(MemberDTO dto);
-	int updateName(MemberDTO dto);
-	int updatePassWord(MemberDTO dto);
-	int updateCardPassWord(MemberDTO dto);
-	int updateAccount(MemberDTO dto);
-	int updateDeviceId(MemberDTO dto);
->>>>>>> master
 	//지윤
 }

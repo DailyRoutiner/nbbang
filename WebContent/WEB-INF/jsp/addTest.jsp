@@ -1,15 +1,8 @@
     <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
-<<<<<<< HEAD
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
-=======
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
-<head>
-    <meta charset="utf-8">
->>>>>>> master
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="ChoiSeongJun">
@@ -33,12 +26,7 @@
   <body>
 
   <section id="container" >
-<<<<<<< HEAD
    <div id="topLeftBar"></div>
-=======
-      <div id="topbar"></div>
-    <div id="leftSideBar"></div>
->>>>>>> master
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -47,7 +35,6 @@
           <section class="wrapper">
           
           	<!-- BASIC FORM ELELEMNTS -->
-<<<<<<< HEAD
           	<form class="form-horizontal style-form" action="addMeeting.do" method="post">
           	<div class="row mt">
           		<div class="col-md-12">
@@ -127,46 +114,6 @@
 					</div>
 	                 </form>
 
-=======
-          	<div class="row mt">
-          		<div class="col-lg-12">
-                  <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i></h4>
-                      <form class="form-horizontal style-form" action="addSpend.do" method="post">
-                              <div>
-                              	<div>
-									<tr>
-									<label class="col-sm-2 col-sm-2 control-label">유형</label><br/><br/><select class="form-control" name="spendCategory" id="spendCategory">
-										<option value="2">1</option>
-										<option value="3">2</option>
-									</select>
-									<br/><br/>
-									</tr>
-								</div>
-                              <label class="col-sm-2 col-sm-2 control-label">w</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="spendMemo" id="spendMemo"><br/><br/>
-                              </div>
-                              
-                              <label class="col-sm-2 col-sm-2 control-label">t</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="spendLocation" id="spendLocation"><br/><br/>
-                              </div>
-                              
-                              <label class="col-sm-2 col-sm-2 control-label">k</label>
-                              <div class="col-sm-10">
-                                  <input type="date" class="form-control" name="spendDate" id="spendDate"><br/><br/>
-                              </div>
-									<center>
-										<button type="submit" class="btn btn-info" name="command" value="addSpend">추가</button>
-										<button type="button" class="btn btn-default" onclick="history.back()">취소</button>
-									</center>
-                          </div>
-                       </form>
-          			</div>
-          		</div>
-          	</div><!-- /row -->
->>>>>>> master
           	
           	
 		</section><!--/wrapper -->
@@ -177,11 +124,7 @@
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/jquery-1.8.3.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
     <script type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
-=======
-    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
->>>>>>> master
 
 
     <!--common script for all pages-->
