@@ -93,4 +93,26 @@ public class MeetingController {
 			
 		return mv;
 	}
+	// 모임 페이지으로 들어가기
+	@RequestMapping(value="valuePass.do", method=RequestMethod.POST)
+	public ModelAndView valuePass(@RequestParam("manageNo") int manageNo,
+	@RequestParam("meetNo") int meetNo,
+	HttpServletRequest req){
+	System.out.println("@@@@@@@@@@"+meetNo + manageNo);
+	List<PayDTO> pd =null;
+	ModelAndView mv=new ModelAndView();
+	HttpSession session = req.getSession();
+
+	// 들어간 모임이 내가 관리자인지 아닌지를 체크
+	if(((MemberDTO)session.getAttribute("dto")).getMemno() == manageNo){
+	pd = payService.friendSelect(meetNo);
+	System.out.println("관리자 입니다");
+	}else{
+	pd = payService.friendSelect(meetNo);
+	System.out.println("사용자 입니다");
+	}
+	mv.addObject("list", pd);
+	    mv.setViewName("meeting");
+	return mv;
+	}
 }
