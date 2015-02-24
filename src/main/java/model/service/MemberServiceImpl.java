@@ -55,29 +55,5 @@ public class MemberServiceImpl implements MemberService {
 	public int updatePicture(MemberDTO dto){
 		return memDao.updatePicture(dto);
 	}
-	@Override
-	public int updatePhone(MemberDTO dto){
-		return memDao.updatePhone(dto);
-	}
-	@Override
-	public int updateName(MemberDTO dto){
-		return memDao.updateName(dto);
-	}
-	@Override
-	public int updatePassWord(MemberDTO dto){
-		return memDao.updatePassWord(dto);
-	}
-	@Override
-	public int updateCardPassWord(MemberDTO dto){
-		return memDao.updateCardPassWord(dto);
-	}
-	@Override
-	public int updateAccount(MemberDTO dto){
-		return memDao.updateAccount(dto);
-	}
-	@Override
-	public int updateDeviceId(MemberDTO dto){
-		return memDao.updateDeviceId(dto);
-	}
 	//지윤
 }

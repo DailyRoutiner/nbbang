@@ -1,35 +1,9 @@
-var httpRequest = null;//자바스크립트 요청 객체, 전역변수로 선언 필수 
-		 
-function getXMLHttpRequest() {
-				if (window.ActiveXObject) {//ms ie용 객체 생성 코드블록
-					try {						
-						return new ActiveXObject("Msxml2.XMLHTTP");//ie6부터의 parameter값
-					} catch(e) {
-						try {		
-							return new ActiveXObject("Microsoft.XMLHTTP");//ie5까지의 parameter값
-						} catch(e1) { 
-							return null; 
-						}
-					}
-				} else if (window.XMLHttpRequest) {	//non-ie, ie7버전 부터의 객채 생성 코드 블록
-					return new XMLHttpRequest();
-				} else {
-					return null;
-				}
-			}
-
-function sendRequest() {
-	httpRequest = getXMLHttpRequest();		
-	httpRequest.open("GET", "addpay.jsp", true);	
-	httpRequest.send();		
-}
-
-function getData() {
+$("#dodo").click(function() {
 	$.ajax({
 			url : "friendSelect.do",
 			type : "post",
 			dataType : "json", //결과데이터타입
-			data : "meetno="+2,
+			data : "meetno="+meetno,
 			success : function(data) {		//data는 파라미터로 값을 넣어 준다. 
 				var table = '';
 				//기존에 있는 테이블 첫행만 빼고 지우기
@@ -38,11 +12,11 @@ function getData() {
 				$(data.list).each(
 						function(index, item) {
 							table += '<div class="col-md-4 mb">'+
-								'<div class="darkblue-panel pn">'+
-							'<div class="darkblue-header">'+
+								'<div class="white-panel pn">'+
+							'<div class="white-header">'+
 								'<h5>'+item.memno+'</h5>'+
 							'</div>'+
-							'<p><img src="assets/img/friends/fr-03.jpg" class="img-circle" width="80"></p>'+
+							'<p><img src="assets/img/friends/fr-02.jpg" class="img-circle" width="80"></p>'+
 							'<p><h5>'+item.memName+'</h5></p>'+
 							'<div class="row">'+
 								'<div class="col-md-6">'+
@@ -64,16 +38,13 @@ function getData() {
 				alert(err + " : 모든 고객 정보보기 실패");
 			}
 	});//end of ajax
-}//end of getData()
+});//end of getData()
 
 $(document).ready(function() {
-
-	$("div#topbar").load("jsp/topbar.jsp");
-	$("div#leftSideBar").load("jsp/leftSideBar.jsp");
+	
+	$("div#topLeftBar").load("jsp/topLeftBar.jsp");
 	$("div#addpay").load("jsp/addpay.jsp");
 	$("div#rightSideBar").load("jsp/rightSidebar.jsp");
-	
-	getData();
 });
 
 
@@ -96,11 +67,3 @@ function removeChar(event) {
         event.target.value = event.target.value.replace(/[^0-9]/g, "");
 }
 
-function viewData(){         
-    if(httpRequest.readyState == 4){ //응답 완료 검증 조건식
-        if(httpRequest.status == 200){//정상 응답 검증 조건식 
-            var message = httpRequest.responseText; //json,html,csv,text
-        	document.getElementById("address").value = message;
-        }
-    }
-  }
