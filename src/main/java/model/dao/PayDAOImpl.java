@@ -84,6 +84,7 @@ public class PayDAOImpl implements PayDAO {
 		}
 		return list;
 	}
+<<<<<<< HEAD
 
 	@Override
 	public int insertPayment(PayDTO pd) {
@@ -98,5 +99,7 @@ public class PayDAOImpl implements PayDAO {
 		}
 		return result;
 	}
+=======
+>>>>>>> master
 	
 }

@@ -15,7 +15,10 @@ public class MemberDTO implements Serializable{
 	
 	public MemberDTO() {
 		super();
+<<<<<<< HEAD
 		// TODO Auto-generated constructor stub
+=======
+>>>>>>> master
 	}
 
 	public MemberDTO(int memno, String memname, String mempw, String cardpw,

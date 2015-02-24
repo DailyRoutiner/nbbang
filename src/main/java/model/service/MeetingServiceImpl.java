@@ -24,13 +24,26 @@ public class MeetingServiceImpl implements MeetingService {
 	}
 
 	@Override
+<<<<<<< HEAD
+=======
+	public MeetingDTO selectMeetNo(String id) {
+		return meetingDao.selectMeetNo(id);
+	}
+
+	@Override
+>>>>>>> master
 	public int insertMeeting(MeetingDTO meetingDTO) {
 		return meetingDao.insertMeeting(meetingDTO);
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<MeetingDTO> meetingList(int memno) {
 		return meetingDao.meetingList(memno);
+=======
+	public List<MeetingDTO> selectAll(String id) {
+		return meetingDao.selectAll(id);
+>>>>>>> master
 	}
 	
 }
