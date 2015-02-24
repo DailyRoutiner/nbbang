@@ -61,7 +61,7 @@ drop table card cascade constraints;
 drop table bank cascade constraints;
 drop view PAY_INFO cascade constraints;
 drop view WEB_PUSH_INFO cascade constraints;
-
+drop view MEETING_INFO cascade constraints;
 
 create table member(
 	memno number(20) primary key,
@@ -71,8 +71,8 @@ create table member(
 	email varchar2(20) unique not null,
 	account varchar2(30) unique,
 	phonenumber number(20),
-	deviceid varchar2(200),
-	mempic varchar2(900)
+	deviceid varchar2(200) unique,
+	mempic varchar2(200)
 );
 
 insert into member values (MEMBER_SQ.NEXTVAL,'정수열','1','1','suyeol3@naver.com','1','01024234','82cfe0b7-b9b8-11e4-86a9-06a6fa0000b9','2');
@@ -109,9 +109,9 @@ create table payment(
 	constraint payment_memno_fk foreign key(memno) references member(memno)
 );
 
-insert into payment values (PAYMENT_SQ.NEXTVAL,1,10000,1,2);
-insert into payment values (PAYMENT_SQ.NEXTVAL,1,20000,1,2);
-insert into payment values (PAYMENT_SQ.NEXTVAL,1,330000,1,3);
+insert into payment values (PAYMENT_SQ.NEXTVAL,1,10000,2,2);
+--insert into payment values (PAYMENT_SQ.NEXTVAL,1,20000,1,2);
+--insert into payment values (PAYMENT_SQ.NEXTVAL,1,330000,1,3);
 
 create table notification(
 	notificationno number(20) primary key,
@@ -157,6 +157,7 @@ M.MEMNO,
 M.MEMPIC,
 P.PAYCHECK,
 P.PRICE,
+T.MEETING_TYPE,
 P.MEETNO,
 T.TOTALFEE, 
 M.DEVICEID
@@ -175,5 +176,17 @@ N.ALRAMTIME
   FROM MEMBER M, NOTIFICATION N
   WHERE M.MEMNO =N.MEMNO;  
   
+  CREATE OR REPLACE VIEW MEETING_INFO AS
+ SELECT 
+P.MEMNO,
+M.MEETING_TYPE,
+M.MEETNO, 
+M.MEETNAME,
+M.PLACE,
+M.MEETDATE,
+M.TOTALFEE,
+M.MANAGENO
+  FROM PAYMENT P, MEETING M
+  WHERE M.MEETNO =P.MEETNO;  
   
 COMMIT;
