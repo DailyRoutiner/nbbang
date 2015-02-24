@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +28,7 @@
 
   <section id="container" >
  
-	<div id="topLeftbar"></div>
+	<div id="topLeftBar"></div>
      
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
@@ -41,8 +41,27 @@
                   	
 					<div id=addpay></div>
                   	<div class="row mt">
-                 <div id="fblist"></div>
-                  	
+                  	<c:forEach items="${requestScope.list}" var="spend">
+                 	<div class="col-md-4 mb">
+								<div class="grey-panel pn">
+							<div class="grey-header">
+								<h5>${spend.memName}</h5>
+							</div>
+							<p><img src="assets/img/friends/fr-02.jpg" class="img-circle" width="80"></p>
+							<p><h5>${spend.memName}</h5></p>
+							<div class="row">
+								<div class="col-md-6">
+									<i class="small mt">MEMBER SINCE</i>
+									<p>${spend.payCheck}</p>
+								</div>
+								<div class="col-md-6">
+									<i class="small mt">PRICE</i>
+									<p>￦ ${spend.price}</p>
+								</div>
+							</div>
+						</div>
+					</div><!-- /col-md-4 -->
+					</c:forEach>
                   	</div><!-- /row-->	
                   	<div class="row mt">
                   	<div class="tab-pane" id="chartjs">
