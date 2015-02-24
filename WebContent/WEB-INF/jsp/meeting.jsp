@@ -16,12 +16,22 @@
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="assets/js/gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css">   
-   
+    <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css"> 
+    <link href="assets/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
 
+<style>
+body {
+    font-family: arial,verdana, sans-serif;
+    font-size: 12px;
+}
+
+
+	</style>
   </head>
 
   <body>
@@ -69,9 +79,7 @@
                           <div class="grey-panel">
                            <div class="col-md-4">
 							  <h4><i class="fa fa-angle-right"></i> 통계</h4>
-                              <div class="panel-body text-center">
-                                  <canvas id="pie" height="250" width="300"></canvas>
-                              </div>
+                              <div id="myStat" data-dimension="250" data-text="35%" data-info="New Clients" data-width="30" data-fontsize="38" data-percent="35" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd"></div>
                               </div><!-- /col-md-12 -->
                               <div class="row">
                                <div class="col-md-6">
@@ -116,11 +124,23 @@
    
     <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
-
+	<script src="js/jquery.circliful.min.js"></script>  
+   
     <!--script for this page-->
 	 <script src="assets/js/chart-master/Chart.js"></script>
     <script src="assets/js/chartjs-conf.js"></script>	
 	<script src="assets/js/meeting.js"></script>
+	<script>
+$( document ).ready(function() {
+        $('#myStathalf').circliful();
+		$('#myStat').circliful();
+		$('#myStathalf2').circliful();
+		$('#myStat2').circliful();
+    $('#myStat3').circliful();
+    $('#myStat4').circliful();
+    $('#myStathalf3').circliful();
+    });
+</script>
 
   </body>
 </html>

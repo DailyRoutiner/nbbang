@@ -14,7 +14,6 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<style type="text/css">
 		.img_button {
-        background: url(money1.png) no-repeat;
         border: none;
         width: 110px;
         height: 110px;

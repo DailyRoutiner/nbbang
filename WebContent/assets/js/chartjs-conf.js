@@ -1,5 +1,4 @@
 var Script = function (pay, not) {
-	alert($("input:hidden[name=no]").val());
 
     var pieData = [
         {
