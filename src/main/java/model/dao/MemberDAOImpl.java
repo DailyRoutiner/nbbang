@@ -88,10 +88,6 @@ public class MemberDAOImpl implements MemberDAO {
 		}finally {
 			session.close();
 		}
-<<<<<<< HEAD
-=======
-		System.out.println(data);
->>>>>>> master
 		return result;
 	}
 	
@@ -100,11 +96,7 @@ public class MemberDAOImpl implements MemberDAO {
 		SqlSession session = DBUtil.getSqlSession();
 		int result = 0;
 		try{
-<<<<<<< HEAD
 			session = DBUtil.getSqlSession();
-=======
-			session = DBUtil.getSqlSession(true);
->>>>>>> master
 			result = session.delete("member.deleteMember", dto);
 		}finally {
 			session.close();
@@ -117,14 +109,8 @@ public class MemberDAOImpl implements MemberDAO {
 		SqlSession session = null;
 		int result = 0;
 		try{
-<<<<<<< HEAD
 			session = DBUtil.getSqlSession();
 			result=session.insert("member.updatePicture", dto);
-=======
-			session = DBUtil.getSqlSession(true);
-			System.out.println("---------"+dto);
-			result=session.update("member.updatePicture", dto);
->>>>>>> master
 		}finally{
 			session.close();
 		}
@@ -144,94 +130,6 @@ public class MemberDAOImpl implements MemberDAO {
 		}
 		return list;
 	}
-<<<<<<< HEAD
-=======
-	@Override
-	public int updatePhone(MemberDTO dto){
-		SqlSession session = DBUtil.getSqlSession();
-		MemberDTO data = null;
-		int result = 0;
-		try{
-			session = DBUtil.getSqlSession(true);
-			result = session.update("member.updatePhone", dto);
-		}finally {
-			session.close();
-		}
-		System.out.println(data);
-		return result;
-	}
-	
-	public int updateName(MemberDTO dto){
-		SqlSession session = DBUtil.getSqlSession();
-		MemberDTO data = null;
-		int result = 0;
-		try{
-			session = DBUtil.getSqlSession(true);
-			result = session.update("member.updateName", dto);
-		}finally{
-			session.close();
-		}
-		System.out.println(data);
-		return result;
-	}
-	
-	public int updatePassWord(MemberDTO dto){
-		SqlSession session = DBUtil.getSqlSession();
-		MemberDTO data = null;
-		int result = 0;
-		try{
-			session = DBUtil.getSqlSession(true);
-			result = session.update("member.updatePassWord", dto);
-		}finally{
-			session.close();
-		}
-		System.out.println(data);
-		return result;
-	}
-	
-	public int updateCardPassWord(MemberDTO dto){
-		SqlSession session = DBUtil.getSqlSession();
-		MemberDTO data = null;
-		int result = 0;
-		try{
-			session = DBUtil.getSqlSession(true);
-			result = session.update("member.updateCardPassWord", dto);
-		}finally{
-			session.close();
-		}
-		System.out.println(data);
-		return result;
-	}
-	
-	public int updateAccount(MemberDTO dto){
-		SqlSession session = DBUtil.getSqlSession();
-		MemberDTO data = null;
-		int result = 0;
-		try{
-			session = DBUtil.getSqlSession(true);
-			result = session.update("member.updateAccount", dto);
-		}finally{
-			session.close();
-		}
-		System.out.println(data);
-		return result;
-	}
-	
-	public int updateDeviceId(MemberDTO dto){
-		SqlSession session = DBUtil.getSqlSession();
-		MemberDTO data = null;
-		int result = 0;
-		try{
-			session = DBUtil.getSqlSession(true);
-			result = session.update("member.updateDeviceId", dto);
-		}finally{
-			session.close();
-		}
-		System.out.println(data);
-		return result;
-	}
-	
->>>>>>> master
 	//지윤이가 만든 곳
 
 }
