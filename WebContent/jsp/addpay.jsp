@@ -8,6 +8,7 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title" id="myModalLabel">회비 추가</h4>
 				</div>
+				<div id="${sessionScope.count }"></div>
 				<div class="modal-body">
 					<div class="row mt">
           		<div class="col-lg-12">
@@ -43,11 +44,11 @@
 		        var username = $('#price').val();
 		        var password = $('#totalfee').val();
 		        if(username == '') {
-		       		alert("프라이스 값을 입력하세");
+		       		alert("프라이스 값을 입력하세요");
 		            return false;
 		        }
 		        if(password == '') {
-		        	alert("토탈 값을 입력하세");      
+		        	alert("토탈 값을 입력하세요");      
 		            return false;
 		        }
 		    });
@@ -55,10 +56,10 @@
 
 		//회비 나누고 총액 확인 로직
 		$("#price").blur(function(){
-			$("input:text[id=totalfee]").val($("input:text[id=price]").val()*4); 
+			$("input:text[id=totalfee]").val($("input:text[id=price]").val() * 4); 
 		});
 		$("#totalfee").blur(function(){
-			$("input:text[id=price]").val($("input:text[id=totalfee]").val()/4); 
+			$("input:text[id=price]").val($("input:text[id=totalfee]").val() / 4); 
 		});
 		
 		//추가하기
@@ -72,7 +73,6 @@
 					if (data == "ok") {
 						alert("추가 성공" +$("#fee").serialize());
 						$("input[type=text]").val(""); //text박스 모두 지우기
-						// 추가 하고 닫기 로직 추가 
 					} else {
 						alert("추가 실패");
 					}

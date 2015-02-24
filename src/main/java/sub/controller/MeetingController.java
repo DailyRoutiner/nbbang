@@ -36,9 +36,8 @@ public class MeetingController {
 
 	// 회비 추가 기능 
 	@RequestMapping("/insertfee.do")
-	@ResponseBody
-	//@requestParam meetno가 들어가야 된다...
-	public String insertPay(@RequestParam("price") int price, @RequestParam("totalfee") int totalfee, @RequestParam("meetno") int meetno){		
+	public String insertPay(@RequestParam("price") int price, @RequestParam("totalfee") int totalfee, @RequestParam("meetno") int meetno){
+		System.out.println(">>>>>>>>>" +price + totalfee + meetno);
 		String resultMsg = "no";
 		int result = meetingService.insertPay(new PayDTO(price, totalfee, meetno));
 		if(result > 0)  {
