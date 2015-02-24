@@ -1,13 +1,13 @@
 var Script = function (pay, not) {
-
+	alert($("input:hidden[name=no]").val());
 
     var pieData = [
         {
-            value : 10/20,
+            value : 2- $("input:hidden[name=no]").val(),
             color : "#CC0000"
         },
         {
-            value : 10/20,
+            value : 2- $("input:hidden[name=ok]").val(),
             color : "#27ae60"
         }
     ];

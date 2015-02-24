@@ -99,7 +99,7 @@ public class MeetingController {
 	}else{
 		pd = payService.friendSelect(meetNo);
 		System.out.println("사용자 입니다");
-		count(meetNo);
+		count(meetNo,session);
 	}
 	session.setAttribute("count",pd.size());
 	mv.addObject("list", pd);
@@ -107,18 +107,21 @@ public class MeetingController {
 	return mv;
 	}
 	
-	void count(int meetNo){
+	void count(int meetNo, HttpSession session){
 		List<PayDTO> pd = payService.friendSelect(meetNo);
 		int count = pd.size();
-		int p =0;
+		float p=0;
+		float n=0;
 		for(PayDTO t : pd){
-			if(t.getPayCheck()==1){
-				System.out.println(p+ "---------" +count);	
+			if(t.getPayCheck().equals("ok")){
+				p++;
+				System.out.println(p+ "---------" +count + p/count);	
 			}else{
-				System.out.println(p+ "---------" +count);
+				n++;
+				System.out.println(n+ "---------" +count + n/count);
 			}
-			
 		}
-	
+		session.setAttribute("ok", p/count);
+		session.setAttribute("no", n/count);
 	}
 }

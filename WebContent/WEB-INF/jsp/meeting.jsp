@@ -38,7 +38,7 @@
           <section class="wrapper">
                  
               <div class="col-lg-9">
-                  	
+                  
 					<div id=addpay></div>
                   	<div class="row mt">
                   	<c:forEach items="${requestScope.list}" var="spend">
@@ -83,7 +83,8 @@
                               	</div>
                               </div>
                           </div><!-- /content-panel -->
-                      
+                     <input type="hidden" name="ok" value="${sessionScope.ok}">
+                  	 <input type="hidden" name="no" value="${sessionScope.no}">
 				</div>
                      </div>
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->

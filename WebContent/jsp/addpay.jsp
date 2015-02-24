@@ -77,9 +77,9 @@
 						alert("추가 실패");
 					}
 				},
-				error : function(data) {
-					alert(data + ' : 추가로직 실행시 에러 발생');
-				}
+				error:function(request,status,error){
+			        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			    }
 			}); //end of ajax
 		});// 회비 추가 로직 
 	});
