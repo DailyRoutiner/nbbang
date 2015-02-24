@@ -78,7 +78,7 @@
                   		<div class="col-md-2 col-sm-2  box0">
                   			<div class="box1">
 					  			<c:choose>
-										<c:when test="${spend.meetingType==2}">
+										<c:when test="${spend.meetingType==1}">
 										<form action="valuePass.do" method="post"> 
 												    <input type="image" src="assets/img/category/ex_category_icon_01.png" width="150" height="150" class="img_button">
 												     <!-- <a href="Sung.jsp"><img alt="식비" title="식비" src="img/category/money1.png"  width="100" height="100"></a> -->
@@ -87,7 +87,7 @@
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
 										</form>
 										</c:when>
-									    <c:when test="${spend.meetingType==3}">
+									    <c:when test="${spend.meetingType==2}">
 									    <form action="valuePass.do" method="post">
 											 <input type="image" src="assets/img/category/ex_category_icon_03.png" width="150" height="150" class="img_button">
 												     <!-- <a href="Sung.jsp"><img alt="식비" title="식비" src="img/category/money1.png"  width="100" height="100"></a> -->

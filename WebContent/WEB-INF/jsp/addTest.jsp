@@ -45,8 +45,8 @@
                               	<div>
 									<label class="col-sm-2 col-sm-2 control-label">유형</label>
 									<select class="form-control" name="meetingType" id="meetingType">
-										<option value="2">행사</option>
-										<option value="3">회식</option>
+										<option value="1">행사</option>
+										<option value="2">회식</option>
 									</select>
 								</div>
 								

@@ -91,8 +91,8 @@ public class PayDAOImpl implements PayDAO {
 		boolean flag = false;
 		int result = 0;
 		try {
-			result = session.insert("PAYMENT.insertPayment",pd);	
-			flag = result > 0 ? true : false;
+			result = session.insert("payment.insertPayment",pd);	
+			/*flag = result > 0 ? true : false;*/
 		} finally {
 			DBUtil.closeSqlSession(flag, session);
 		}
