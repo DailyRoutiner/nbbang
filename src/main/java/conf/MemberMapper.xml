@@ -26,7 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from member where email = #{email} and mempw = #{mempw} 
 	</select>
 	<insert id ="insertMember" parameterType = "memDTO">
-  		insert into member(memno, memname, mempw, email, deviceid, phonenumber) values(#{memno}, #{memname}, #{mempw}, #{email},#{deviceid}, #{phonenumber})
+  		insert into member(memno, memname, mempw, email, phonenumber) values(((select max(memno)from member)+1), #{memname}, #{mempw}, #{email}, #{phonenumber})
   	</insert>
   	
   	<update id = "updatePhone" parameterType = "memDTO">

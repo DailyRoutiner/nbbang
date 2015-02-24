@@ -65,7 +65,6 @@ public class MemberController {
 									@RequestParam("phonenumber") int phonenumber,
 									HttpServletRequest req){
 		MemberDTO dto = new MemberDTO(memname, mempw, email, phonenumber);
-		dto.setDeviceid("82cfe0b7-b9b8-11e4-86a9-06a6fa0000b9");
 		HttpSession session= req.getSession();
 		ModelAndView mv=new ModelAndView();
 		MemberDTO checkDto=memService.memJoinCheck(email);
