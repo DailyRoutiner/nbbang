@@ -56,18 +56,15 @@ public class MeetingController {
 			mv.setViewName("addTest");
 			return mv;
 	}
-	
 	// 친구 목록 불러오기 
 	@RequestMapping("/friendSelect.do")
 	public ModelAndView friendSelect(@RequestParam("meetno") int meetno){
 		List<PayDTO> list =  payService.friendSelect(meetno);
-		System.out.println(list);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("list", list);			
 		mv.setViewName("jsonView");
 		return mv;
 	}
-	
 	//모임 추가 
 	@RequestMapping(value="addMeeting.do", method=RequestMethod.POST)
     public ModelAndView addSpend(@RequestParam("meetingType") int meetingType,
@@ -96,22 +93,24 @@ public class MeetingController {
 			
 		return mv;
 	}
-	
 	// 모임 페이지으로 들어가기
 	@RequestMapping(value="valuePass.do", method=RequestMethod.POST)
 	public ModelAndView valuePass(@RequestParam("manageNo") int manageNo,
 	@RequestParam("meetNo") int meetNo,
 	HttpServletRequest req){
-	HttpSession session = req.getSession();
-	System.out.println("@@@@@@@@@@"+meetNo+ "manageno"+ manageNo +  "=="+ ((MemberDTO)session.getAttribute("dto")).getMemno());
+	List<PayDTO> pd =null;
 	ModelAndView mv=new ModelAndView();
+	HttpSession session = req.getSession();
 	// 들어간 모임이 내가 관리자인지 아닌지를 체크
 	if(((MemberDTO)session.getAttribute("dto")).getMemno() == manageNo){
-	System.out.println("관리자 입니다" );
+		pd = payService.friendSelect(meetNo);
+		System.out.println("관리자 입니다");
 	}else{
-	System.out.println("사용자 입니다");
+		pd = payService.friendSelect(meetNo);
+		System.out.println("사용자 입니다");
 	}
-	mv.addObject("meetno", meetNo);
+	session.setAttribute("count",pd.size());
+	mv.addObject("list", pd);
 	mv.setViewName("meeting");
 	return mv;
 	}

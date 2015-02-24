@@ -83,8 +83,9 @@ request.setCharacterEncoding("euc-kr");
                   			<div class="box1">
 					  			<c:choose>
 										<c:when test="${spend.meetingType==1}">
-										<form action="valuePass.do" method="post" id="img"> 
-												    <input type="image" src="assets/img/category/ex_category_icon_01.png" width="150" height="150" class="img_button" onclick="friend(2)">
+										<form action="valuePass.do" method="post"> 
+												    <input type="image" src="assets/img/category/ex_category_icon_01.png" width="150" height="150" class="img_button">
+												     <!-- <a href="Sung.jsp"><img alt="식비" title="식비" src="img/category/money1.png"  width="100" height="100"></a> -->
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
@@ -92,7 +93,8 @@ request.setCharacterEncoding("euc-kr");
 										</c:when>
 									    <c:when test="${spend.meetingType==2}">
 									    <form action="valuePass.do" method="post">
-											 <input type="image" src="assets/img/category/ex_category_icon_03.png" width="150" height="150" class="img_button" id="img">
+											 <input type="image" src="assets/img/category/ex_category_icon_03.png" width="150" height="150" class="img_button">
+												     <!-- <a href="Sung.jsp"><img alt="식비" title="식비" src="img/category/money1.png"  width="100" height="100"></a> -->
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
@@ -106,8 +108,13 @@ request.setCharacterEncoding("euc-kr");
                   		    <div>
                   		    <form action="deleteMeeting.do" method="post">		
 								<!-- search -->
+<<<<<<< HEAD
 								    <input type="image" width="10" height="10" src="assets/img/category/trash.png"  class="img_button">
 				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">����</button> -->
+=======
+								    <input type="image" width="10" height="10" src="trash.png"  class="img_button">
+				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">삭제</button> -->
+>>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
                   		    <input type="checkbox" name="spendIndex" value="${spend.meetNo}">
                   		    </form>
                   		    </div>
