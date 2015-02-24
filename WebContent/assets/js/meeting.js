@@ -1,14 +1,14 @@
-$("#dodo").click(function() {
+function friend(meetNo) {
+	alert(meetNo);
+	var meetnumber = meetNo;
 	$.ajax({
 			url : "friendSelect.do",
 			type : "post",
 			dataType : "json", //결과데이터타입
-			data : "meetno="+meetno,
-			success : function(data) {		//data는 파라미터로 값을 넣어 준다. 
+			data : "meetno="+ meetnumber,
+			success : function(data) {		//data는 파라미터로 값을 넣어 준다.
+				console.log(data);
 				var table = '';
-				//기존에 있는 테이블 첫행만 빼고 지우기
-				//http://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_sel_gt
-
 				$(data.list).each(
 						function(index, item) {
 							table += '<div class="col-md-4 mb">'+
@@ -31,14 +31,14 @@ $("#dodo").click(function() {
 						'</div>'+
 					'</div><!-- /col-md-4 -->';
 						});
-				//테이블에 추가
-				$("#fblist").after(table);
+				$("#fblist").append(table);
 			},
 			error : function(err) {//실패했을때
 				alert(err + " : 모든 고객 정보보기 실패");
 			}
+			
 	});//end of ajax
-});//end of getData()
+};//end of getData()
 
 $(document).ready(function() {
 	
