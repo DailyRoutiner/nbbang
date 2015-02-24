@@ -84,19 +84,5 @@ public class PayDAOImpl implements PayDAO {
 		}
 		return list;
 	}
-
-	@Override
-	public int insertPayment(PayDTO pd) {
-		SqlSession session = DBUtil.getSqlSession();
-		boolean flag = false;
-		int result = 0;
-		try {
-			result = session.insert("PAYMENT.insertPayment",pd);	
-			flag = result > 0 ? true : false;
-		} finally {
-			DBUtil.closeSqlSession(flag, session);
-		}
-		return result;
-	}
 	
 }

@@ -11,5 +11,4 @@ public interface PayDAO {
 	int payMeetUpdate(PayDTO vo);
 	List<PayDTO> friendSelect(int meetno);
 	List<WebPushDTO> ResAfterSelect(int ckNo);
-	int insertPayment(PayDTO pd);
 }

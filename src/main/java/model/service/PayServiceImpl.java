@@ -43,9 +43,4 @@ public class PayServiceImpl implements PayService {
 		return payDao.friendSelect(meetno);
 	}
 	
-	@Override
-	public int insertPayment(PayDTO pd){
-		return payDao.insertPayment(pd);
-	}
-	
 }

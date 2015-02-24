@@ -33,13 +33,25 @@ public class MeetingDAOImpl implements MeetingDAO {
 	}
 
 	@Override
+	public MeetingDTO selectMeetNo(String id) {
+		SqlSession session = DBUtil.getSqlSession();
+		MeetingDTO meetVo;
+		try {
+			meetVo = session.selectOne("MEETING.selectOne", id);
+		} finally {
+			session.close();
+		}
+		return meetVo;
+	}
+
+	@Override
 	public int insertMeeting(MeetingDTO meetingDTO) {
 		SqlSession session = DBUtil.getSqlSession();
-		System.out.println(meetingDTO);
+		System.out.println(meetingDTO.getMeetNo());
 		int result = 0;
 		boolean flag = false;
 		try {
-			result = session.insert("MEETING.insertMeeting", meetingDTO);
+			result = session.insert("MEETING.insertSpend", meetingDTO);
 			flag = result >0 ? true : false;
 		} finally {
 			DBUtil.closeSqlSession(flag, session);
@@ -48,11 +60,11 @@ public class MeetingDAOImpl implements MeetingDAO {
 	}
 
 	@Override
-	public List<MeetingDTO> meetingList(int memno) {
+	public List<MeetingDTO> selectAll(String id) {
 		SqlSession session = DBUtil.getSqlSession();
 		List<MeetingDTO> spendList = null;
 		try {
-			spendList = session.selectList("MEETING.meetingList", memno);
+			spendList = session.selectList("MEETING.selectAll", id);
 		} finally {
 			session.close();
 		}

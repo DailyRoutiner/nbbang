@@ -10,14 +10,13 @@ public class MeetingDTO implements Serializable {
 	private String meetDate ;
 	private int totalfee ;
 	private int manageNo ;
-	private int memNo;
 	
 	public MeetingDTO() {
 		super();
 	}
 
 	public MeetingDTO(int meetingType, int meetNo, String meetName,
-			String place, String meetDate, int totalfee, int manageNo, int memNo) {
+			String place, String meetDate, int totalfee, int manageNo) {
 		super();
 		this.meetingType = meetingType;
 		this.meetNo = meetNo;
@@ -26,18 +25,10 @@ public class MeetingDTO implements Serializable {
 		this.meetDate = meetDate;
 		this.totalfee = totalfee;
 		this.manageNo = manageNo;
-		this.memNo = memNo;
 	}
 
-
-	public MeetingDTO(int meetingType, String meetName, String place,
-			String meetDate, int manageNo) {
-		super();
-		this.meetingType = meetingType;
-		this.meetName = meetName;
-		this.place = place;
-		this.meetDate = meetDate;
-		this.manageNo = manageNo;
+	public MeetingDTO(int parseInt, String string, String spendLocation,
+			String spendDate, String spendMemo, int count2, int intValue, int i) {
 	}
 
 	public int getMeetingType() {
@@ -96,22 +87,12 @@ public class MeetingDTO implements Serializable {
 		this.manageNo = manageNo;
 	}
 
-	public int getMemNo() {
-		return memNo;
-	}
-
-	public void setMemNo(int memNo) {
-		this.memNo = memNo;
-	}
-
 	@Override
 	public String toString() {
 		return "MeetingDTO [meetingType=" + meetingType + ", meetNo=" + meetNo
 				+ ", meetName=" + meetName + ", place=" + place + ", meetDate="
 				+ meetDate + ", totalfee=" + totalfee + ", manageNo="
-				+ manageNo + ", memNo=" + memNo + "]";
+				+ manageNo + "]";
 	}
 
-	
 }
-
