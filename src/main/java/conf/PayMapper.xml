@@ -20,31 +20,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="MEETNO" property="meetno" />
 		<result column="deviceId" property="deviceId" />
 	</resultMap>
-<!-- 
+
 	<select id="paySelect" resultMap="payResultMap">
 		select * from pay_info
 	</select>
 	
-	모임에서 친구 목록 가져오기
+	<!-- 모임에서 친구 목록 가져오기 -->
 	<select id="friendSelect" resultMap="payResultMap" parameterType="int">
 		select * from pay_info where meetno = #{meetno}
 	</select>
 	
-	결제했을 때 총액 업데이트 
+	<!-- 결제했을 때 총액 업데이트  -->
 	<update id="payMeetUpdate" parameterType="payVo">
 		update meeting
 		set TOTALFEE = #{totalfee}
 		where MEETNO = (select MEETNO from payment where MEMNO = #{memno})
 	</update>
 	
-	 결제 했을 때 자신의 금액 업데이트
+	<!--  결제 했을 때 자신의 금액 업데이트 -->
 	<update id="payUpdate" parameterType="payVo">
 		update payment
 		set PRICE = #{price}
 		where MEMNO = #{memno}
 	</update>
 	
-	모임에 있는 멤버들 회비 정해주기
+	<!-- 모임에 있는 멤버들 회비 정해주기 -->
 	<update id="priceUpdate" parameterType="payVo">
 		update payment set price = #{price} 
 		where memno in (select memno 
@@ -52,23 +52,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 								 where meetno = #{meetno})
 	</update>
 	
-	총회비 저장
+	<!-- 총회비 저장 -->
 	<update id="totalfeeUpdate" parameterType="payVo">
 		update meeting set totalfee = #{totalfee} 
 		where meetno = #{meetno}
 	</update>
 	
-	모임 삭제
+	<!-- 모임 삭제 -->
 	<delete id="deleteMeeting" parameterType="payVo">
 		delete from meeting where meetno = #{meetno} and manageno=#{memno}
 	</delete>
 	
-	<delete id="deleteMeeting" parameterType="payVo">
-		delete from meeting where meetno = #{meetno} and manageno=#{memno}
-	</delete>
-	 -->
-	<insert id="insertPayment" parameterType="payVo">
-		insert into payment(MEETNO, MEMNO) VALUES(#{meetno}, #{memno})
-	</insert>
-	 
+	
 </mapper>

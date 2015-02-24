@@ -40,7 +40,7 @@ public class MemberController {
 		return mv;
 	}
 	
-	@RequestMapping(value="Login.do", method=RequestMethod.POST)
+	@RequestMapping(value="login.do", method=RequestMethod.POST)
 	public ModelAndView login(@RequestParam("email") String email, @RequestParam("mempw") String mempw,
 							 HttpServletRequest req){
 		ModelAndView mv=new ModelAndView("error");
