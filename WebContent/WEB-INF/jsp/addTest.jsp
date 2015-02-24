@@ -38,10 +38,9 @@
           	<form class="form-horizontal style-form" action="addMeeting.do" method="post">
           	<div class="row mt">
           		<div class="col-md-12">
-                  <div class="content-panel">
-                  	  <br><br><br><br>
+                  <div class="content-panel"  style="height: 320px">
+                  	 
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i>모임을 추가해 주세요.</h4>
-                      
                               
                               	<div>
 									<label class="col-sm-2 col-sm-2 control-label">유형</label>
