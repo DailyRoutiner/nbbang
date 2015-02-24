@@ -61,7 +61,7 @@ drop table card cascade constraints;
 drop table bank cascade constraints;
 drop view PAY_INFO cascade constraints;
 drop view WEB_PUSH_INFO cascade constraints;
-
+drop view MEETING_INFO cascade constraints;
 
 create table member(
 	memno number(20) primary key,
