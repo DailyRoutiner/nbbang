@@ -43,6 +43,23 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery-1.8.3.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
+
+
+    <!--common script for all pages-->
+    <script src="assets/js/common-scripts.js"></script>
+   
+    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
+    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
+
+    <!--script for this page-->
+	 <script src="assets/js/chart-master/Chart.js"></script>
+    <script src="assets/js/chartjs-conf.js"></script>	
+	<script src="assets/js/meeting.js"></script>
   </head>
   <body>
    <%
@@ -51,6 +68,7 @@
   
 
   <section id="container" >
+  
       <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
@@ -77,7 +95,7 @@
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
       <!--main content start-->
-      <br><br>
+
       <section id="main-content">
           <section class="wrapper">
       		<div class="row mt">
@@ -91,15 +109,28 @@
 						<!--사진 집어넣기-->
 						          
                       <!-- PICTURE UPLOAD -->
+                      <table>
+					<tr>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td><img src="<%=dto.getMempic()%>" style="width:128px;height:128px"><br>
+					</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</td>
+					
+                     <td>               
+                	<img src="${sessionScope.mempic}" style="width:128px;height:128px">
+                	</td>
+                	</tr>
+                	</table><br>
                		<form action="picEnroll.do" method="post" class="form-signin"  enctype="multipart/form-data">
 							<input type="hidden" name="command" value="picEnroll">
 							<label for="upload_bigfile" class="sr-only">upload_bigfile</label> 
 							<input type="file" id="upload_bigfile" name="upload_bigfile" class="form-control" placeholder="Upload_Bigfile">
-			
+							<br>
 							<button class="btn btn-info" id="picEnroll" type="submit">Enroll</button>
 							<button class="btn btn-info" type="reset">Reset</button>
 					</form>
-                		<img src="${requestScope.mempic}" style="width:128px;height:128px">  
+					
                 <!-- PICTURE UPLOAD -->
 						</div>
       				</div><!--/showback -->
@@ -161,7 +192,7 @@
                          <form class="form-horizontal style-form" method="post" action = "deleteMember.do">
 											<input type = "hidden" value="deleteMember" name= "command">
 											<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
-											<button type="submit" class="btn btn-info" name="command" value="deleteMember">삭제</button>
+											<button type="submit" class="btn btn-info" name="command" value="deleteMember">탈퇴</button>
 						</form>
       				</div><!-- /showback -->
       			</div><!-- /col-lg-6 -->

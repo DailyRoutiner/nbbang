@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,6 +36,9 @@
     <link href="assets/css/icon.css" rel = "stylesheet">
 
   </head>
+ <%
+request.setCharacterEncoding("euc-kr");
+%>
  
   <body>
 
@@ -61,7 +65,7 @@
 						        <tr>
 						        <td>
 								<form action="insertMeeting.do" method="post">
-				                    <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">ëª¨ìž„ ì¶”ê°€</button>
+				                    <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">¸ðÀÓ Ãß°¡</button>
                                 </form> 
 						       </td>
 						 
@@ -96,19 +100,19 @@
 										</c:when>
 									</c:choose>
 									
-					  			<h3>${spend.meetName} ëª¨ìž„</h3>
+					  			<h3>${spend.meetName} ¸ðÀÓ</h3>
                   			</div>
                   		   
                   		    <div>
                   		    <form action="deleteMeeting.do" method="post">		
 								<!-- search -->
 								    <input type="image" width="10" height="10" src="assets/img/category/trash.png"  class="img_button">
-				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">ì‚­ì œ</button> -->
+				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">»èÁ¦</button> -->
                   		    <input type="checkbox" name="spendIndex" value="${spend.meetNo}">
                   		    </form>
                   		    </div>
-                  						<p>ìž¥ì†Œ : ${spend.place}</p>
-					  			        <p>ë‚ ì§œ : ${spend.meetDate}</p>	
+                  						<p>Àå¼Ò : ${spend.place}</p>
+					  			        <p>³¯Â¥ : ${spend.meetDate}</p>	
                   		</div>
                   		
                        </c:forEach>		

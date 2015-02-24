@@ -16,4 +16,11 @@ public interface MemberService {
 	List<MemberDTO> memPicSelect(int memno);//upload
 	int updatePicture(MemberDTO dto);
 	//지윤
+	int updatePhone(MemberDTO dto);
+	int updateName(MemberDTO dto);
+	int updatePassWord(MemberDTO dto);
+	int updateCardPassWord(MemberDTO dto);
+	int updateAccount(MemberDTO dto);
+	int updateDeviceId(MemberDTO dto);
+	//지윤
 }
