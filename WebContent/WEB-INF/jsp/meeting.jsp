@@ -65,14 +65,25 @@
                   	</div><!-- /row-->	
                   	<div class="row mt">
                   	<div class="tab-pane" id="chartjs">
-				  <div class="col-md-12">
-                          <div class="content-panel">
+				 
+                          <div class="grey-panel">
+                           <div class="col-md-4">
 							  <h4><i class="fa fa-angle-right"></i> 통계</h4>
                               <div class="panel-body text-center">
                                   <canvas id="pie" height="250" width="300"></canvas>
                               </div>
+                              </div><!-- /col-md-12 -->
+                              <div class="row">
+                               <div class="col-md-6">
+                               <c:forEach items="${requestScope.list}" var="spend" >
+                              	<a class="logo pull-right"><b>총액 : ${spend.totalfee }</b></a><br><br><br>
+                              	</c:forEach>
+                              	</div>
+                              	<div class="col">
+                              	</div>
+                              </div>
                           </div><!-- /content-panel -->
-                      </div><!-- /col-md-12 -->
+                      
 				</div>
                      </div>
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->

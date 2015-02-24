@@ -55,15 +55,7 @@ public class MeetingController {
 			mv.setViewName("addTest");
 			return mv;
 	}
-	// 친구 목록 불러오기 
-	@RequestMapping("/friendSelect.do")
-	public ModelAndView friendSelect(@RequestParam("meetno") int meetno){
-		List<PayDTO> list =  payService.friendSelect(meetno);
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("list", list);			
-		mv.setViewName("jsonView");
-		return mv;
-	}
+	
 	//모임 추가 
 	@RequestMapping(value="addMeeting.do", method=RequestMethod.POST)
     public ModelAndView addSpend(@RequestParam("meetingType") int meetingType,
@@ -107,10 +99,26 @@ public class MeetingController {
 	}else{
 		pd = payService.friendSelect(meetNo);
 		System.out.println("사용자 입니다");
+		count(meetNo);
 	}
 	session.setAttribute("count",pd.size());
 	mv.addObject("list", pd);
 	mv.setViewName("meeting");
 	return mv;
+	}
+	
+	void count(int meetNo){
+		List<PayDTO> pd = payService.friendSelect(meetNo);
+		int count = pd.size();
+		int p =0;
+		for(PayDTO t : pd){
+			if(t.getPayCheck()==1){
+				System.out.println(p+ "---------" +count);	
+			}else{
+				System.out.println(p+ "---------" +count);
+			}
+			
+		}
+	
 	}
 }

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -36,10 +36,6 @@
     <link href="assets/css/icon.css" rel = "stylesheet">
 
   </head>
- <%
-request.setCharacterEncoding("euc-kr");
-%>
- 
   <body>
 
   <section id="container" >

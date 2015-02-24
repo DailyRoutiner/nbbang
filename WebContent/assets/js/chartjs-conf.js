@@ -1,13 +1,13 @@
-var Script = function () {
+var Script = function (pay, not) {
 
 
     var pieData = [
         {
-            value : 90,
+            value : 10/20,
             color : "#CC0000"
         },
         {
-            value : 200,
+            value : 10/20,
             color : "#27ae60"
         }
     ];
