@@ -1,23 +1,33 @@
-
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 
-<head>
+    <head>
+        <meta http-equiv="Content-type" content="text/html" charset ="EUC-KR">
+        <title>NBBANG</title>
+        
+        <meta name="author" content="">
+         <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
 
-<meta http-equiv="Content-type" content="text/html" charset="EUC-KR">
-<title>N-BBANG</title>
-<link rel="shortcut icon" href="favicon.ico">
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		<link rel="shortcut icon" href="favicon.ico">
+        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 
-<!-- CSS -->
-<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
-<link rel="stylesheet" href="assets/logincss/reset.css">
-<link rel="stylesheet" href="assets/logincss/supersized.css">
-<link rel="stylesheet" href="assets/logincss/style.css">
-<link href="assets/logincss/bootstrap.css" rel="stylesheet">
+        <!-- CSS -->
+        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
+        <link rel="stylesheet" href="assets/logincss/reset.css">
+        <link rel="stylesheet" href="assets/logincss/supersized.css">
+        <link rel="stylesheet" href="assets/logincss/style.css">
+        <link href="assets/logincss/bootstrap.css" rel="stylesheet">
+        <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
 
-
-<script type="text/javascript">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+          	<script type="text/javascript">
+          	
          $(window).load(function(){
 
     $('.flexslider').flexslider({
@@ -29,100 +39,104 @@
     });  
 });
          </script>
-</head>
+    </head>
 
-<body>
-
-	<!-- Header -->
-	<header id="header">
-		<nav id="nav">
-			<ul>
-				<li><a href="loginpage.html" class="btnnew">Home</a></li>
-				<li>
-					<!-- MODAL BLOCK -->
-					<div class="half-unit">
-						<div class="cont">
-							<a href="#myModal" class="button special" data-toggle="modal">Sign Up</a>
-						</div>
-					</div>
-
-				</li>
-			</ul>
-		</nav>
-	</header>
-
-
-	<div class="page-container">
-		<h1>Login</h1>
-		<form action="login.do" method="post">
-			<input type="hidden" value="login" name="command">
-			 <input type="text" name="email" class="username" placeholder="Username">
-			<input type="password" name="mempw" class="password" placeholder="Password">
-			<Button type="submit" class="btn">Login</button>
-			<div class="error">
-				<span>+</span>
-			</div>
-		</form>
-
-	<div id="fb-root"></div>
-		<div class="connect">
-			<p>Or connect with:</p>
-			<p>
-				<a class="facebook" href="#" ></a> 
-				<a class="kakaotalk" href="#"></a>
-			</p>
-		</div>
-	</div>
-
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Join in</h4>
-				</div>
-				<div class="modal-body">
-					<div id="register-wraper">
-						<form id="register-form" class="form" action="insertMember.do"	method="post">
-							<input type="hidden" name="command" value="insertMember">
-
-							<legend>User Register</legend>
-
-							<div class="body">
-								<label for="email">Email</label> 
-								<input name="email" class="input-huge" type="text"> 
-								<label for="memname">Name</label>
-								<input name="memname" class="input-huge" type="text"> 
-								<label for="mempw">Password</label>
-								 <input name="mempw" class="input-huge" type="password"> 
-								 <label for="phonenumber">Phone Number</label> 
-								 <input name="phonenumber" class="input-huge" type="text">
-								<button type="submit" class="btn btn-right">Register</button>
-
-							</div>
-						</form>
-					</div>
-					<div class="modal-footer"></div>
-				</div>
-				<!-- /.modal-content -->
-			</div>
-			<!-- /.modal-dialog -->
-		</div>
-		<!-- /.modal -->
+    <body>
+    
+    <!-- Header -->
+			<header id="header">
+				<nav id="nav">
+					<ul>
+						<li>
+						<!-- MODAL BLOCK -->     
+					<!-- 	<div class="half-unit">
+		           			 <div class="cont"> -->
+		             			  <a href="#myModal" class="btn" data-toggle="modal" style="font-weight:300; text-decoration: none; vertical-align: middle; ">Sign Up</a>
+		      		<!--       </div>
+									</div>
+				 	-->
+						</li>
+					</ul>
+				</nav>
+			</header>
 
 
-		<!-- Javascript -->
-		<script type="text/javascript" src="assets/loginjs/bootstrap.js"></script>
-		<script type="text/javascript" src="assets/js/facebook.js"></script>
-		<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-		<script src="assets/loginjs/jquery-1.8.2.min.js"></script>
-		<script src="assets/loginjs/supersized.3.2.7.min.js"></script>
-		<script src="assets/loginjs/supersized-init.js"></script>
-		<script src="assets/loginjs/scripts.js"></script>
-		
-</body>
+        <div class="page-container">
+         <h1><i class="fa fa-angle-right"></i>Login In</h1>
+            
+            <form action="login.do" method = "post">
+			<input type = "hidden" value="login.do" name= "command">
+			<div align="center">
+                <input type="text" name="email" class="form-control-u" placeholder="Username" style="vertical-align: middle;">
+                <br>
+                <input type="password" name="mempw" class="form-control-u" placeholder="Password">
+           <Button type="submit" class="btn" style="font-weight:bold;"><h2>LOGIN</h2></button>
+                <div class="error"><span>+</span></div>
+           </div>
+            </form>
+            
+        <div id="fb-root"></div>
+        <div class="connect">
+                <p>Or connect with:</p>
+                <p>
+                    <a class="facebook" href="#"></a>
+                    <a class="kakaotalk" href="#"></a>
+                </p>
+            </div>
+        </div>
+      
+			<!-- Modal -->
+			  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" align="center">
+			    <div class="modal-dialog">
+			      <div class="modal-content">
+			        <div class="modal-header">
+			           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			          <h1 class="modal-title"><i class="fa fa-angle-right"></i> Join in</h1>
+			        </div>
+			        <div class="modal-body">
+			         <div id="register-wraper">
+        		    <form id="register-form" class="form" action = "insertMember.do" method = "post">
+        		    <input type="hidden" name="command" value="insertMember">
+
+        		        <div class="body">
+    		        		<label class="col-sm-2 col-sm-2 control-label"><h2>Email</h2></label>
+    		        		<input name="email" class="form-control-p" type="text" >
+    		        		<br>
+    		        		<label class="col-sm-2 col-sm-2 control-label"><h2>Name</h2></label>
+    		        		<input name="memname" class="form-control-p" type="text">
+    		        		<br>
+    		        		<label class="col-sm-2 col-sm-2 control-label"><h2>PassWord</h2></label>
+    		        		<input name="mempw" class="form-control-p" type="password">
+    		        		<br>
+    		        		<label class="col-sm-2 col-sm-2 control-label"><h2>Phonenumber</h2></label>
+    		        		<input name="phonenumber" class="form-control-p" type="text">
+        		         <button type="submit" class="btn btn-right"><h2>Register</h2></button>
+        		              
+        		        </div>
+        		        </form>
+        		    </div>
+			      </div><!-- /.modal-content -->
+			    </div><!-- /.modal-dialog -->
+			  </div><!-- /.modal -->
+
+            
+   <script type="text/javascript" src="assets/loginjs/bootstrap.js"></script>
+   
+        <!-- Javascript -->
+        <script type="text/javascript" src="assets/loginjs/bootstrap.js"></script>
+        <script type="text/javascript" src="assets/js/facebook.js"></script>
+        <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+        <script src="assets/loginjs/jquery-1.8.2.min.js"></script>
+        <script src="assets/loginjs/supersized.3.2.7.min.js"></script>
+        <script src="assets/loginjs/supersized-init.js"></script>
+        <script src="assets/loginjs/scripts.js"></script>
+       	<script type="text/javascript" src="js/noty/themes/default.js"></script>
+ 
+	<script src="js/jquery.flexslider.js" type="text/javascript"></script>
+	 <script type="text/javascript" src="js/admin.js"></script>
+	 
+
+    </body>
 
 </html>
 

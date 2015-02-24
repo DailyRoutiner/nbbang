@@ -39,6 +39,7 @@
           	<div class="row mt">
           		<div class="col-md-12">
                   <div class="content-panel">
+                  	  <br><br><br><br>
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i>모임을 추가해 주세요.</h4>
                       
                               

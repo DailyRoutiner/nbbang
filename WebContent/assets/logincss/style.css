@@ -32,17 +32,17 @@ form {
     text-align: center;
 }
 
-input {
+/* input {
     width: 270px;
     height: 42px;
     margin-top: 25px;
     padding: 0 15px;
-    background: #2d2d2d; /* browsers that don't support rgba */
+    background: #2d2d2d; browsers that don't support rgba
     background: rgba(45,45,45,.15);
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
-    border: 1px solid #3d3d3d; /* browsers that don't support rgba */
+    border: 1px solid #3d3d3d; browsers that don't support rgba
     border: 1px solid rgba(255,255,255,.15);
     -moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
     -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
@@ -72,9 +72,115 @@ input:focus {
     box-shadow:
         0 2px 3px 0 rgba(0,0,0,.1) inset,
         0 2px 7px 0 rgba(0,0,0,.2);
+} */
+
+.input[type=text] {
+	width: 270px;
+    height: 42px;
+    margin-top: 25px;
+    padding: 0 15px;
+    background: #2d2d2d; browsers that don't support rgba
+    background: rgba(45,45,45,.15);
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: 1px solid #3d3d3d; browsers that don't support rgba
+    border: 1px solid rgba(255,255,255,.15);
+    -moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+    -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+    -o-transition: all .2s;
+    -moz-transition: all .2s;
+    -webkit-transition: all .2s;
+    -ms-transition: all .2s;
 }
 
-button {
+input:-moz-placeholder { color: #fff; }
+input:-ms-input-placeholder { color: #fff; }
+input::-webkit-input-placeholder { color: #fff; }
+
+input:focus {
+    outline: none;
+    -moz-box-shadow:
+        0 2px 3px 0 rgba(0,0,0,.1) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow:
+        0 2px 3px 0 rgba(0,0,0,.1) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+    box-shadow:
+        0 2px 3px 0 rgba(0,0,0,.1) inset,
+        0 2px 7px 0 rgba(0,0,0,.2);
+} 
+
+.steps input[type=checkbox] {
+  display: none;
+}
+.steps input[type=submit]{
+  background: #f1783c;
+  border: none;
+  padding: 0px;
+  margin: 0 auto;
+  width: 270px;
+  height: 42px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background 0.5s ease
+}
+.steps input[type=submit]:hover{
+  background: #8fde9c;
+}
+.steps label{
+  background: #393D40;
+  height: 65px;
+  line-height: 65px;
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #44494e;
+  color: #889199;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-indent: 52px;
+  cursor: pointer;
+  transition: all 0.7s ease;
+  margin: 0px;
+}
+.steps label:before{
+  content:"";
+  width: 12px;
+  height: 12px;
+  display: block;
+  position: absolute;
+  margin: 26px 0px 0px 18px;
+  border-radius: 100%;
+  transition: border 0.7s ease
+}
+.steps label:hover{
+  background: #2B2E30;
+  color: #46b7e5
+}
+.steps label:hover:before{
+  border: 1px solid #46b7e5;
+}
+#op1:checked ~ label[for=op1]:before,
+#op2:checked ~ label[for=op2]:before,
+#op3:checked ~ label[for=op3]:before{
+  border: 2px solid #96c93c;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAHCAYAAAA1WQxeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGFJREFUeNpinHLMhgEHKADia0xQThIQs6JJ9gPxZhYQAcS6QHwDiI8hSYJAC0gBPxDLAvFcIJ6JJJkDxFNBVtgBcQ8Qa6BLghgwN4A4a9ElQYAFSj8C4mwg3o8sCQIAAQYA78QTYqnPZuEAAAAASUVORK5CYII=') no-repeat center center;
+}
+
+
+
+/* button {
     cursor: pointer;
     width: 300px;
     height: 44px;
@@ -129,6 +235,135 @@ button:active {
         0 1px 4px 0 rgba(0,0,0,.1);
 
     border: 0px solid #ef4300;
+} */
+
+.modal-header {
+	background: #68dff0;
+}
+
+.modal-title {
+	color: white;
+}
+
+.lock-screen .modal-content {
+	position: relative;
+	background-color: #f2f2f2;
+	background-clip: padding-box;
+	border: 1px solid #999;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 5px;
+}
+
+.close {
+  float: right;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+button.close {
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+.btn {
+	color: #f2f2f2;
+	 width: 306px;
+    height: 42px;
+	font-size: 12px;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border: 1px solid #64c3c2 !important;
+	padding: 5px 15px;
+	margin-right: 15px;
+	background: #68dff0;
+	margin-top: 15px;
+	size : 30px;
+}
+
+
+.btn-theme {
+  color: #fff;
+  background-color: #68dff0;
+  border-color: #48bcb4;
+}
+.btn-theme:hover,
+.btn-theme:focus,
+.btn-theme:active,
+.btn-theme.active,
+.open .dropdown-toggle.btn-theme {
+  color: #fff;
+  background-color: #48bcb4;
+  border-color: #48bcb4;
+}
+
+.btn-theme02 {
+  color: #fff;
+  background-color: #ac92ec;
+  border-color: #967adc;
+}
+.btn-theme02:hover,
+.btn-theme02:focus,
+.btn-theme02:active,
+.btn-theme02.active,
+.open .dropdown-toggle.btn-theme02 {
+  color: #fff;
+  background-color: #967adc;
+  border-color: #967adc;
+}
+
+.btn-theme03 {
+  color: #fff;
+  background-color: #48cfad;
+  border-color: #37bc9b;
+}
+.btn-theme03:hover,
+.btn-theme03:focus,
+.btn-theme03:active,
+.btn-theme03.active,
+.open .dropdown-toggle.btn-theme03 {
+  color: #fff;
+  background-color: #37bc9b;
+  border-color: #37bc9b;
+}
+
+.btn-theme04 {
+  color: #fff;
+  background-color: #ed5565;
+  border-color: #da4453;
+}
+.btn-theme04:hover,
+.btn-theme04:focus,
+.btn-theme04:active,
+.btn-theme04.active,
+.open .dropdown-toggle.btn-theme04 {
+  color: #fff;
+  background-color: #da4453;
+  border-color: #da4453;
+}
+
+.btn-clear-g {
+	color: #48bcb4;
+	background: transparent;
+	border-color: #48bcb4;
+}
+
+.btn-clear-g:hover {
+	color: white;
 }
 
 .error {

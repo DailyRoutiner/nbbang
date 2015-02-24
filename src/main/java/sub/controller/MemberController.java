@@ -77,7 +77,7 @@ public class MemberController {
 			else
 				{
 					System.out.println("에러 발생");
-					mv.setViewName("error");
+					mv.setViewName("main");
 				}
 			return mv;
 	}
