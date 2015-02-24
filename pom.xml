@@ -1,11 +1,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.springframework.samples.service.service</groupId>
+<<<<<<< HEAD
   <artifactId>Nbbang</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   
 	 <dependencies>
+=======
+  <artifactId>helloworld</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  <dependencies>
+		
+		
+>>>>>>> master
 			<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
@@ -55,5 +64,8 @@
 			<version>1.7.4</version>
 		</dependency>
 	</dependencies>	
+<<<<<<< HEAD
 		
+=======
+>>>>>>> master
 </project>

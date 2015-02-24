@@ -11,5 +11,8 @@ public interface PayDAO {
 	int payMeetUpdate(PayDTO vo);
 	List<PayDTO> friendSelect(int meetno);
 	List<WebPushDTO> ResAfterSelect(int ckNo);
+<<<<<<< HEAD
 	int insertPayment(PayDTO pd);
+=======
+>>>>>>> master
 }
