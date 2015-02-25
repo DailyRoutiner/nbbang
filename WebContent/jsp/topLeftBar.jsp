@@ -72,7 +72,7 @@
 							function(data) {
 							$(data.list).each(
 									function(index, item) {
-										table += "<a href='index.html#'> <span class='photo'><img alt='avatar' src='assets/img/ui-zac.jpg'></span> <span id='listTable' class='subject'>"+
+										table += "<a href='index.html#'> <span class='photo'><img alt='avatar' src="+item.mempic+ "></span> <span id='listTable' class='subject'>"+
 										"<span class='subject'> <span class='from'>"+item.memname+"</span>"
 												+"<span class='time'>"+item.alramtime+"</span></span>"
 												+"<span class='message'>"+item.content+"</span></span></a>";
