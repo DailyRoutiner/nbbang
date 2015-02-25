@@ -202,14 +202,13 @@
 		<!-- 전화번호 변경 모달 -->
  				 <div class="modal fade" id="phonenumber" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						  <div class="modal-dialog">
-						    <div class="modal-content">
+						    <div class="modal-content" style="height:200px">
 						      <div class="modal-header">
 						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						        <h4 class="modal-title" id="myModalLabel">휴대번호 설정</h4>
 						      </div>
 						      <div class="modal-body">
 						          	<!-- BASIC FORM ELELEMNTS -->
-          						<div class="col-lg-12">
                   					<div class="form-panel">
                      					 <form class="form-horizontal style-form" method="post" action = "updatePhone.do">
 											<input type = "hidden" value="updatePhone" name= "command">
@@ -227,7 +226,6 @@
 						     </form>
 						    </div>
 						   </div>
-						  </div>
 						 </div>
 						</div>
 					   </div>
@@ -241,7 +239,6 @@
 						      </div>
 						      <div class="modal-body">
 						          	<!-- BASIC FORM ELELEMNTS -->
-          						<div class="col-lg-12">
                   					<div class="form-panel">
                      					 <form class="form-horizontal style-form" method="post" action = "updateCardPassWord.do">
 											<input type = "hidden" value="updateCardPassWord" name= "command">
@@ -260,7 +257,6 @@
 						     	</form>
 						    </div>
 						   </div>
-						  </div>
 						 </div>
 						</div>
 					   </div>
@@ -274,7 +270,6 @@
 						      </div>
 						      <div class="modal-body">
 						          	<!-- BASIC FORM ELELEMNTS -->
-          						<div class="col-lg-12">
                   					<div class="form-panel">
                      					 <form class="form-horizontal style-form" method="post" action = "updatePassWord.do">
 											<input type = "hidden" value="updatePassWord" name= "command">
@@ -294,7 +289,6 @@
 						    </div>
 						   </div>
 						  </div>
-						 </div>
 						</div>
 					   </div>
 		<!-- 계좌번호 변경 모달 -->				 
@@ -307,7 +301,6 @@
 						      </div>
 						      <div class="modal-body">
 						          	<!-- BASIC FORM ELELEMNTS -->
-          						<div class="col-lg-12">
                   					<div class="form-panel">
                      						 <form class="form-horizontal style-form" method="post" action = "updateAccount.do">
 												<input type = "hidden" value="updateAccount" name= "command">
@@ -325,7 +318,6 @@
 						     </form>
 						    </div>
 						   </div>
-						  </div>
 						 </div>
 						</div>
 					   </div>
@@ -339,7 +331,6 @@
 						      </div>
 						      <div class="modal-body">
 						          	<!-- BASIC FORM ELELEMNTS -->
-          						<div class="col-lg-12">
                   					<div class="form-panel">
                      					 <form class="form-horizontal style-form" method="post" action = "updateDeviceId.do">
 												<!-- <input type = "hidden" value="updateDeviceId" name= "deviceid"> -->
@@ -355,7 +346,6 @@
           							</div>
 						      </div>
 						     </form>
-						    </div>
 						   </div>
 						  </div>
 						 </div>

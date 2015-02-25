@@ -5,8 +5,11 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
   <link href="assets/css/bootstrap.css" rel="stylesheet">
-      <link href="assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/style-responsive.css" rel="stylesheet">
+  
+
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
 		<!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
@@ -16,7 +19,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="메뉴"></div>
               </div>
             <!--logo start-->
-            <form action="login.do" class="logo" method="post"><button class="home"><b>N-BBANG</b></button></a></form>
+            <form action="login.do" method="post"><a class = "logo" href="loginpage.jsp"><b>N-BBANG</b></a></form>
             <!--logo end-->
             <div class="nav notify-row " id="top_menu" >
                 <!--  notification start -->
@@ -108,11 +111,7 @@
 								</div>
 								
 							<!-- 	<div class="profile-01 centered"> -->
-							<div class="steps pn">
-									<%-- <form action="profile.do" method="post"><p><input type="submit" style="height:50px; width:175px; color: white; font-size: large; font-weight: 700; " id='submit' value=" --%><%-- <%=dto.getMemname()%>"><!-- </p></form> --> --%>
-									<input id='op1' name='op1' type='checkbox'/>
-							    <label for='op1'>Update Profile</label>
-									</div>
+									<form action="profile.do" method="post"><p><input type="submit" style="height:50px; width:175px; color: white; font-size: large; font-weight: 700; " class="profile-01 centered" value="<%=dto.getMemname()%>"></p></form>
 								<!-- </div> -->
 								<div class="centered">
 									<h6><i class="fa fa-envelope"></i><br/><%=dto.getPhonenumber()%></h6>
