@@ -15,6 +15,15 @@ public class MeetingDTO implements Serializable {
 	public MeetingDTO() {
 		super();
 	}
+	
+	public MeetingDTO(int memno) {
+		manageNo = memno;
+	}
+	
+	public MeetingDTO(int meetNo, int manageNo) { //meeting 딜리트 할때 쓰는 생성자
+		this.meetNo = meetNo;
+		this.manageNo = manageNo;
+	}
 
 	public MeetingDTO(int meetingType, int meetNo, String meetName,
 			String place, String meetDate, int totalfee, int manageNo, int memNo) {

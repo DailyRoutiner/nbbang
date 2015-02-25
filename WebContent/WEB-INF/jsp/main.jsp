@@ -52,22 +52,29 @@
 
               <div class="row">
                      
-                  <div class="col-lg-12 main-chart">
+                  <div class="col-lg-9 main-chart">
                       
-                <div class="col-md-12">
+                <div class="col-lg-12">
 					<div class="pull-right">
 				           
-							
+						
+							<div class="form-group">
+						        <table>
+						        <tr>
+						        <td>
 								<form action="insertMeeting.do" method="post">
 				                    <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">모임 추가</button>
-								</form>
-					</div>
+                                </form> 
+						       </td>
+						 
+                                </tr>
+                                </table>						
+							</div>
 						
 					</div>
 				</div>
-              </div>           
+                          
                   	<div class="row mtbox">
-                  	<div class="col-md-12">
                   	    <c:forEach items="${requestScope.list}" var="spend">
                   		
                   		<div class="col-md-2 col-sm-2  box0">
@@ -75,7 +82,8 @@
 					  			<c:choose>
 										<c:when test="${spend.meetingType==1}">
 										<form action="valuePass.do" method="post"> 
-												    <input type="image" src="assets/img/category/ex_category_icon_01.png" width="150" height="150" class="img_button">
+												    <input type="image" src="assets/img/category/payback.png" width="150" height="150" class="img_button">
+												     <!-- <a href="Sung.jsp"><img alt="식비" title="식비" src="img/category/money1.png"  width="100" height="100"></a> -->
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
@@ -83,7 +91,8 @@
 										</c:when>
 									    <c:when test="${spend.meetingType==2}">
 									    <form action="valuePass.do" method="post">
-											 <input type="image" src="assets/img/category/ex_category_icon_03.png" width="150" height="150" class="img_button">
+											 <input type="image" src="assets/img/category/group.png" width="150" height="150" class="img_button">
+												     <!-- <a href="Sung.jsp"><img alt="식비" title="식비" src="img/category/money1.png"  width="100" height="100"></a> -->
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
@@ -97,9 +106,9 @@
                   		    <div>
                   		    <form action="deleteMeeting.do" method="post">		
 								<!-- search -->
-								    <input type="image" width="10" height="10" src="assets/img/category/trash.png"  class="img_button">
-								    <input type="image" width="10" height="10" src="trash.png"  class="img_button">
-                  		    <input type="checkbox" name="spendIndex" value="${spend.meetNo}">
+								    <input type="image" width="50" height="50" src="assets/img/category/trash.png">
+				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">삭제</button> -->
+                  		    <input type="checkbox" name="meetingIndex" value="${spend.meetNo}">
                   		    </form>
                   		    </div>
                   						<p>장소 : ${spend.place}</p>
@@ -111,9 +120,7 @@
                   
               </div>                 			
                   	</div><!-- /row mt -->	
-                  	
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
-                 
 		     </div>
      	</section>
      </section>

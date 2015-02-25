@@ -33,4 +33,21 @@ public class MeetingServiceImpl implements MeetingService {
 		return meetingDao.meetingList(memno);
 	}
 	
+	@Override
+	public MeetingDTO selectMeetNo(MeetingDTO md){
+		return meetingDao.selectMeetNo(md);
+	}
+	
+	@Override
+	public List<MeetingDTO> meetingList(MeetingDTO md) {
+		return meetingDao.meetingList(md);
+	}
+	
+	
+	@Override
+	public int deleteMeeting(MeetingDTO md){
+		return meetingDao.deleteMeeting(md);
+		
+	}
+	
 }

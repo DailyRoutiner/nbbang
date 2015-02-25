@@ -58,4 +58,45 @@ public class MeetingDAOImpl implements MeetingDAO {
 		}
 		return spendList;
 	}
+	
+	@Override
+	public MeetingDTO selectMeetNo(MeetingDTO md){
+		SqlSession session = DBUtil.getSqlSession();
+		MeetingDTO md2=null;
+		try {
+			md2 = session.selectOne("MEETING.selectOne", md);
+		} finally {
+			session.close();
+		}
+		return md2;
+	}
+	
+	@Override
+	public List<MeetingDTO> meetingList(MeetingDTO md) {
+		SqlSession session = DBUtil.getSqlSession();
+		List<MeetingDTO> meetingList = null;
+		try {
+			meetingList = session.selectList("MEETING.meetingList", md);
+		} finally {
+			session.close();
+		}
+		return meetingList;
+	}
+	
+	
+	@Override
+	public int deleteMeeting(MeetingDTO md){ //미팅 삭제
+		SqlSession session = DBUtil.getSqlSession(true);
+		int result = 0;
+		try {
+			result = session.delete("MEETING.deleteMeeting", md);
+			//System.out.println(result);
+		} finally {
+			session.close();
+		}
+		return result;	//delete �����ϸ� 1�� ����
+		
+	}
+	
+	
 }

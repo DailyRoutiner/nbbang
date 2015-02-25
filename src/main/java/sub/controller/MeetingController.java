@@ -57,34 +57,69 @@ public class MeetingController {
 	}
 	
 	//모임 추가 
-	@RequestMapping(value="addMeeting.do", method=RequestMethod.POST)
-    public ModelAndView addSpend(@RequestParam("meetingType") int meetingType,
-                         @RequestParam("place") String place,
-                         @RequestParam("meetDate") String meetDate,
-                         @RequestParam("meetName") String meetName,
-                         @RequestParam("memberIndex") String[] rowIndex,
-                         @RequestParam("meetNo") int meetNo,
-                         HttpServletRequest req){
-       int result=0;
-       HttpSession session=req.getSession();
-		result = meetingService.insertMeeting(new MeetingDTO(meetingType, meetName, place, meetDate, ((MemberDTO)session.getAttribute("dto")).getMemno()));
-		for(int i=0; i<rowIndex.length; i++){
-		result = payService.insertPayment(new PayDTO(Integer.parseInt(rowIndex[i]),meetNo));
-		}
-            if(result > 0){
-				System.out.println("데이터 삽입 성공!");
-			}else{
-				System.out.println("데이터 삽입 실패");
-			}
-		//다시 list값을 뿌려 주기 위해 불러오는 부분..
-            List<MeetingDTO> list = meetingService.meetingList(((MemberDTO)session.getAttribute("dto")).getMemno());
-            ModelAndView mv=new ModelAndView();
-			mv.addObject("list",list);
-            mv.setViewName("main");
+		@RequestMapping(value="addMeeting.do", method=RequestMethod.POST)
+	    public ModelAndView addSpend(@RequestParam("meetingType") int meetingType,
+	                         @RequestParam("place") String place,
+	                         @RequestParam("meetDate") String meetDate,
+	                         @RequestParam("meetName") String meetName,
+	                         @RequestParam("memberIndex") String[] rowIndex,
+	                         HttpServletRequest req){
+	       int result=0;
+	       MeetingDTO md=null;//meetNo을 저장하기 위한 변수
+	       HttpSession session=req.getSession();
+			result = meetingService.insertMeeting(new MeetingDTO(meetingType, meetName, place, meetDate, ((MemberDTO)session.getAttribute("dto")).getMemno()));
 			
-		return mv;
-	}
-	// 모임 페이지으로 들어가기
+			System.out.println(rowIndex[0]);	
+			md = meetingService.selectMeetNo(new MeetingDTO(((MemberDTO)(session.getAttribute("dto"))).getMemno()));//해당 memno값을 가진 사용자가 최근에 만든 meetno을 가지고온다.
+			System.out.println(md.getMeetNo());
+			
+			for(int i=0; i<rowIndex.length; i++){
+			result = payService.insertPayment(new PayDTO(Integer.parseInt(rowIndex[i]),md.getMeetNo()));
+			}
+	            if(result > 0){
+					System.out.println("데이터 삽입 성공!");
+				}else{
+					System.out.println("데이터 삽입 실패");
+				}
+			//다시 list값을 뿌려 주기 위해 불러오는 부분..
+	            List<MeetingDTO> list = meetingService.meetingList(new MeetingDTO(((MemberDTO)session.getAttribute("dto")).getMemno()));
+	            ModelAndView mv=new ModelAndView();
+				mv.addObject("list",list);
+	            mv.setViewName("main");
+				
+			return mv;
+		}
+		
+		//모임 삭제
+		@RequestMapping(value="deleteMeeting.do", method=RequestMethod.POST)
+		public ModelAndView deleteMeeting(@RequestParam("meetingIndex") String[] rowIndex,
+				                                                 HttpServletRequest req){
+			
+			HttpSession session=req.getSession();
+			int result=0;
+			
+				  for(int i=0; i<rowIndex.length; i++){
+					  result=meetingService.deleteMeeting(new MeetingDTO(Integer.parseInt(rowIndex[i]), ((MemberDTO)session.getAttribute("dto")).getMemno()));//meetno과 사용자의 manageno을
+				     if(result==1){
+					     System.out.println("모임목록 삭제 성공!");
+				     }
+				   }
+				
+				   /*List<MeetingBean> list=meetingService.selectAll((String)(session.getAttribute("id"))); //지윤이가 session값 넘겨주면 그 id로 사용하기!
+				ModelAndView mv=new ModelAndView();
+				mv.addObject("spendView", list);
+				mv.setViewName("Test");*/
+				
+				 ModelAndView mv=new ModelAndView();
+				 List<MeetingDTO> list = meetingService.meetingList(new MeetingDTO(((MemberDTO)session.getAttribute("dto")).getMemno()));
+			     mv.addObject("list",list);
+		         mv.setViewName("main");
+				
+				return mv;
+		}
+	
+		
+		// 모임 페이지으로 들어가기
 	@RequestMapping(value="valuePass.do", method=RequestMethod.POST)
 	public ModelAndView valuePass(@RequestParam("manageNo") int manageNo,
 	@RequestParam("meetNo") int meetNo,

@@ -11,4 +11,10 @@ public interface MeetingDAO {
 	int insertMeeting(MeetingDTO meetingDTO);
 
 	List<MeetingDTO> meetingList(int memno);
+	
+    MeetingDTO selectMeetNo(MeetingDTO md);
+	
+	List<MeetingDTO> meetingList(MeetingDTO md);
+	
+	int deleteMeeting(MeetingDTO md);
 }

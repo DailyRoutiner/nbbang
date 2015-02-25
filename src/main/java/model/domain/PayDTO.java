@@ -11,6 +11,7 @@ public class PayDTO implements Serializable{
 	String carPw;
 	String memPic;
 	String payCheck;
+	int payNo;
 	int price;
 	int memno;
 	int totalfee;
