@@ -116,7 +116,7 @@
 						      </div>
 						      
 						      <div class="modal-body" style="height: 400px">
-						      <! -- PROFILE 01 PANEL -->
+						      <!-- PROFILE 01 PANEL -->
 							
 							<div class="content-panel pn">
 								<div>
@@ -146,7 +146,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
              
-              	   <p class="centered"><a href="#" data-toggle="modal" data-target="#myModal"><img src="<%=dto.getMempic()%>" class="img-circle" width="80"></a></p>
+              	   <p class="centered"><a href="#" data-toggle="modal" data-target="#myModal"><img src="<%=dto.getMempic()%>" class="img-circle" width="80" height="80"></a></p>
               	  <h5 class="centered">${sessionScope.dto.memname }</h5>
               	
                   <li class="mt">

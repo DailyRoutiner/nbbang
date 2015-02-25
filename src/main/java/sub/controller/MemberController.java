@@ -86,7 +86,35 @@ public class MemberController {
 				}
 			return mv;
 	}
-	
+	@RequestMapping(value="insertkakaotalk.do", method=RequestMethod.GET)
+	public ModelAndView insertKakaotalk(@RequestParam("data") String data,
+													HttpServletRequest req){
+		
+		JSONObject obj = JSONObject.fromObject(JSONSerializer.toJSON(data));
+		JSONObject json = (JSONObject)obj.get("properties");
+		System.out.println("data : "+json);
+		MemberDTO dto = null;
+		 MemberDTO checkDto = memService.memJoinCheck(obj.getString("id"));
+		HttpSession session = req.getSession();
+		ModelAndView mv = new ModelAndView();
+			if(checkDto == null)
+				{
+					dto = new MemberDTO(json.getString("nickname"), obj.getString("id"), obj.getString("id"), 0);
+					dto.setMempic(json.getString("profile_image"));
+					memService.insertMember(dto);
+					session.setAttribute("dto", dto);
+					mv.addObject("dto", dto);
+					mv.setViewName("main");
+				}
+			else
+				{
+					checkDto.setMempic(json.getString("profile_image"));
+					session.setAttribute("dto", checkDto);
+					mv.addObject("dto", checkDto);
+					mv.setViewName("main");
+				}
+			return mv;
+	}
 	@RequestMapping(value="insertMember.do", method=RequestMethod.POST)
 	public ModelAndView insertMember(@RequestParam("memname") String memname,
 									@RequestParam("mempw") String mempw,

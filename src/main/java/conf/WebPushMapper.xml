@@ -12,7 +12,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="ckno" property="ckNo" />
 		<result column="meetno" property="meetno" />
 		<result column="memno" property="memno" />
-		<result column="memname" property="memname" />		
+		<result column="memname" property="memname" />
+		<result column="mempic" property="mempic" />		
 	</resultMap>
 	
 	

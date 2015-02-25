@@ -102,7 +102,7 @@ insert into meeting values (1,MEETING_SQ.NEXTVAL,'kodb','영등포','2015-02-25'
 create table payment(
 	payno number(20) primary key,
 	paycheck varchar2(5),
-	price number(30) not null,
+	price number(30),
 	meetno number(20) not null,
 	memno number(20) not null,
 	constraint payment_meetno_fk foreign key(meetno) references meeting(meetno),
@@ -172,7 +172,8 @@ N.NOTIFICATIONNO,
 N.MEETNO,
 N.MEMNO,
 N.CKNO,
-N.ALRAMTIME
+N.ALRAMTIME,
+M.MEMPIC
   FROM MEMBER M, NOTIFICATION N
   WHERE M.MEMNO =N.MEMNO;  
   
