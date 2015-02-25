@@ -32,7 +32,7 @@
 							</div><br><!--/panel -->
                     <!--COMPLETED ACTIONS DONUTS CHART-->
                     <div class="content-panel pn">
-						<h3>받은 메시지</h3>
+						<h3>NOTIFICATION</h3>
 						<div id="rightBar" class="desc">
                       </div>
                                      </div>  

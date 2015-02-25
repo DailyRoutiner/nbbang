@@ -65,10 +65,18 @@ public class MeetingController {
 	                         @RequestParam("memberIndex") String[] rowIndex,
 	                         HttpServletRequest req){
 	       int result=0;
+	       ModelAndView mv=new ModelAndView();
 	       MeetingDTO md=null;//meetNo을 저장하기 위한 변수
 	       HttpSession session=req.getSession();
-			result = meetingService.insertMeeting(new MeetingDTO(meetingType, meetName, place, meetDate, ((MemberDTO)session.getAttribute("dto")).getMemno()));
 			
+	       if(result==0){
+	           result = meetingService.insertMeeting(new MeetingDTO(meetingType, meetName, place, meetDate, ((MemberDTO)session.getAttribute("dto")).getMemno()));
+	       }else{
+	    	   
+	    	   mv.setViewName("error");
+	    	   return mv;
+	       }
+	       
 			System.out.println(rowIndex[0]);	
 			md = meetingService.selectMeetNo(new MeetingDTO(((MemberDTO)(session.getAttribute("dto"))).getMemno()));//해당 memno값을 가진 사용자가 최근에 만든 meetno을 가지고온다.
 			System.out.println(md.getMeetNo());
@@ -78,12 +86,13 @@ public class MeetingController {
 			}
 	            if(result > 0){
 					System.out.println("데이터 삽입 성공!");
+					
 				}else{
 					System.out.println("데이터 삽입 실패");
 				}
 			//다시 list값을 뿌려 주기 위해 불러오는 부분..
 	            List<MeetingDTO> list = meetingService.meetingList(new MeetingDTO(((MemberDTO)session.getAttribute("dto")).getMemno()));
-	            ModelAndView mv=new ModelAndView();
+	            
 				mv.addObject("list",list);
 	            mv.setViewName("main");
 				

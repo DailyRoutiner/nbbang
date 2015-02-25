@@ -39,15 +39,28 @@
                             <li>
                                 <a href="meeting.jsp">See all messages</a>
                             </li>
+            
                         </ul>
+                        
                     </li>
-                    <!-- inbox dropdown end -->
+                    
+                     <li id="header_inbox_bar" class="dropdown">
+                        <input type="image" width="30" height="30" src="assets/img/category/People.png"> 
+                     </li>
+                    <li id="header_inbox_bar" class="dropdown">
+                        &nbsp;&nbsp;&nbsp;
+                     </li>
+                     <li id="header_inbox_bar" class="dropdown">
+                        <input type="image" width="25" height="25" src="assets/img/category/pay.png"> 
+                     </li>
+                     
+                     <!-- inbox dropdown end -->                     
                 </ul>
                 <!--  notification end -->
+  
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="jsp/logout.jsp">Logout</a></li>
             	</ul>
             </div>
         </header>
@@ -103,7 +116,7 @@
 						      </div>
 						      
 						      <div class="modal-body" style="height: 400px">
-						      <! -- PROFILE 01 PANEL -->
+						      <!-- PROFILE 01 PANEL -->
 							
 							<div class="content-panel pn">
 								<div>
@@ -133,7 +146,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
              
-              	   <p class="centered"><a href="#" data-toggle="modal" data-target="#myModal"><img src="<%=dto.getMempic()%>" class="img-circle" width="80"></a></p>
+              	   <p class="centered"><a href="#" data-toggle="modal" data-target="#myModal"><img src="<%=dto.getMempic()%>" class="img-circle" width="80" height="80"></a></p>
               	  <h5 class="centered">${sessionScope.dto.memname }</h5>
               	
                   <li class="mt">

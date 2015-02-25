@@ -19,7 +19,8 @@
     <link rel="stylesheet" type="text/css" href="assets/lineicons/style.css"> 
     <link href="assets/css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-
+	<link href="assets/css/zabuto_calendar.css" rel="stylesheet" type="text/css" />
+	
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
@@ -55,13 +56,13 @@ body {
                  	<div class="col-md-4 mb">
 								<div class="grey-panel pn">
 							<div class="grey-header">
-								<h5>${spend.memName}</h5>
+								<h4>${spend.memName}</h4>
 							</div>
-							<p><img src="${spend.memPic }" class="img-circle" width="80"></p>
-							<p><h5>${spend.memName}</h5></p>
+							<p><img src="${spend.memPic }" class="img-circle" width="80" height="80"></p>
+							<p><h4>${spend.memName}</h4></p>
 							<div class="row">
 								<div class="col-md-6">
-									<h4>입금 상태</h4>
+									<i class="small mt">입금 상태</i>
 									<p>${spend.payCheck}</p>
 								</div>
 								<div class="col-md-6">
@@ -78,7 +79,7 @@ body {
 				 
                           <div class="grey-panel">
                            <div class="col-md-4">
-							  <h4><i class="fa fa-angle-right"></i> 통계</h4>
+							  <h3><i class="fa fa-angle-right"></i> 통계</h3>
                               <div id="myStat" data-dimension="250" data-text="35%" data-info="New Clients" data-width="30" data-fontsize="38" data-percent="35" data-fgcolor="#61a9dc" data-bgcolor="#eee" data-fill="#ddd"></div>
                               </div><!-- /col-md-12 -->
                               <div class="row">
@@ -126,6 +127,7 @@ body {
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
 	<script src="js/jquery.circliful.min.js"></script>  
    	<script src="assets/js/zabuto_calendar.js"></script>
+   	<script type="assets/js/jquery.circliful.min.js"></script>
    	
     <!--script for this page-->
 	 <script src="assets/js/chart-master/Chart.js"></script>
