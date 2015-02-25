@@ -104,12 +104,6 @@ public class MeetingController {
 					     System.out.println("모임목록 삭제 성공!");
 				     }
 				   }
-				
-				   /*List<MeetingBean> list=meetingService.selectAll((String)(session.getAttribute("id"))); //지윤이가 session값 넘겨주면 그 id로 사용하기!
-				ModelAndView mv=new ModelAndView();
-				mv.addObject("spendView", list);
-				mv.setViewName("Test");*/
-				
 				 ModelAndView mv=new ModelAndView();
 				 List<MeetingDTO> list = meetingService.meetingList(new MeetingDTO(((MemberDTO)session.getAttribute("dto")).getMemno()));
 			     mv.addObject("list",list);
@@ -122,8 +116,8 @@ public class MeetingController {
 		// 모임 페이지으로 들어가기
 	@RequestMapping(value="valuePass.do", method=RequestMethod.POST)
 	public ModelAndView valuePass(@RequestParam("manageNo") int manageNo,
-	@RequestParam("meetNo") int meetNo,
-	HttpServletRequest req){
+												@RequestParam("meetNo") int meetNo,
+												HttpServletRequest req){
 	List<PayDTO> pd =null;
 	ModelAndView mv=new ModelAndView();
 	HttpSession session = req.getSession();

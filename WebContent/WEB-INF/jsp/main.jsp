@@ -62,7 +62,7 @@
 						        <table>
 						        <tr>
 						        <td>
-								<form action="insertMeeting.do" method="post">
+								<form action="insertMeeting.do" method="POST">
 				                    <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">모임 추가</button>
                                 </form> 
 						       </td>
@@ -81,26 +81,37 @@
                   			<div class="box1">
 					  			<c:choose>
 										<c:when test="${spend.meetingType==1}">
-										<form action="valuePass.do" method="post"> 
+										<form action="valuePass.do" method="POST"> 
 												    <input type="image" src="assets/img/category/payback.png" width="150" height="150" class="img_button">
-												     <!-- <a href="Sung.jsp"><img alt="식비" title="식비" src="img/category/money1.png"  width="100" height="100"></a> -->
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
+                  		                            <h3>${spend.meetName} 모임</h3>
 										</form>
 										</c:when>
 									    <c:when test="${spend.meetingType==2}">
-									    <form action="valuePass.do" method="post">
+									    <form action="valuePass.do" method="POST">
 											 <input type="image" src="assets/img/category/group.png" width="150" height="150" class="img_button">
-												     <!-- <a href="Sung.jsp"><img alt="식비" title="식비" src="img/category/money1.png"  width="100" height="100"></a> -->
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
+                  		                            <h3>${spend.meetName} 모임</h3>
 										</form>
 										</c:when>
 									</c:choose>
+									<!-- Product Panel -->
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-4 mb">
+							<div class="product-panel-2 pn">
+								<div class="badge badge-hot">HOT</div>
+								<img src="assets/img/product.jpg" width="200" alt="">
+								<h5 class="mt">Flat Pack Heritage</h5>
+								<h6>TOTAL SALES: 1388</h6>
+								<button class="btn btn-small btn-theme04">FULL REPORT</button>
+							</div>
+						</div><! --/col-md-4 -->
 									
-					  			<h3>${spend.meetName} 모임</h3>
+					  			
                   			</div>
                   		   
                   		    <div>

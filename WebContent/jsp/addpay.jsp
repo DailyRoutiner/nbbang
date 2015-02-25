@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 	<!-- 회비 추가 팝업창 on-->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -44,11 +43,11 @@
 		        var username = $('#price').val();
 		        var password = $('#totalfee').val();
 		        if(username == '') {
-		       		alert("프라이스 값을 입력하세요");
+		       		alert("price 값을 입력하세요");
 		            return false;
 		        }
 		        if(password == '') {
-		        	alert("토탈 값을 입력하세요");      
+		        	alert("total 값을 입력하세요");      
 		            return false;
 		        }
 		    });
@@ -56,14 +55,15 @@
 
 		//회비 나누고 총액 확인 로직
 		$("#price").blur(function(){
-			$("input:text[id=totalfee]").val($("input:text[id=price]").val() * 4); 
+			$("input:text[name=totalfee]").val($("input:text[name=price]").val() * 4); 
 		});
 		$("#totalfee").blur(function(){
-			$("input:text[id=price]").val($("input:text[id=totalfee]").val() / 4); 
+			$("input:text[name=price]").val($("input:text[name=totalfee]").val() / 4); 
 		});
 		
 		//추가하기
 		$("#btn").click(function() {
+			alert($("#fee").serialize());
 			$.ajax({
 				url : "insertfee.do",
 				type : "get",
@@ -84,3 +84,6 @@
 		});// 회비 추가 로직 
 	});
 	</script>
+	<script src="assets/js/common-scripts.js"></script>
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/jquery-1.8.3.min.js"></script>    
