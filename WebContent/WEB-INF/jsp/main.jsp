@@ -37,6 +37,9 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
+    
+    
+    
   </head>
   <body>
 
@@ -73,21 +76,36 @@
 						
 					</div>
 				</div>
-                          
+                          <!-- <div class="col-lg-4 col-md-4 col-sm-4 mb">
+							<div class="product-panel-2 pn">
+								<img src="assets/img/product.jpg" width="200" alt="">
+								<h5 class="mt">Flat Pack Heritage</h5>
+								<h6>TOTAL SALES: 1388</h6>
+								<button class="btn btn-small btn-theme04">FULL REPORT</button>
+							</div>
+						</div> -->
                   	<div class="row mtbox">
                   	    <c:forEach items="${requestScope.list}" var="spend">
                   		
-                  		<div class="col-md-2 col-sm-2  box0">
+                  		<div class="col-md-6 col-sm-5 box0">
                   			<div class="box1">
 					  			<c:choose>
+					  			
+					  			
 										<c:when test="${spend.meetingType==1}">
-										<form action="valuePass.do" method="POST"> 
-												    <input type="image" src="assets/img/category/payback.png" width="150" height="150" class="img_button">
-				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
-                  		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
+										
+										<form action="valuePass.do" method="POST" class="product-panel-2 pn" height="200"> 
+										
+												    <input type="image" src="assets/img/product.jpg" width="200">
+				                                    <input class="mt" type="hidden" name="manageNo" value="${spend.manageNo}">
+                  		                            <input class="btn btn-small btn-theme04" type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
-                  		                            <h3>${spend.meetName} 모임</h3>
+                  		                            
+                  		                            <h5 class="mt">장소 : ${spend.place}</h5>
+					  			        <h6>날짜 : ${spend.meetDate}</h6>
+					  			        <h5 class="btn btn-small btn-theme04">${spend.meetName} 모임</h5>
 										</form>
+										
 										</c:when>
 									    <c:when test="${spend.meetingType==2}">
 									    <form action="valuePass.do" method="POST">
@@ -100,30 +118,21 @@
 										</c:when>
 									</c:choose>
 									<!-- Product Panel -->
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-4 mb">
-							<div class="product-panel-2 pn">
-								<div class="badge badge-hot">HOT</div>
-								<img src="assets/img/product.jpg" width="200" alt="">
-								<h5 class="mt">Flat Pack Heritage</h5>
-								<h6>TOTAL SALES: 1388</h6>
-								<button class="btn btn-small btn-theme04">FULL REPORT</button>
-							</div>
-						</div><! --/col-md-4 -->
-									
-					  			
-                  			</div>
-                  		   
-                  		    <div>
-                  		    <form action="deleteMeeting.do" method="post">		
+					
+						
+					  			<form action="deleteMeeting.do" method="post">		
 								<!-- search -->
-								    <input type="image" width="50" height="50" src="assets/img/category/trash.png">
+								    <input type="image" width="50" height="50" src="assets/img/category/trash.png"> 
 				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">삭제</button> -->
                   		    <input type="checkbox" name="meetingIndex" value="${spend.meetNo}">
                   		    </form>
+                  			</div>
+                  		   
+                  		    <div>
+                  		    
                   		    </div>
-                  						<p>장소 : ${spend.place}</p>
-					  			        <p>날짜 : ${spend.meetDate}</p>	
+                  						<%-- <p>장소 : ${spend.place}</p>
+					  			        <p>날짜 : ${spend.meetDate}</p>	 --%>
                   		</div>
                   		
                        </c:forEach>		
