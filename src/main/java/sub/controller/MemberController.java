@@ -47,7 +47,7 @@ public class MemberController {
 		HttpSession session=req.getSession();
 			MemberDTO vo = memService.isIdValid(email, mempw);
 			if(vo != null){
-				List<MeetingDTO> list = meetingService.meetingList(vo.getMemno());
+				List<MeetingDTO> list = meetingService.meetingList(new MeetingDTO(((MemberDTO)session.getAttribute("dto")).getMemno()));
 				session.setAttribute("dto", vo);
 				System.out.println(list);
 				mv.addObject("list",list);

@@ -4,6 +4,7 @@ package model.dao;
 import java.util.List;
 
 import model.domain.MeetingDTO;
+import model.domain.MemberDTO;
 import model.domain.PayDTO;
 
 import org.apache.ibatis.session.SqlSession;
@@ -48,14 +49,27 @@ public class MeetingDAOImpl implements MeetingDAO {
 	}
 
 	@Override
-	public List<MeetingDTO> meetingList(int memno) {
+	public List<MeetingDTO> meetingList(MeetingDTO md) {
 		SqlSession session = DBUtil.getSqlSession();
-		List<MeetingDTO> spendList = null;
+		List<MeetingDTO> meetingList = null;
 		try {
-			spendList = session.selectList("MEETING.meetingList", memno);
+			meetingList = session.selectList("MEETING.meetingList", md);
 		} finally {
 			session.close();
 		}
-		return spendList;
+		return meetingList;
 	}
+	
+	
+	public MeetingDTO selectMeetNo(MeetingDTO md){
+		SqlSession session = DBUtil.getSqlSession();
+		MeetingDTO md2=null;
+		try {
+			md2 = session.selectOne("MEETING.selectOne", md);
+		} finally {
+			session.close();
+		}
+		return md2;
+	}
+	
 }

@@ -15,6 +15,12 @@ public class MeetingDTO implements Serializable {
 	public MeetingDTO() {
 		super();
 	}
+	
+	
+	public MeetingDTO(int memno) {
+		manageNo = memno;
+	}
+
 
 	public MeetingDTO(int meetingType, int meetNo, String meetName,
 			String place, String meetDate, int totalfee, int manageNo, int memNo) {
@@ -40,6 +46,7 @@ public class MeetingDTO implements Serializable {
 		this.manageNo = manageNo;
 	}
 
+	
 	public int getMeetingType() {
 		return meetingType;
 	}

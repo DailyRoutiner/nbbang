@@ -17,6 +17,7 @@ public class MemberDTO implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 
 	public MemberDTO(int memno, String memname, String mempw, String cardpw,
 			String email, String account, int phonenumber, String deviceid,
@@ -44,6 +45,8 @@ public class MemberDTO implements Serializable{
 		this.email = email2;
 		this.mempw = mempw2;
 	}
+
+	
 
 	public int getMemno() {
 		return memno;

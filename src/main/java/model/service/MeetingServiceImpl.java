@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 
 import model.dao.MeetingDAO;
 import model.domain.MeetingDTO;
+import model.domain.MemberDTO;
 import model.domain.PayDTO;
 
 import org.springframework.stereotype.Service;
@@ -29,8 +30,14 @@ public class MeetingServiceImpl implements MeetingService {
 	}
 
 	@Override
-	public List<MeetingDTO> meetingList(int memno) {
-		return meetingDao.meetingList(memno);
+	public List<MeetingDTO> meetingList(MeetingDTO md) {
+		return meetingDao.meetingList(md);
 	}
+	
+	@Override
+	public MeetingDTO selectMeetNo(MeetingDTO md){
+		return meetingDao.selectMeetNo(md);
+	}
+	
 	
 }

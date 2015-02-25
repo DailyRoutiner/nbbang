@@ -87,7 +87,7 @@ public class PayDAOImpl implements PayDAO {
 
 	@Override
 	public int insertPayment(PayDTO pd) {
-		SqlSession session = DBUtil.getSqlSession();
+		SqlSession session = DBUtil.getSqlSession(true);
 		boolean flag = false;
 		int result = 0;
 		try {

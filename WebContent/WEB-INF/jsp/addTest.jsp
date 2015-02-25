@@ -106,7 +106,7 @@
 	                 <div class="row mt">
 	                  <div class="col-md-12">
 	                     <center>
-	                                    <input type="hidden" name = "meetNo" value='${requestScope.meetNo}'>
+	                                    <%-- <input type="hidden" name = "meetNo" value='${requestScope.meetNo}'> --%>
 										<button type="submit" class="btn btn-info" name="command" value="addSpend">추가</button>
 										<button type="button" class="btn btn-default" onclick="history.back()">취소</button>
 						</center>

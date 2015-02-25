@@ -4,21 +4,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="payment">
-
 	<resultMap type="payVo" id="payResultMap">
-		<result column="MEMNAME" property="memName" />
-		<result column="MEMPW" property="memPw" />
-		<result column="EMAIL" property="email" />
-		<result column="ACCOUNT" property="account" />
-		<result column="PHONENUMBER" property="phoneNumber" />
-		<result column="CARDPW" property="carPw" />
-		<result column="PAYCHECK" property="payCheck" />
-		<result column="PRICE" property="price" />
-		<result column="MEMNO" property="memno" />
-		<result column="TOTALFEE" property="totalfee" />
-		<result column="MEETING_TYPE" property="meetingType" />
-		<result column="MEETNO" property="meetno" />
-		<result column="deviceId" property="deviceId" />
+		<result column="memName" property="MEMNAME" />
+		<result column="memPw" property="MEMPW" />
+		<result column="email" property="EMAIL" />
+		<result column="account" property="ACCOUNT" />
+		<result column="phoneNumber" property="PHONENUMBER" />
+		<result column="carPw" property="CARPW" />
+		<result column="payCheck" property="PAYCHECK" />
+		<result column="price" property="PRICE" />
+		<result column="memno" property="MEMNO" />
+		<result column="totalfee" property="TOTALFEE" />
+		<result column="meetingType" property="MEETINGTYPE" />
+		<result column="meetno" property="MEETNO" />
+		<result column="deviceId" property="DEVICEID" />
+        <result column="memPic" property="MEMPIC" />
 	</resultMap>
 <!-- 
 	<select id="paySelect" resultMap="payResultMap">
