@@ -15,6 +15,8 @@
               </div>
             <!--logo start-->
             <a href="WEB-INF/jsp/Test.jsp" class="logo"><b>N-BBANG</b></a>
+            <!--logo start-->
+            <a href="login.do" class="logo" method="get"><b>N-BBANG</b></a>
             <!--logo end-->
             <div class="nav notify-row " id="top_menu" >
                 <!--  notification start -->
@@ -89,15 +91,15 @@
       <!-- 프로필 사진 -->
       <section id="container">
 	  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						  <div class="modal-dialog">
-						    <div class="modal-content">
+						  <div class="modal-dialog" style="width:280px">
+						    <div class="modal-content" align="center">
 						      <div class="modal-header">
 						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						        <h4 class="modal-title" style="color: white; font-size: x-large; font-weight: 1200; " id="myModalLabel">PROFILE</h4>
 						        
 						      </div>
 						      
-						      <div class="modal-body">
+						      <div class="modal-body" style="height: 400px">
 						      <! -- PROFILE 01 PANEL -->
 							
 							<div class="content-panel pn">
@@ -114,7 +116,7 @@
 								<div class="centered">
 									<h6><i class="fa fa-envelope"></i><br/><%=dto.getEmail()%></h6>
 								</div>
-							</div>
+							</div><!--/content-panel -->
 							
 						      </div>
 						      </div>
