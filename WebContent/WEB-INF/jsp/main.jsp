@@ -69,7 +69,6 @@
                              <input type="image" width="50" height="50" src="assets/img/category/add2.png">                                
                                 </form> 
 						       </td>
-						 
                                 </tr>
                                 </table>						
 							</div>
@@ -93,6 +92,12 @@
 					  			
 					  			
 										<c:when test="${spend.meetingType==1}">
+
+										<form action="valuePass.do" method="POST"> 
+												    <input type="image" src="assets/img/category/payback.png" width="150" height="150" class="img_button">
+				                                    <input type="hidden" name="manageNo" style="font-size: large;" value="${spend.manageNo}">
+                  		                            <input type="hidden" name="meetDate" style="font-size: large;"value="${spend.meetDate}">
+
 										
 										<form action="valuePass.do" method="POST" class="product-panel-2 pn" height="200"> 
 										
