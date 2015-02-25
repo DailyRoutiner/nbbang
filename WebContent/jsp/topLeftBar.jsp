@@ -39,15 +39,28 @@
                             <li>
                                 <a href="meeting.jsp">See all messages</a>
                             </li>
+            
                         </ul>
+                        
                     </li>
-                    <!-- inbox dropdown end -->
+                    
+                     <li id="header_inbox_bar" class="dropdown">
+                        <input type="image" width="30" height="30" src="assets/img/category/People.png"> 
+                     </li>
+                    <li id="header_inbox_bar" class="dropdown">
+                        &nbsp;&nbsp;&nbsp;
+                     </li>
+                     <li id="header_inbox_bar" class="dropdown">
+                        <input type="image" width="25" height="25" src="assets/img/category/pay.png"> 
+                     </li>
+                     
+                     <!-- inbox dropdown end -->                     
                 </ul>
                 <!--  notification end -->
+  
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="jsp/logout.jsp">Logout</a></li>
             	</ul>
             </div>
         </header>
