@@ -249,7 +249,7 @@
         										<label class="col-sm-3 col-sm-6 control-label">카드비밀번호</label>
         										<br><br>
         									<div class="col-sm-10">
-                              					<input type="text" class="form-control" name="cardpw" value="비밀번호">
+                              					<input type="text" class="form-control" name="cardpw">
                               					<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
                               					<br>
                               				</div>
@@ -282,7 +282,7 @@
         										<label class="col-sm-3 col-sm-6 control-label"  >비밀번호</label>
         										<br><br>
         									<div class="col-sm-10">
-                              					<input type="text" class="form-control" name="mempw" value="비밀번호">
+                              					<input type="text" class="form-control" name="mempw">
                               					<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
                               					<br>
                               				</div>
@@ -343,7 +343,7 @@
                   					<div class="form-panel">
                      					 <form class="form-horizontal style-form" method="post" action = "updateDeviceId.do">
 												<!-- <input type = "hidden" value="updateDeviceId" name= "deviceid"> -->
-												<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
+												<input type="hidden" class="form-control" name="email" >
         									<div class="form-group">
         						<label class="col-sm-3 col-sm-6 control-label">Device ID 설정</label>
         						<div class="col-sm-10">

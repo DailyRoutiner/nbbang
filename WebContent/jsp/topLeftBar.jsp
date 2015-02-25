@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
   <link href="assets/css/bootstrap.css" rel="stylesheet">
 		<!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
@@ -87,15 +89,15 @@
       <!-- 프로필 사진 -->
       <section id="container">
 	  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						  <div class="modal-dialog">
-						    <div class="modal-content">
+						  <div class="modal-dialog" style="width:280px">
+						    <div class="modal-content" align="center">
 						      <div class="modal-header">
 						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						        <h4 class="modal-title" style="color: white; font-size: x-large; font-weight: 1200; " id="myModalLabel">PROFILE</h4>
 						        
 						      </div>
 						      
-						      <div class="modal-body">
+						      <div class="modal-body" style="height: 400px">
 						      <! -- PROFILE 01 PANEL -->
 							
 							<div class="content-panel pn">
@@ -112,7 +114,7 @@
 								<div class="centered">
 									<h6><i class="fa fa-envelope"></i><br/><%=dto.getEmail()%></h6>
 								</div>
-							</div><! --/content-panel -->
+							</div><!--/content-panel -->
 							
 						      </div>
 						      </div>
@@ -147,6 +149,9 @@
                           <i class="fa fa-book"></i>
                           <span>모임 관리</span>
                       </a>
+                      <ul class="sub">
+                          <li><a  href="push_and_pay.html">결제 & 메시지</a></li>
+                      </ul>
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
