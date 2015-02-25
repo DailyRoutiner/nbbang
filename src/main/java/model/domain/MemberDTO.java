@@ -40,9 +40,9 @@ public class MemberDTO implements Serializable{
 		this.phonenumber = phonenumber2;
 	}
 
-	public MemberDTO(String email2, String mempw2) {
-		this.email = email2;
-		this.mempw = mempw2;
+	public MemberDTO(String name, String email) {
+		this.memname = name;
+		this.email = email;
 	}
 
 	public int getMemno() {

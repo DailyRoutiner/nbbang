@@ -11,12 +11,16 @@ import model.domain.MeetingDTO;
 import model.domain.MemberDTO;
 import model.service.MeetingService;
 import model.service.MemberService;
+import net.sf.json.JSONObject;
+import net.sf.json.JSONSerializer;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import sun.org.mozilla.javascript.internal.json.JsonParser;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -44,31 +48,32 @@ public class MemberController {
 							 HttpServletRequest req){
 		ModelAndView mv=new ModelAndView("error");
 		HttpSession session=req.getSession();
-			MemberDTO vo = memService.isIdValid(email, mempw);
-			if(vo != null){
-				List<MeetingDTO> list = meetingService.meetingList(vo.getMemno());
-				session.setAttribute("dto", vo);
+		 MemberDTO checkDto = memService.memJoinCheck(email);
+			if(checkDto != null){
+				List<MeetingDTO> list = meetingService.meetingList(checkDto.getMemno());
+				session.setAttribute("dto", checkDto);
 				System.out.println(list);
 				mv.addObject("list",list);
-				mv.addObject("dto",vo );
+				mv.addObject("dto",checkDto );
 				mv.setViewName("main");
 				return mv;
 			}
 			return mv;
 	}
-	@RequestMapping(value="insertfacebook.do", method=RequestMethod.POST)
-	public ModelAndView insertFacebook(String response, 
-													@RequestParam("email") String email,
-													@RequestParam("email") String name,
+	@RequestMapping(value="insertfacebook.do", method=RequestMethod.GET)
+	public ModelAndView insertFacebook(@RequestParam("data") String data,
 													HttpServletRequest req){
-		System.out.println(response); 
-		 MemberDTO dto =null;
-		 MemberDTO checkDto = memService.memJoinCheck(email);
+		JSONObject obj = JSONObject.fromObject(JSONSerializer.toJSON(data));
+		System.out.println("req" +obj );
+		MemberDTO dto = null;
+		 MemberDTO checkDto = memService.memJoinCheck((String)obj.get("email"));
 		HttpSession session = req.getSession();
 		ModelAndView mv = new ModelAndView();
 			if(checkDto == null)
 				{
-					dto = new MemberDTO(name, email);
+					dto = new MemberDTO((String)obj.get("name"), (String)obj.get("id"), (String)obj.get("email"), 0);
+					dto.setMempic("https://graph.facebook.com/"+(String)obj.get("id")+"/picture");
+					System.out.println(dto);
 					memService.insertMember(dto);
 					session.setAttribute("dto", dto);
 					mv.addObject("dto", dto);
@@ -82,7 +87,6 @@ public class MemberController {
 					mv.setViewName("main");
 				}
 			return mv;
-		
 	}
 	
 	@RequestMapping(value="insertMember.do", method=RequestMethod.POST)

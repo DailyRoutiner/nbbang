@@ -133,7 +133,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
              
-              	   <p class="centered"><a href="#" data-toggle="modal" data-target="#myModal"><img src="<%=dto.getMempic()%>" class="img-circle" width="100"></a></p>
+              	   <p class="centered"><a href="#" data-toggle="modal" data-target="#myModal"><img src="<%=dto.getMempic()%>" class="img-circle" width="80"></a></p>
               	  <h5 class="centered">${sessionScope.dto.memname }</h5>
               	
                   <li class="mt">
