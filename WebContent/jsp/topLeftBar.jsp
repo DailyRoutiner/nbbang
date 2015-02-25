@@ -5,6 +5,11 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
   <link href="assets/css/bootstrap.css" rel="stylesheet">
+  
+
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+
 		<!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
@@ -14,7 +19,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="메뉴"></div>
               </div>
             <!--logo start-->
-            <form action="login.do" class="logo" method="post"><button class="home"><b>N-BBANG</b></button></a></form>
+            <form action="login.do" method="post"><a class = "logo" href="loginpage.jsp"><b>N-BBANG</b></a></form>
             <!--logo end-->
             <div class="nav notify-row " id="top_menu" >
                 <!--  notification start -->
@@ -67,7 +72,7 @@
 							function(data) {
 							$(data.list).each(
 									function(index, item) {
-										table += "<a href='index.html#'> <span class='photo'><img alt='avatar' src='assets/img/ui-zac.jpg'></span> <span id='listTable' class='subject'>"+
+										table += "<a href='index.html#'> <span class='photo'><img alt='avatar' src="+item.mempic+ "></span> <span id='listTable' class='subject'>"+
 										"<span class='subject'> <span class='from'>"+item.memname+"</span>"
 												+"<span class='time'>"+item.alramtime+"</span></span>"
 												+"<span class='message'>"+item.content+"</span></span></a>";
