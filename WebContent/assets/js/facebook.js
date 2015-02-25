@@ -15,7 +15,7 @@ $(document).ready(function(){
 			      Kakao.API.request({
 			        url: '/v1/user/me',
 			        success: function(res) {
-			          alert(JSON.stringify(res));
+			        	window.document.location.href = "insertkakaotalk.do?data=" +JSON.stringify(res);
 			        },
 			        fail: function(error) {
 			          alert(JSON.stringify(error));

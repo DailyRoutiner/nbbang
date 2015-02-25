@@ -72,34 +72,34 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper">
-          	<h3><i class="fa fa-angle-right"></i> Form Components</h3>
+          	<h1><i class="fa fa-angle-right"></i> 결제 및 푸쉬 알림</h1>
           	
           	<!-- BASIC FORM ELELEMNTS -->
           	<div class="row mt">
           		<div class="col-lg-12">
                   <div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> Form Elements</h4>
+                  	  <h2 class="mb"><i class="fa fa-angle-right"></i> 결제하기</h2>
                      <form action="pay.do" id="pay" class="form-horizontal style-form" method="post">
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">돈 보낼 계좌</label>
+                              <label class="col-sm-2 col-sm-2 control-label"><h3><strong>돈 보낼 계좌</strong></h3></label>
                               <div class="col-sm-10">
                                   <input id="account" name="account" type="text" class="form-control">
                               </div>
                           </div>
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">은행</label>
+                              <label class="col-sm-2 col-sm-2 control-label"><h3><strong>은행</strong></h3></label>
                               <div class="col-sm-10">
                                   <input name="bank" type="text" class="form-control">
                               </div>
                           </div>
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">금액</label>
+                              <label class="col-sm-2 col-sm-2 control-label"><h3><strong>금액</strong></h3></label>
                               <div class="col-sm-10">
                                   <input id="price" name="price" type="text" class="form-control">
                               </div>
                           </div>
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">계좌 비밀번호</label>
+                              <label class="col-sm-2 col-sm-2 control-label"><h3><strong>계좌 비밀번호</strong></h3></label>
                               <div class="col-sm-10">
                                   <input id="carPw" name="carPw" type="password" class="form-control round-form">
                               </div>
@@ -146,19 +146,19 @@
 
 						<div class="form-group">
 							<!-- push send message -->
-							<label>message</label>
+							<label><h3><strong>message</strong></h3></label>
 							<textarea id="content" name="content" class="form-control __message" rows="3" placeholder="메세지 내용은 iOS 220Byte, Android 4000Byte 로 제한되어 발송됩니다."></textarea>
 						</div>
 
 					
 						<div class="form-group">	
 							<!-- push reserve -->
-							<label>reserve</label>
+							<label><h3><strong>reserve</strong></h3></label>
 							<input id="alramtime" name="alramtime" type="text" class="form-control __reserve" placeholder="YYYY/MM/DD HH:MI (EX : 2014/09/15 13:40)">
 						</div>
 
 						<!-- select platform -->
-						<label>platform</label>
+						<label><h3><strong>platform</strong></h3></label>
 
 						<div class="form-group">
 							<label style="margin:0 10px 0 0;">
@@ -190,7 +190,7 @@
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2014 - Alvarez.is
+            2015 - N-BBANG
               <a href="form_component.html#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
@@ -204,7 +204,6 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 
     <!--script for this page-->
@@ -226,7 +225,7 @@
 	
 	
 	<script src="assets/js/form-component.js"></script>    
-    <script src="js/jquery-1.10.2.js"></script>
+	<script src="assets/loginjs/jquery-1.8.2.min.js"></script>
     <script type="text/javascript">
     
     $(document)	.ready(function() {

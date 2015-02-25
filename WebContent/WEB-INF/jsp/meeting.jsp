@@ -57,11 +57,11 @@ body {
 							<div class="grey-header">
 								<h5>${spend.memName}</h5>
 							</div>
-							<p><img src="assets/img/friends/fr-02.jpg" class="img-circle" width="80"></p>
+							<p><img src="${spend.memPic }" class="img-circle" width="80"></p>
 							<p><h5>${spend.memName}</h5></p>
 							<div class="row">
 								<div class="col-md-6">
-									<i class="small mt">MEMBER SINCE</i>
+									<h4>입금 상태</h4>
 									<p>${spend.payCheck}</p>
 								</div>
 								<div class="col-md-6">
@@ -125,7 +125,8 @@ body {
     <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
 	<script src="js/jquery.circliful.min.js"></script>  
-   
+   	<script src="assets/js/zabuto_calendar.js"></script>
+   	
     <!--script for this page-->
 	 <script src="assets/js/chart-master/Chart.js"></script>
     <script src="assets/js/chartjs-conf.js"></script>	
