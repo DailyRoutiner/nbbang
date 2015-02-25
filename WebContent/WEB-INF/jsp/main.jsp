@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -65,7 +65,7 @@ request.setCharacterEncoding("euc-kr");
 						        <tr>
 						        <td>
 								<form action="insertMeeting.do" method="post">
-				                    <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">¸ðÀÓ Ãß°¡</button>
+				                    <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">ëª¨ìž„ ì¶”ê°€</button>
                                 </form> 
 						       </td>
 						 
@@ -85,7 +85,7 @@ request.setCharacterEncoding("euc-kr");
 										<c:when test="${spend.meetingType==1}">
 										<form action="valuePass.do" method="post"> 
 												    <input type="image" src="assets/img/category/ex_category_icon_01.png" width="150" height="150" class="img_button">
-												     <!-- <a href="Sung.jsp"><img alt="ì‹ë¹„" title="ì‹ë¹„" src="img/category/money1.png"  width="100" height="100"></a> -->
+												     <!-- <a href="Sung.jsp"><img alt="ï¿½ï¿½ï¿½" title="ï¿½ï¿½ï¿½" src="img/category/money1.png"  width="100" height="100"></a> -->
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
@@ -94,7 +94,7 @@ request.setCharacterEncoding("euc-kr");
 									    <c:when test="${spend.meetingType==2}">
 									    <form action="valuePass.do" method="post">
 											 <input type="image" src="assets/img/category/ex_category_icon_03.png" width="150" height="150" class="img_button">
-												     <!-- <a href="Sung.jsp"><img alt="ì‹ë¹„" title="ì‹ë¹„" src="img/category/money1.png"  width="100" height="100"></a> -->
+												     <!-- <a href="Sung.jsp"><img alt="ï¿½ï¿½ï¿½" title="ï¿½ï¿½ï¿½" src="img/category/money1.png"  width="100" height="100"></a> -->
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
@@ -102,24 +102,24 @@ request.setCharacterEncoding("euc-kr");
 										</c:when>
 									</c:choose>
 									
-					  			<h3>${spend.meetName} ¸ðÀÓ</h3>
+					  			<h3>${spend.meetName} ëª¨ìž„</h3>
                   			</div>
                   		   
                   		    <div>
                   		    <form action="deleteMeeting.do" method="post">		
 								<!-- search -->
-<<<<<<< HEAD
+
 								    <input type="image" width="10" height="10" src="assets/img/category/trash.png"  class="img_button">
-				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">»èÁ¦</button> -->
-=======
-								    <input type="image" width="10" height="10" src="trash.png"  class="img_button">
 				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">ì‚­ì œ</button> -->
->>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
+
+								    <input type="image" width="10" height="10" src="trash.png"  class="img_button">
+				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">ï¿½ï¿½ï¿½</button> -->
+
                   		    <input type="checkbox" name="spendIndex" value="${spend.meetNo}">
                   		    </form>
                   		    </div>
-                  						<p>Àå¼Ò : ${spend.place}</p>
-					  			        <p>³¯Â¥ : ${spend.meetDate}</p>	
+                  						<p>ìž¥ì†Œ : ${spend.place}</p>
+					  			        <p>ë‚ ì§œ : ${spend.meetDate}</p>	
                   		</div>
                   		
                        </c:forEach>		
