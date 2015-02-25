@@ -10,7 +10,6 @@
     <meta name="author" content="ChoiSeongJun">
     <meta name="keyword" content="alarm, credit, system, friends">
 
-    <title>N-BBANG</title>
 	<link rel="shortcut icon" href="favicon.ico">
 	<style type="text/css">
 		.img_button {
@@ -32,8 +31,12 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
-    <link href="assets/css/icon.css" rel = "stylesheet">
 
+
+    
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
   </head>
   <body>
 
@@ -58,19 +61,20 @@
 								<form action="insertMeeting.do" method="post">
 				                    <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">모임 추가</button>
 <<<<<<< HEAD
+								</form>
+=======
                                 </form> 
 						       </td>
 						 
                                 </tr>
                                 </table>						
-=======
                               </form>					
->>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
 							</div>
+>>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
 						
 					</div>
 				</div>
-                          
+              </div>           
                   	<div class="row mtbox">
                   	<div class="col-md-12">
                   	    <c:forEach items="${requestScope.list}" var="spend">
@@ -82,8 +86,8 @@
 										<form action="valuePass.do" method="post"> 
 												    <input type="image" src="assets/img/category/ex_category_icon_01.png" width="150" height="150" class="img_button">
 <<<<<<< HEAD
-												     <!-- <a href="Sung.jsp"><img alt="���" title="���" src="img/category/money1.png"  width="100" height="100"></a> -->
 =======
+												     <!-- <a href="Sung.jsp"><img alt="���" title="���" src="img/category/money1.png"  width="100" height="100"></a> -->
 >>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
@@ -94,8 +98,8 @@
 									    <form action="valuePass.do" method="post">
 											 <input type="image" src="assets/img/category/ex_category_icon_03.png" width="150" height="150" class="img_button">
 <<<<<<< HEAD
-												     <!-- <a href="Sung.jsp"><img alt="���" title="���" src="img/category/money1.png"  width="100" height="100"></a> -->
 =======
+												     <!-- <a href="Sung.jsp"><img alt="���" title="���" src="img/category/money1.png"  width="100" height="100"></a> -->
 >>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
@@ -109,19 +113,21 @@
                   		   
                   		    <div>
                   		    <form action="deleteMeeting.do" method="post">		
-								<!-- search -->
 <<<<<<< HEAD
-
 =======
+								<!-- search -->
 >>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
 								    <input type="image" width="10" height="10" src="assets/img/category/trash.png"  class="img_button">
 <<<<<<< HEAD
+=======
 				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">삭제</button> -->
 
+>>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
 								    <input type="image" width="10" height="10" src="trash.png"  class="img_button">
+<<<<<<< HEAD
+=======
 				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">���</button> -->
 
-=======
 >>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
                   		    <input type="checkbox" name="spendIndex" value="${spend.meetNo}">
                   		    </form>
@@ -148,9 +154,6 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
-    <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
-    <script src="assets/js/jquery.sparkline.js"></script>
-
 
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
@@ -159,7 +162,6 @@
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
 
     <!--script for this page-->
-    <script src="assets/js/sparkline-chart.js"></script>    
 	<script src="assets/js/zabuto_calendar.js"></script>	
     <!--script for this page-->
 	 <script src="assets/js/chart-master/Chart.js"></script>
