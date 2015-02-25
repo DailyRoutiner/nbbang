@@ -14,7 +14,6 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<style type="text/css">
 		.img_button {
-        background: url(money1.png) no-repeat;
         border: none;
         width: 110px;
         height: 110px;
@@ -36,10 +35,6 @@
     <link href="assets/css/icon.css" rel = "stylesheet">
 
   </head>
- <%
-request.setCharacterEncoding("euc-kr");
-%>
- 
   <body>
 
   <section id="container" >
@@ -54,29 +49,30 @@ request.setCharacterEncoding("euc-kr");
 
               <div class="row">
                      
-                  <div class="col-lg-9 main-chart">
+                  <div class="col-lg-12 main-chart">
                       
-                <div class="col-lg-12">
+                <div class="col-md-12">
 					<div class="pull-right">
 				           
-						
-							<div class="form-group">
-						        <table>
-						        <tr>
-						        <td>
+							
 								<form action="insertMeeting.do" method="post">
 				                    <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">모임 추가</button>
+<<<<<<< HEAD
                                 </form> 
 						       </td>
 						 
                                 </tr>
                                 </table>						
+=======
+                              </form>					
+>>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
 							</div>
 						
 					</div>
 				</div>
                           
                   	<div class="row mtbox">
+                  	<div class="col-md-12">
                   	    <c:forEach items="${requestScope.list}" var="spend">
                   		
                   		<div class="col-md-2 col-sm-2  box0">
@@ -85,7 +81,10 @@ request.setCharacterEncoding("euc-kr");
 										<c:when test="${spend.meetingType==1}">
 										<form action="valuePass.do" method="post"> 
 												    <input type="image" src="assets/img/category/ex_category_icon_01.png" width="150" height="150" class="img_button">
+<<<<<<< HEAD
 												     <!-- <a href="Sung.jsp"><img alt="���" title="���" src="img/category/money1.png"  width="100" height="100"></a> -->
+=======
+>>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
@@ -94,7 +93,10 @@ request.setCharacterEncoding("euc-kr");
 									    <c:when test="${spend.meetingType==2}">
 									    <form action="valuePass.do" method="post">
 											 <input type="image" src="assets/img/category/ex_category_icon_03.png" width="150" height="150" class="img_button">
+<<<<<<< HEAD
 												     <!-- <a href="Sung.jsp"><img alt="���" title="���" src="img/category/money1.png"  width="100" height="100"></a> -->
+=======
+>>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
 				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
@@ -108,13 +110,19 @@ request.setCharacterEncoding("euc-kr");
                   		    <div>
                   		    <form action="deleteMeeting.do" method="post">		
 								<!-- search -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
 								    <input type="image" width="10" height="10" src="assets/img/category/trash.png"  class="img_button">
+<<<<<<< HEAD
 				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">삭제</button> -->
 
 								    <input type="image" width="10" height="10" src="trash.png"  class="img_button">
 				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">���</button> -->
 
+=======
+>>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
                   		    <input type="checkbox" name="spendIndex" value="${spend.meetNo}">
                   		    </form>
                   		    </div>
@@ -127,7 +135,9 @@ request.setCharacterEncoding("euc-kr");
                   
               </div>                 			
                   	</div><!-- /row mt -->	
+                  	
                   </div><!-- /col-lg-9 END SECTION MIDDLE -->
+                 
 		     </div>
      	</section>
      </section>

@@ -38,18 +38,18 @@
           	<form class="form-horizontal style-form" action="addMeeting.do" method="post">
           	<div class="row mt">
           		<div class="col-md-12">
-                  <div class="content-panel"  style="height: 320px">
-                  	 
+                  <div class="content-panel" >
+                  	 <div class="wrapper">
                   	  <h4 class="mb"><i class="fa fa-angle-right"></i>모임을 추가해 주세요.</h4>
                               
-                              	<div>
-									<label class="col-sm-2 col-sm-2 control-label">유형</label>
-									<select class="form-control" name="meetingType" id="meetingType">
-										<option value="1">행사</option>
-										<option value="2">회식</option>
-									</select>
-								</div>
-								
+                   			<label class="col-sm-2 col-sm-2 control-label">유형</label>
+								<div class="col-sm-10">
+							<select class="form-control"  name="meetingType" id="meetingType">
+								<option value="1">행사</option>
+								<option value="2">회식</option>
+							</select>
+							</div>
+								<br><br><br>
                               <label class="col-sm-2 col-sm-2 control-label">모임명</label>
                               <div class="col-sm-10">
                                   <input type="text" class="form-control" name="meetName" id="meetName" placeholder="모임명이 무엇인가요."><br/><br/>
@@ -65,9 +65,9 @@
                                   <input type="date" class="form-control" name="meetDate" id="meetDate" placeholder="날짜를 선택해 주세요."><br/><br/>
                               </div>
                           </div>
-                      
           			</div>
           		</div>
+          	</div>
           	
  
 				<div class="row mt">

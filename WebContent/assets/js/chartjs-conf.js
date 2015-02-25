@@ -1,13 +1,12 @@
-var Script = function () {
-
+var Script = function (pay, not) {
 
     var pieData = [
         {
-            value : 90,
+            value : 2- $("input:hidden[name=no]").val(),
             color : "#CC0000"
         },
         {
-            value : 200,
+            value : 2- $("input:hidden[name=ok]").val(),
             color : "#27ae60"
         }
     ];

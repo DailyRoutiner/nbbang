@@ -36,9 +36,8 @@ public class MeetingController {
 
 	// 회비 추가 기능 
 	@RequestMapping("/insertfee.do")
-	@ResponseBody
-	//@requestParam meetno가 들어가야 된다...
-	public String insertPay(@RequestParam("price") int price, @RequestParam("totalfee") int totalfee, @RequestParam("meetno") int meetno){		
+	public String insertPay(@RequestParam("price") int price, @RequestParam("totalfee") int totalfee, @RequestParam("meetno") int meetno){
+		System.out.println(">>>>>>>>>" +price + totalfee + meetno);
 		String resultMsg = "no";
 		int result = meetingService.insertPay(new PayDTO(price, totalfee, meetno));
 		if(result > 0)  {
@@ -56,15 +55,7 @@ public class MeetingController {
 			mv.setViewName("addTest");
 			return mv;
 	}
-	// 친구 목록 불러오기 
-	@RequestMapping("/friendSelect.do")
-	public ModelAndView friendSelect(@RequestParam("meetno") int meetno){
-		List<PayDTO> list =  payService.friendSelect(meetno);
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("list", list);			
-		mv.setViewName("jsonView");
-		return mv;
-	}
+	
 	//모임 추가 
 	@RequestMapping(value="addMeeting.do", method=RequestMethod.POST)
     public ModelAndView addSpend(@RequestParam("meetingType") int meetingType,
@@ -108,10 +99,29 @@ public class MeetingController {
 	}else{
 		pd = payService.friendSelect(meetNo);
 		System.out.println("사용자 입니다");
+		count(meetNo,session);
 	}
 	session.setAttribute("count",pd.size());
 	mv.addObject("list", pd);
 	mv.setViewName("meeting");
 	return mv;
+	}
+	
+	void count(int meetNo, HttpSession session){
+		List<PayDTO> pd = payService.friendSelect(meetNo);
+		int count = pd.size();
+		float p=0;
+		float n=0;
+		for(PayDTO t : pd){
+			if(t.getPayCheck().equals("ok")){
+				p++;
+				System.out.println(p+ "---------" +count + p/count);	
+			}else{
+				n++;
+				System.out.println(n+ "---------" +count + n/count);
+			}
+		}
+		session.setAttribute("ok", p/count);
+		session.setAttribute("no", n/count);
 	}
 }
