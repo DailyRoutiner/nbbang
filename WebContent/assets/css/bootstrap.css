@@ -62,6 +62,7 @@ dfn {
 h1 {
   margin: .67em 0;
   font-size: 2em;
+  font-family: 'Open Sans', sans-serif;
 }
 mark {
   color: #000;
@@ -230,10 +231,12 @@ th {
   h3 {
     orphans: 3;
     widows: 3;
+    font-family: 'Open Sans', sans-serif;
   }
   h2,
   h3 {
     page-break-after: avoid;
+    font-family: 'Open Sans', sans-serif;
   }
   select {
     background: #fff !important;
@@ -912,16 +915,19 @@ textarea {
 a {
   color: #428bca;
   text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
 }
 a:hover,
 a:focus {
   color: #2a6496;
   text-decoration: underline;
+  font-family: 'Open Sans', sans-serif;
 }
 a:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+  font-family: 'Open Sans', sans-serif;
 }
 figure {
   margin: 0;
@@ -1000,6 +1006,7 @@ h6,
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
+  font-family: 'Open Sans', sans-serif;
 }
 h1 small,
 h2 small,
@@ -1028,6 +1035,7 @@ h6 .small,
   font-weight: normal;
   line-height: 1;
   color: #777;
+  font-family: 'Open Sans', sans-serif;
 }
 h1,
 .h1,
@@ -1037,6 +1045,7 @@ h3,
 .h3 {
   margin-top: 20px;
   margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
 }
 h1 small,
 .h1 small,
@@ -1051,6 +1060,7 @@ h2 .small,
 h3 .small,
 .h3 .small {
   font-size: 65%;
+  font-family: 'Open Sans', sans-serif;
 }
 h4,
 .h4,
@@ -1060,6 +1070,7 @@ h6,
 .h6 {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-family: 'Open Sans', sans-serif;
 }
 h4 small,
 .h4 small,
@@ -1074,30 +1085,37 @@ h5 .small,
 h6 .small,
 .h6 .small {
   font-size: 75%;
+  font-family: 'Open Sans', sans-serif;
 }
 h1,
 .h1 {
   font-size: 36px;
+  font-family: 'Open Sans', sans-serif;
 }
 h2,
 .h2 {
   font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
 }
 h3,
 .h3 {
   font-size: 24px;
+  font-family: 'Open Sans', sans-serif;
 }
 h4,
 .h4 {
   font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
 }
 h5,
 .h5 {
   font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
 }
 h6,
 .h6 {
   font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
 }
 p {
   margin: 0 0 10px;
@@ -1157,6 +1175,7 @@ mark,
 }
 a.text-primary:hover {
   color: #3071a9;
+  font-family: 'Open Sans', sans-serif;
 }
 .text-success {
   color: #3c763d;
