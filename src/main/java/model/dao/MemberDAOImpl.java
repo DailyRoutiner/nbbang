@@ -83,7 +83,7 @@ public class MemberDAOImpl implements MemberDAO {
 		MemberDTO data = null;
 		int result = 0;
 		try{
-			session = DBUtil.getSqlSession();
+			session = DBUtil.getSqlSession(true);
 			result = session.update("member.updateMember", dto);
 		}finally {
 			session.close();
@@ -96,7 +96,7 @@ public class MemberDAOImpl implements MemberDAO {
 		SqlSession session = DBUtil.getSqlSession();
 		int result = 0;
 		try{
-			session = DBUtil.getSqlSession();
+			session = DBUtil.getSqlSession(true);
 			result = session.delete("member.deleteMember", dto);
 		}finally {
 			session.close();
@@ -109,7 +109,7 @@ public class MemberDAOImpl implements MemberDAO {
 		SqlSession session = null;
 		int result = 0;
 		try{
-			session = DBUtil.getSqlSession();
+			session = DBUtil.getSqlSession(true);
 			result=session.insert("member.updatePicture", dto);
 		}finally{
 			session.close();

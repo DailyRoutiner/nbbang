@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-    
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style-responsive.css" rel="stylesheet">
   <link href="assets/css/bootstrap.css" rel="stylesheet">
 		<!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
@@ -12,11 +14,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="메뉴"></div>
               </div>
             <!--logo start-->
-<<<<<<< HEAD
             <a href="WEB-INF/jsp/Test.jsp" class="logo"><b>N-BBANG</b></a>
-=======
-            <a href="login.do" class="logo" method="get"><b>N-BBANG</b></a>
->>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
             <!--logo end-->
             <div class="nav notify-row " id="top_menu" >
                 <!--  notification start -->
@@ -116,7 +114,7 @@
 								<div class="centered">
 									<h6><i class="fa fa-envelope"></i><br/><%=dto.getEmail()%></h6>
 								</div>
-							</div><! --/content-panel -->
+							</div>
 							
 						      </div>
 						      </div>
@@ -151,6 +149,9 @@
                           <i class="fa fa-book"></i>
                           <span>모임 관리</span>
                       </a>
+                      <ul class="sub">
+                          <li><a  href="push_and_pay.html">결제 & 메시지</a></li>
+                      </ul>
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
