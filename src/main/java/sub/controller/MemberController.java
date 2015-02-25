@@ -64,7 +64,6 @@ public class MemberController {
 	public ModelAndView insertFacebook(@RequestParam("data") String data,
 													HttpServletRequest req){
 		JSONObject obj = JSONObject.fromObject(JSONSerializer.toJSON(data));
-		System.out.println("req" +obj );
 		MemberDTO dto = null;
 		 MemberDTO checkDto = memService.memJoinCheck((String)obj.get("email"));
 		HttpSession session = req.getSession();
@@ -73,7 +72,6 @@ public class MemberController {
 				{
 					dto = new MemberDTO((String)obj.get("name"), (String)obj.get("id"), (String)obj.get("email"), 0);
 					dto.setMempic("https://graph.facebook.com/"+(String)obj.get("id")+"/picture");
-					System.out.println(dto);
 					memService.insertMember(dto);
 					session.setAttribute("dto", dto);
 					mv.addObject("dto", dto);
@@ -81,7 +79,7 @@ public class MemberController {
 				}
 			else
 				{
-					System.out.println("페이스북으로 로그인");
+					checkDto.setMempic("https://graph.facebook.com/"+(String)obj.get("id")+"/picture");
 					session.setAttribute("dto", checkDto);
 					mv.addObject("dto", checkDto);
 					mv.setViewName("main");
