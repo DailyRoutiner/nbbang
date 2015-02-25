@@ -72,6 +72,7 @@ public class MemberController {
 			if(checkDto == null)
 				{
 					dto = new MemberDTO((String)obj.get("name"), (String)obj.get("id"), (String)obj.get("email"), 0);
+					dto.setMempic("https://graph.facebook.com/"+(String)obj.get("id")+"/picture");
 					System.out.println(dto);
 					memService.insertMember(dto);
 					session.setAttribute("dto", dto);
@@ -111,7 +112,13 @@ public class MemberController {
 				}
 			return mv;
 	}
-	
+	@RequestMapping(value="profile.do", method=RequestMethod.POST)
+	public ModelAndView moveProfile(HttpServletRequest req){
+		ModelAndView mv=new ModelAndView();
+		HttpSession session = req.getSession();
+		mv.setViewName("Profile");
+		return mv;
+	}
 	@RequestMapping(value="insertfacebook.do", method=RequestMethod.POST)
 	public ModelAndView insertFacebook(@RequestParam("memname") String memname,
 			@RequestParam("mempw") String mempw,
@@ -234,7 +241,7 @@ public class MemberController {
 			e.printStackTrace();
 			req.getSession().setAttribute("error","에러났습니다.");
 		}
-		mv.setViewName("Test");
+		mv.setViewName("main");
 		return mv;
 	}
 	
