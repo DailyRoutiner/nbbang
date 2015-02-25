@@ -62,14 +62,11 @@
 						        <table>
 						        <tr>
 						        <td>
-<<<<<<< HEAD
 								<form action="insertMeeting.do" method="post">
 				                    <!-- <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">모임 추가</button>
  -->                                <input type="image" width="50" height="50" src="assets/img/category/add2.png">                                
-=======
 								<form action="insertMeeting.do" method="POST">
 				                    <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">모임 추가</button>
->>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
                                 </form> 
 						       </td>
 						 
@@ -89,7 +86,7 @@
 										<c:when test="${spend.meetingType==1}">
 										<form action="valuePass.do" method="POST"> 
 												    <input type="image" src="assets/img/category/payback.png" width="150" height="150" class="img_button">
-				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
+				                                    <input type="hidden" name="manageNo" style="font-size: large;" value="${spend.manageNo}">
                   		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
                   		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
                   		                            <h3>${spend.meetName} 모임</h3>
