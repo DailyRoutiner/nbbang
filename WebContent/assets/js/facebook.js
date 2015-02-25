@@ -3,9 +3,7 @@ $(document).ready(function(){
 	  Kakao.init('f18a77886192705601a312e6bfbbfa14');
 	  
 	$(".facebook").click(function(){
-	  // This function is called when someone finishes with the Login
-	  // Button. See the onlogin handler attached to it in the sample
-	  // code below.
+	  //클릭 했을 때 
 	    FB.getLoginStatus(function(response) {
 	      statusChangeCallback(response);
 	    });
@@ -43,8 +41,6 @@ $(document).ready(function(){
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
       FB.login(function(response) {
       }, {scope: 'email'});
     } else {
@@ -52,8 +48,6 @@ $(document).ready(function(){
         }, {scope: 'email'});
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
 
     }
   }
@@ -83,19 +77,7 @@ $(document).ready(function(){
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
     	console.log(response);
-        $.ajax({
-			url : "insertfacebook.do",
-			type : "post",
-			dataType : "text",
-			data : JSON.stringify(response),
-			success : function(data) {
-				alert("성공");
-			},
-			error:function(request,status,error){
-		        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-		    }
-		}); //end of ajax
+    	window.document.location.href = "insertfacebook.do?data=" +JSON.stringify(response);
     });
   };
-  
 });

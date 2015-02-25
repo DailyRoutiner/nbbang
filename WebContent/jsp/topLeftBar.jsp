@@ -81,7 +81,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
              
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/friends/fr-01.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="profile.html"><img src="https://graph.facebook.com/${sessionScope.dto.mempw }/picture" class="img-circle" width="60"></a></p>
               	  <h5 class="centered">${sessionScope.dto.memname }</h5>
               	
                   <li class="mt">
