@@ -12,7 +12,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="메뉴"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>N-BBANG</b></a>
+            <a href="login.do" class="logo" method="get"><b>N-BBANG</b></a>
             <!--logo end-->
             <div class="nav notify-row " id="top_menu" >
                 <!--  notification start -->

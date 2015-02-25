@@ -132,13 +132,7 @@ body {
 	<script src="assets/js/meeting.js"></script>
 	<script>
 $( document ).ready(function() {
-        $('#myStathalf').circliful();
 		$('#myStat').circliful();
-		$('#myStathalf2').circliful();
-		$('#myStat2').circliful();
-    $('#myStat3').circliful();
-    $('#myStat4').circliful();
-    $('#myStathalf3').circliful();
     });
 </script>
 

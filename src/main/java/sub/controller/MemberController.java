@@ -56,6 +56,34 @@ public class MemberController {
 			}
 			return mv;
 	}
+	@RequestMapping(value="insertfacebook.do", method=RequestMethod.POST)
+	public ModelAndView insertFacebook(String response, 
+													@RequestParam("email") String email,
+													@RequestParam("email") String name,
+													HttpServletRequest req){
+		System.out.println(response); 
+		 MemberDTO dto =null;
+		 MemberDTO checkDto = memService.memJoinCheck(email);
+		HttpSession session = req.getSession();
+		ModelAndView mv = new ModelAndView();
+			if(checkDto == null)
+				{
+					dto = new MemberDTO(name, email);
+					memService.insertMember(dto);
+					session.setAttribute("dto", dto);
+					mv.addObject("dto", dto);
+					mv.setViewName("main");
+				}
+			else
+				{
+					System.out.println("페이스북으로 로그인");
+					session.setAttribute("dto", checkDto);
+					mv.addObject("dto", checkDto);
+					mv.setViewName("main");
+				}
+			return mv;
+		
+	}
 	
 	@RequestMapping(value="insertMember.do", method=RequestMethod.POST)
 	public ModelAndView insertMember(@RequestParam("memname") String memname,

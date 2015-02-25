@@ -82,10 +82,19 @@ $(document).ready(function(){
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-        alert(JSON.stringify(response));
-      console.log('Successful login for: ' + response.name + response.id);
-      var accessToken = response.authResponse.accessToken; 
-      alert(response.name + response.email +accessToken);
+    	console.log(response);
+        $.ajax({
+			url : "insertfacebook.do",
+			type : "post",
+			dataType : "text",
+			data : JSON.stringify(response),
+			success : function(data) {
+				alert("성공");
+			},
+			error:function(request,status,error){
+		        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		    }
+		}); //end of ajax
     });
   };
   
