@@ -9,11 +9,38 @@ public class WebPushDTO implements Serializable{
 	int memno;
 	int ckNo;
 	String alramtime;
-	
+	String mempic;
 	public WebPushDTO() {
 	}
 	
 	
+
+	public WebPushDTO(String memname, String content, int notificationno,
+			int meetno, int memno, int ckNo, String alramtime, String mempic) {
+		super();
+		this.memname = memname;
+		this.content = content;
+		this.notificationno = notificationno;
+		this.meetno = meetno;
+		this.memno = memno;
+		this.ckNo = ckNo;
+		this.alramtime = alramtime;
+		this.mempic = mempic;
+	}
+
+
+
+	public String getMempic() {
+		return mempic;
+	}
+
+
+
+	public void setMempic(String mempic) {
+		this.mempic = mempic;
+	}
+
+
 
 	public WebPushDTO(String memname, String content, int notificationno,
 			int meetno, int memno, int ckNo, String alramtime) {
