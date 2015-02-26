@@ -45,13 +45,30 @@
                     </li>
                     
                      <li id="header_inbox_bar" class="dropdown">
+                     <form action="profile.do" method="post">
                         <input type="image" width="30" height="30" src="assets/img/category/People.png"> 
+                     </form>
                      </li>
+                     
+                     
                     <li id="header_inbox_bar" class="dropdown">
                         &nbsp;&nbsp;&nbsp;
                      </li>
+                     
                      <li id="header_inbox_bar" class="dropdown">
+                     <!-- <form action="profile.do" method="post">
                         <input type="image" width="25" height="25" src="assets/img/category/pay.png"> 
+                     </form> -->
+                     <a href="push_and_pay.html" ><img src="assets/img/category/pay.png" width="25" height="25"></a>
+                     </li>
+                     
+                     
+                     <li id="header_inbox_bar" class="dropdown">
+                        &nbsp;&nbsp;&nbsp;
+                     </li>
+                     
+                     <li id="header_inbox_bar" class="dropdown">
+                     <a href="jsp/logout.jsp" ><img src="assets/img/category/power.png" width="25" height="25"></a>
                      </li>
                      
                      <!-- inbox dropdown end -->                     
