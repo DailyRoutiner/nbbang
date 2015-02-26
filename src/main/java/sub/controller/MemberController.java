@@ -138,6 +138,7 @@ public class MemberController {
 									@RequestParam("phonenumber") int phonenumber,
 									HttpServletRequest req){
 		MemberDTO dto =null;
+		MemberDTO member = null;
 		List<MeetingDTO> list = null;
 		String defaultPic = "assets/img/friends/fr-05.jpg";
 		HttpSession session= req.getSession();
@@ -147,9 +148,10 @@ public class MemberController {
 				{
 					dto = new MemberDTO(memname, mempw, email, phonenumber, defaultPic);
 					memService.insertMember(dto);
-					list = meetingService.meetingList(dto.getMemno());
-					session.setAttribute("dto", dto);
-					mv.addObject("dto", dto);
+					member=memService.memJoinCheck(dto.getEmail());
+					list = meetingService.meetingList(member.getMemno());
+					session.setAttribute("dto", member);
+					mv.addObject("dto", member);
 				}
 			else
 				{

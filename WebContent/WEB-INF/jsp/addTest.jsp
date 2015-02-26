@@ -88,7 +88,7 @@
 		                          <tr>
 		                             <td><input type= "checkbox" name="memberIndex" value="${member.memno}">     
 		                             </td>
-		                             <td>${member.mempic}사진이들어가용</td>
+		                             <td><img src="${member.mempic}" class="img-circle" width="80" height="80"></td>
 								     <td>${member.memname}</td>
 								     <td>${member.email}</td>
 		                          </tr>

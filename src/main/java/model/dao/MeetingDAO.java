@@ -14,8 +14,6 @@ public interface MeetingDAO {
 	
     MeetingDTO selectMeetNo(MeetingDTO md);
 	
-	List<MeetingDTO> meetingList(MeetingDTO md);
-	
 	int deleteMeeting(MeetingDTO md);
 
 	MeetingDTO meetSelectNum(int meetno);

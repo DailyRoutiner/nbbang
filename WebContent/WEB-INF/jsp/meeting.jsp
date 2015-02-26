@@ -47,7 +47,7 @@ body {
           <section class="wrapper">
                  
               <div class="col-lg-9">
-                  
+                   <input type="hidden" name="meetno" value="${requestScope.meeting.meetNo}">
 					<div id=addpay></div>
                   	<div class="row mt">
                   	<c:forEach items="${requestScope.list}" var="spend">
@@ -81,9 +81,8 @@ body {
                               </div><!-- /col-md-12 -->
                               <div class="row">
                                <div class="col-md-6">
-                               <c:forEach items="${requestScope.list}" var="spend" >
-                              	<a class="logo pull-right"><b>총액 : ${spend.totalfee }</b></a><br><br><br>
-                              	</c:forEach>
+                              	<h1><a class="pull-right"><b>총액 : ￦ ${sessionScope.meeting.totalfee }</b></a></h1>
+                              	<br><br><br>
                               	</div>
                               	<div class="col">
                               	</div>

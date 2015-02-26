@@ -83,17 +83,6 @@ public class MeetingDAOImpl implements MeetingDAO {
 		return md2;
 	}
 	
-	@Override
-	public List<MeetingDTO> meetingList(MeetingDTO md) {
-		SqlSession session = DBUtil.getSqlSession();
-		List<MeetingDTO> meetingList = null;
-		try {
-			meetingList = session.selectList("MEETING.meetingList", md);
-		} finally {
-			session.close();
-		}
-		return meetingList;
-	}
 	
 	
 	@Override

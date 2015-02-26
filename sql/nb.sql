@@ -120,6 +120,12 @@ create table notification(
 	constraint notification_meetno_fk foreign key(meetno) references meeting(meetno),
 	constraint notification_memno_fk foreign key(memno) references member(memno)
 );
+insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 3 );
+insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 4 );
+insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 5 );
+insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 6 );
+insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 7 );
+insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 8 );
 
 create table card(
 	cardno number(20) primary key,

@@ -136,18 +136,16 @@
 						      <!-- PROFILE 01 PANEL -->
 							
 							<div class="content-panel pn">
-								<div>
-								<img src="<%=dto.getMempic()%>" style="width:175px;height:240px">
-								</div>
+								<img src="<%=dto.getMempic()%>" style="width:248px;height:250px;margin-bottom: 20px;">
 								
 							<!-- 	<div class="profile-01 centered"> -->
 									<form action="profile.do" method="post"><p><input type="submit" style="height:50px; width:175px; color: white; font-size: large; font-weight: 700; " class="profile-01 centered" value="<%=dto.getMemname()%>"></p></form>
 								<!-- </div> -->
 								<div class="centered">
-									<h6><i class="fa fa-envelope"></i><br/><%=dto.getPhonenumber()%></h6>
+									<h5><i class="fa fa-envelope"></i><br/><%=dto.getPhonenumber()%></h5>
 								</div>
 								<div class="centered">
-									<h6><i class="fa fa-envelope"></i><br/><%=dto.getEmail()%></h6>
+									<h5><i class="fa fa-envelope"></i><br/><%=dto.getEmail()%></h5>
 								</div>
 							</div><!--/content-panel -->
 							

@@ -22,10 +22,11 @@
 										<h4>DJ SHERMAN</h4>
 									</div>
 								</div>
-								
+					<p>
 					<ul class="nav top-menu">
 						<input type="submit" style="height:35px; width:255px; color: white; font-size: medium; font-weight: 700; " class="btn btn-warning" value="회비 추가" data-toggle="modal" data-target="#myModal2" >
 					</ul>
+					<p>
 					<ul class="nav top-menu">
                     <li><input type="submit" style="height:35px; width:255px; color: white; font-size: medium; font-weight: 700; " class="btn btn-warning" value="결제 하기">
 					</ul>

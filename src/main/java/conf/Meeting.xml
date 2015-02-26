@@ -20,7 +20,7 @@
 	</insert>
 	
 	<!-- 멤버에 있는 모임들 불러오기  -->
-	<select id="meetingList" parameterType="meetingDTO" resultMap="meetingResultMap">
+	<select id="meetingList" parameterType="int" resultMap="meetingResultMap">
 		SELECT * FROM meeting_info WHERE MEMNO =#{memNo}
 	</select>
 	

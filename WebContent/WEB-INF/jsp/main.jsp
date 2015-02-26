@@ -85,7 +85,7 @@
 							</div>
 						</div> -->
                   	<div class="row mtbox">
-                  	    <c:forEach items="${sessionScope.list}" var="spend">
+                  	    <c:forEach items="${requestScope.list}" var="spend">
                   		
                   		<div class="col-lg-4 col-md-4 col-sm-4 mb">
                   			<div class="product-panel-2 pn">
