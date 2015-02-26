@@ -20,8 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import sun.org.mozilla.javascript.internal.json.JsonParser;
-
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -40,6 +38,16 @@ public class MemberController {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("list", list);			
 		mv.setViewName("jsonView");	//id=jsonView 객체를 찾아서 JsonView실행
+		return mv;
+	}
+	
+	@RequestMapping("/home.do")
+	public ModelAndView home(HttpServletRequest req){
+		ModelAndView mv=new ModelAndView("error");
+		HttpSession session=req.getSession();
+		List<MeetingDTO> list = meetingService.meetingList(((MemberDTO)session.getAttribute("dto")).getMemno());
+		mv.addObject("list",list);
+		mv.setViewName("main");	//id=jsonView 객체를 찾아서 JsonView실행
 		return mv;
 	}
 	

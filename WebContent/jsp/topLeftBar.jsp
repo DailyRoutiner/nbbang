@@ -19,7 +19,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="메뉴"></div>
               </div>
             <!--logo start-->
-            <form action="login.do" method="post"><input type="image" src="" value="N-BBANG" class = "logo"></form>
+            <form action="home.do" method="post"><input type="image" src="" value="N-BBANG" class = "logo"></form>
             <!--logo end-->
             <div class="nav notify-row " id="top_menu" >
                 <!--  notification start -->
