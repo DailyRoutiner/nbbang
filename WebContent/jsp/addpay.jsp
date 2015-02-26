@@ -7,12 +7,12 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title" id="myModalLabel">회비 추가</h4>
 				</div>
-				<div id="${sessionScope.count }"></div>
+				
 				<div class="modal-body">
 					<div class="row mt">
           		<div class="col-lg-12">
           			<div class="form-panel">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> 회비를 입력해 주세요.</h4>
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> 회비를 입력해 주세요. </h4>
                       <form class="form-inline" role="form" method="get" id="fee">
                           <div class="form-group">
                           	  <label> 한 사람당 회비 : <input id="price" type="text" name="price" class="form-control" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)'> 원 </label>
@@ -21,6 +21,8 @@
                           <div class="form-group">
                               <label> 총 회비 : <input id="totalfee" type="text" name="totalfee" class="form-control" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)'>원</label>
                           </div>
+                        <input type="hidden" name="count" value="${sessionScope.count }"> 
+                        <input type="hidden" name="meetno" value="${requestScope.meetNo }"> 
                       </form>
           			</div><!-- /form-panel -->
           		</div><!-- /col-lg-12 -->
@@ -37,7 +39,6 @@
 	</div>
 	<!-- 회비 추가 end -->
 	<script>
-	$(document).ready(function() {
 			//회비 값 체크 
 		    $('.modal-footer').submit(function(){
 		        var username = $('#price').val();
@@ -55,10 +56,10 @@
 
 		//회비 나누고 총액 확인 로직
 		$("#price").blur(function(){
-			$("input:text[name=totalfee]").val($("input:text[name=price]").val() * 4); 
+			$("input:text[name=totalfee]").val($("input:text[name=price]").val() * $("input:hidden[name=count]").val()); 
 		});
 		$("#totalfee").blur(function(){
-			$("input:text[name=price]").val($("input:text[name=totalfee]").val() / 4); 
+			$("input:text[name=price]").val($("input:text[name=totalfee]").val() / $("input:hidden[name=count]").val()); 
 		});
 		
 		//추가하기
@@ -82,7 +83,6 @@
 			    }
 			}); //end of ajax
 		});// 회비 추가 로직 
-	});
 	</script>
 	<script src="assets/js/common-scripts.js"></script>
 	<script src="assets/js/jquery.js"></script>

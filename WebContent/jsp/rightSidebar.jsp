@@ -55,7 +55,6 @@
                   </div><!-- /col-lg-3 -->
                   
                   
-                  <script src="assets/js/common-scripts.js"></script>
        <script type="text/javascript">
     $(document).ready(function() {
     	var table="";
@@ -83,7 +82,6 @@
     </script>
     
     <script src="assets/js/zabuto_calendar.js"></script>	
-	
 	
 	<script type="application/javascript">
         $(document).ready(function () {

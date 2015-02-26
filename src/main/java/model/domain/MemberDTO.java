@@ -45,6 +45,15 @@ public class MemberDTO implements Serializable{
 		this.email = email;
 	}
 
+	public MemberDTO(String memname2, String mempw2, String email2,
+			int phonenumber2, String defaultPic) {
+		this.memname =memname2;
+		this.mempw = mempw2;
+		this.email = email2;
+		this.phonenumber = phonenumber2;
+		this.mempic = defaultPic;
+	}
+
 	public int getMemno() {
 		return memno;
 	}

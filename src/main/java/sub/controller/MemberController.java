@@ -131,13 +131,13 @@ public class MemberController {
 									HttpServletRequest req){
 		MemberDTO dto =null;
 		List<MeetingDTO> list = null;
+		String defaultPic = "assets/img/friends/fr-05.jpg";
 		HttpSession session= req.getSession();
 		ModelAndView mv=new ModelAndView();
 		MemberDTO checkDto=memService.memJoinCheck(email);
 			if(checkDto==null)
 				{
-					dto = new MemberDTO(memname, mempw, email, phonenumber);
-					dto.setMempic("assets/img/friends/fr-05");
+					dto = new MemberDTO(memname, mempw, email, phonenumber, defaultPic);
 					memService.insertMember(dto);
 					list = meetingService.meetingList(dto.getMemno());
 					session.setAttribute("dto", dto);
