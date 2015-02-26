@@ -22,7 +22,7 @@
                               <label> 총 회비 : <input id="totalfee" type="text" name="totalfee" class="form-control" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)'>원</label>
                           </div>
                         <input type="hidden" name="count" value="${sessionScope.count }"> 
-                        <input type="hidden" name="meetno" value="${requestScope.meetNo }"> 
+                        <input type="hidden" name="meetno" value="${sessionScope. }"> 
                       </form>
           			</div><!-- /form-panel -->
           		</div><!-- /col-lg-12 -->
