@@ -4,13 +4,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <link rel="shortcut icon" href="assets/img/favicon.ico">
     <meta charset="euc-kr">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="ChoiSeongJun">
     <meta name="keyword" content="alarm, credit, system, friends">
 
-	<link rel="shortcut icon" href="favicon.ico">
 	<style type="text/css">
 		.img_button {
         border: none;
@@ -55,7 +55,7 @@
 
               <div class="row">
                      
-                  <div class="col-lg-9 main-chart">
+                  <div class="col-lg-12 main-chart">
                       
                 <div class="col-lg-12">
 					<div class="pull-right">
@@ -95,36 +95,33 @@
 
 										<form action="valuePass.do" method="POST" class="product-panel-2 pn" height="200"> 
 										
-												    <input type="image" src="assets/img/product.jpg" width="200">
-				                                    <input class="mt" type="hidden" name="manageNo" value="${spend.manageNo}">
-                  		                            <input class="btn btn-small btn-theme04" type="hidden" name="meetDate" value="${spend.meetDate}">
-                  		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
+												    <input type="image" src="assets/img/category/group.png"  width="150" height="150" class="img_button">
+				                                    <input class="mt" type="hidden" name="manageno" value="${spend.manageNo}">
+                  		                            <input class="btn btn-small btn-theme04" type="hidden" name="meetdate" value="${spend.meetDate}">
+                  		                            <input type="hidden" name="meetno" value="${spend.meetNo}">
                   		                            
-                  		                            <h5 class="mt">장소 : ${spend.place}</h5>
-					  			        <h6>날짜 : ${spend.meetDate}</h6>
-					  			        <h5 class="btn btn-small btn-theme04">${spend.meetName}</h5>
+                  		                            <h4 class="mt"><i class="fa" style="font-size: large;">모임명 : ${spend.meetName}</i></h4>
+					  			        <h5><i class="fa" style="font-size: large;">장소 : ${spend.place} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					  			        																날짜 : ${spend.meetDate }</i></h5>
+					  			        																
+					  			      <a class="btn btn-small btn-danger" href="deleteMeeting.do?meetno=${spend.meetNo}">delete</a>
 										</form>
 										
 										</c:when>
 									    <c:when test="${spend.meetingType==2}">
 									    <form action="valuePass.do" method="POST">
 											 <input type="image" src="assets/img/category/group.png" width="150" height="150" class="img_button">
-				                                    <input type="hidden" name="manageNo" value="${spend.manageNo}">
-                  		                            <input type="hidden" name="meetDate" value="${spend.meetDate}">
-                  		                            <input type="hidden" name="meetNo" value="${spend.meetNo}">
-                  		                            <h3>${spend.meetName} 모임</h3>
+				                                    <input type="hidden" name="manageno" value="${spend.manageNo}">
+                  		                            <input type="hidden" name="meetdate" value="${spend.meetDate}">
+                  		                            <input type="hidden" name="meetno" value="${spend.meetNo}">
+                  		                            <h3>${spend.meetName} 그룹</h3>
+                  		                          <a class="btn btn-small btn-danger" href="deleteMeeting.do?meetno= ${spend.meetNo}" >delete</a>  
 										</form>
+										
 										</c:when>
 									</c:choose>
 									<!-- Product Panel -->
-					
-						
-					  			<form action="deleteMeeting.do" method="post">		
-								<!-- search -->
-								    <input type="image" width="50" height="50" src="assets/img/category/trash.png"> 
-				                   <!--  <button type="submit" class="btn btn-info" name="command" value="deleteFromMeetingList">삭제</button> -->
-                  		    <input type="checkbox" name="meetingIndex" value="${spend.meetNo}">
-                  		    </form>
+					  		
                   			</div>
                   		   
                   		    <div>

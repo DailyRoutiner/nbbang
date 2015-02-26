@@ -1,5 +1,6 @@
 package sub.controller;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,42 +35,33 @@ public class PushAndPayController {
 	@Resource(name="payService")
 	private PayService payService;
 	
-	@RequestMapping("/pay.do")
-	public ModelAndView paying(PayDTO vo,HttpServletRequest req){
+	// 결제 실행 
+	@RequestMapping(value="pay.do", method=RequestMethod.POST)
+	public String paying(PayDTO vo,HttpServletRequest req){
 		HttpSession session=req.getSession();
 		// payment 에서 meetno으로 된 리스트 가져오기 
-		System.out.println("meetno : " + vo.getMeetno());
 		List<PayDTO> list=payService.paySelect(vo.getMeetno());
-		String resultMsg="no";
-		int resultPrice=0;
-		int resultTotal=0;
-		ModelAndView mv= new ModelAndView();
-		List<MeetingDTO> list2 = null;
 		for(int i=0;i<list.size();i++)
 		{
 			if(vo.getMeetname().equals(list.get(i).getMeetname()) && vo.getCarPw().equals(list.get(i).getCarPw()))
 			{
 				list.get(i).setPrice(list.get(i).getPrice()-vo.getPrice());
-				resultPrice=payService.payUpdate(list.get(i));
+				payService.payUpdate(list.get(i));
 				list.get(i).setTotalfee(list.get(i).getTotalfee()-vo.getPrice());
 				list.get(i).setMemno((int)((MemberDTO)session.getAttribute("dto")).getMemno());
-				resultTotal=payService.payMeetUpdate(list.get(i));
+				payService.payMeetUpdate(list.get(i));
 			}
 		}
-			if((resultPrice > 0) && (resultTotal > 0))  
-			{
-				mv.setViewName("meeting");
-			}
-		return mv;
+			return "redirect:/valuePass2.do";
 	}
 	// 결제 페이지로 이동
-	@RequestMapping(value="payCheck.do", method=RequestMethod.POST)
+	@RequestMapping(value="payCheck.do", method=RequestMethod.GET)
 	public ModelAndView payCheck(HttpServletRequest req){
 		HttpSession session = req.getSession();
 		ModelAndView mv = new ModelAndView();
 			// 모임 이름, 사용자에게 보내는 금액, 은행
-			((MeetingDTO)session.getAttribute("meeting")).getMeetName();
-			
+			System.out.println(((MeetingDTO)session.getAttribute("meeting")).getMeetNo());
+			System.out.println();
 			
 			mv.setViewName("push_and_pay");
 			return mv;

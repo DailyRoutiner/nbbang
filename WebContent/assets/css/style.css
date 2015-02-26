@@ -1296,7 +1296,7 @@ PANELS CONFIGURATIONS
 
 /* Product Panel 2*/
 .product-panel-2 {
-	background: #dadad2;
+	background: rgba(234, 234, 230, 0.14);
 	text-align: center;
 }
 .product-panel-2 .badge {

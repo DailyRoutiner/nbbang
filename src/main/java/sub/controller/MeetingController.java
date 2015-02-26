@@ -70,7 +70,7 @@ public class MeetingController {
 	       ModelAndView mv=new ModelAndView();
 	       MeetingDTO md=null;//meetNo을 저장하기 위한 변수
 	       HttpSession session=req.getSession();
-			
+	       
 	       if(result==0){
 	           result = meetingService.insertMeeting(new MeetingDTO(meetingType, meetName, place, meetDate, ((MemberDTO)session.getAttribute("dto")).getMemno()));
 	       }else{
@@ -97,24 +97,29 @@ public class MeetingController {
 		}
 		
 		//모임 삭제
-		@RequestMapping(value="deleteMeeting.do", method=RequestMethod.POST)
-		public ModelAndView deleteMeeting(@RequestParam("meetingIndex") String[] rowIndex,
-				                                                 HttpServletRequest req){
-			
+		@RequestMapping(value="deleteMeeting.do", method=RequestMethod.GET)
+		public ModelAndView deleteMeeting(@RequestParam int meetno,
+															
+				                                            HttpServletRequest req){
+			// manageno, meetno, 먼저 모임안에 있는 멤버들 삭제
 			HttpSession session=req.getSession();
 			int result=0;
+			int result2=0;
 			
-				  for(int i=0; i<rowIndex.length; i++){
-					  result=meetingService.deleteMeeting(new MeetingDTO(Integer.parseInt(rowIndex[i]), ((MemberDTO)session.getAttribute("dto")).getMemno()));//meetno과 사용자의 manageno을
-				     if(result==1){
-					     System.out.println("모임목록 삭제 성공!");
-				     }
+					  result2 = payService.memberDelete(meetno);
+					  if(result2 >0){
+						  result = meetingService.deleteMeeting(new MeetingDTO(meetno, ((MemberDTO)session.getAttribute("dto")).getMemno()));//meetno과 사용자의 manageno을
+						  if(result > 0){
+							  System.out.println("모임목록 삭제 성공!");
+						  }else{
+							  System.out.println("모임 삭제 실패 :" + meetno);
+					  }
+					  System.out.println("result : " +result + result2);
 				   }
 				 ModelAndView mv=new ModelAndView();
 				 List<MeetingDTO> list = meetingService.meetingList(((MemberDTO)session.getAttribute("dto")).getMemno());
-			     mv.addObject("list",list);
+				 session.setAttribute("list", list);
 		         mv.setViewName("main");
-				
 				return mv;
 		}
 	
@@ -142,6 +147,28 @@ public class MeetingController {
 	mv.addObject("list", pd);
 	mv.setViewName("meeting");
 	return mv;
+	}
+	
+	@RequestMapping(value="valuePass2.do", method=RequestMethod.GET)
+	public ModelAndView valuePass(HttpServletRequest req) {
+		List<PayDTO> pd = null;
+		ModelAndView mv = new ModelAndView();
+		HttpSession session = req.getSession();
+		MeetingDTO mt = meetingService.meetSelectNum(((MeetingDTO)session.getAttribute("meeting")).getMeetNo());
+		// 들어간 모임이 내가 관리자인지 아닌지를 체크
+		if (((MemberDTO) session.getAttribute("dto")).getMemno() == ((MeetingDTO)session.getAttribute("meeting")).getManageNo()) {
+			pd = payService.friendSelect(((MeetingDTO)session.getAttribute("meeting")).getMeetNo()); // 친구들 불러오기
+			System.out.println("관리자 입니다");
+		} else {
+			pd = payService.friendSelect(((MeetingDTO)session.getAttribute("meeting")).getMeetNo());
+			System.out.println("사용자 입니다");
+			// count(meetNo,session);
+		}
+		session.setAttribute("meeting", mt);
+		session.setAttribute("count", pd.size());
+		mv.addObject("list", pd);
+		mv.setViewName("meeting");
+		return mv;
 	}
 	
 //	void count(int meetNo, HttpSession session){

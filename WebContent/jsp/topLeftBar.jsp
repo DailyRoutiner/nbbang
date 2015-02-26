@@ -58,7 +58,7 @@
                      <!-- <form action="profile.do" method="post">
                         <input type="image" width="25" height="25" src="assets/img/category/pay.png"> 
                      </form> -->
-                     <a href="push_and_pay.html" ><img src="assets/img/category/pay.png" width="25" height="25"></a>
+                     <a href="payCheck.do" ><i class="fa fa-credit-card"></i></a>
                      </li>
                      
                      
@@ -69,6 +69,7 @@
                      <li id="header_inbox_bar" class="dropdown">
                      <a href="jsp/logout.jsp" ><img src="assets/img/category/power.png" width="25" height="25"></a>
                      </li>
+                     
                      
                      <!-- inbox dropdown end -->                     
                 </ul>
@@ -165,20 +166,19 @@
                          ${sessionScope.dto.memname } </i></h5>
               	
                   <li class="mt">
-                      <h3><a href="#" data-toggle="modal" data-target="#myModal" style="font-size:30px; font-family: 'Open Sans', sans-serif;" >
-                       <i class="fa fa-dashboard" style="font-size: large;" >
+                      <h3><a href="#" data-toggle="modal" data-target="#myModal"  >
+                       <i class="fa fa-users" style="font-size: large;">
                           Member</i>
                       </a></h3>
                   </li>
                  <li class="sub-menu">
-                      <a href="push_and_pay.html">
-                      <i class="fa fa-desktop" style="font-size: large;">
-                          Payment</i>
-                      </a>
+                     <h3><a href="payCheck.do"> 
+                      <i class="fa fa-desktop" style="font-size: large;">Payment</i>
+                      </a></h3>
                   </li>
                   <li class="sub-menu">
                       <a href="#">
-                      <i class="fa fa-desktop" style="font-size: large;">
+                      <i class="fa fa-tasks" style="font-size: large;">
                           Meeting</i>
                       </a>
                       <ul class="sub">

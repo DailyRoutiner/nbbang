@@ -10,7 +10,7 @@
     <meta name="keyword" content="alarm, credit, system, friends">
 
     <title>N-BBANG</title>
-	<link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
@@ -54,10 +54,10 @@ body {
                  	<div class="col-md-4 mb">
 								<div class="grey-panel pn">
 							<div class="grey-header">
-								<h4>회원</h4>
+								<h4><i class="fa" style="font-size: large;">회원</i></h4>
 							</div>
 							<p><img src="${spend.memPic }" class="img-circle" width="80" height="80"></p>
-							<p><h4>${spend.memName}</h4></p>
+							<p><h4><i class="fa" style="font-size: large;">${spend.memName}</i></h4></p>
 							<div class="row">
 								<div class="col-md-6">
 									<i class="small mt">입금 상태</i>

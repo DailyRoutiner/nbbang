@@ -9,7 +9,7 @@
     <meta name="keyword" content="alarm, credit, system, friends">
 
     <title>N-BBANG</title>
-	<link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
@@ -76,21 +76,29 @@
 	                  	  	  <h4><i class="fa fa-angle-right"></i> 모임에 추가할 친구를 선택하세요</h4>
 	                  	  	
 		                      <table class="table">
-		                    
 		                          <tbody>
 		                          <tr>
 		                              <td></td>
 		                              <td>사진</td>
 		                              <td>이름</td>
-		                              <td>email</td>
+		                              
 		                          </tr>
 		                          <c:forEach items="${requestScope.memberView}" var="member">
 		                          <tr>
-		                             <td><input type= "checkbox" name="memberIndex" value="${member.memno}">     
+		                             <td>   
+		                     <div class="row mt">
+                              <div class="col-sm-4 text-center">
+                                  <div class="switch switch-square"
+                                       data-on-label="<i class=' fa fa-check'></i>"
+                                       data-off-label="<i class='fa fa-times'></i>">
+                                      <input type="checkbox" name="memberIndex" value="${member.memno}"/>
+                                  </div>
+                              </div>
+						</div>
+		                              
 		                             </td>
 		                             <td><img src="${member.mempic}" class="img-circle" width="80" height="80"></td>
 								     <td><h3>${member.memname}</h3></td>
-								     <td><h3>${member.email}</h3></td>
 		                          </tr>
 		             
 		                          </c:forEach>
@@ -126,6 +134,8 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
 
+	<!--custom switch-->
+	<script src="assets/js/bootstrap-switch.js"></script>
 
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>

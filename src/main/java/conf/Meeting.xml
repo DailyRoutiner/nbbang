@@ -21,7 +21,14 @@
 	
 	<!-- 멤버에 있는 모임들 불러오기  -->
 	<select id="meetingList" parameterType="int" resultMap="meetingResultMap">
-		SELECT * FROM meeting_info WHERE MEMNO =#{memNo}
+		SELECT   MEMNO,
+ MEETING_TYPE,
+ MEETNO,
+ MEETNAME,
+ PLACE,
+ to_char(MEETDATE,'YYYY-MM-DD') as MEETDATE,
+ TOTALFEE,
+ MANAGENO FROM meeting_info WHERE MEMNO =#{memNo}
 	</select>
 	
 	<!-- 사용자가 만든 마지막 meetno가지고 오기 -->
@@ -30,12 +37,19 @@
 	</select>
 	
 	<select id="meetSelect" parameterType="int" resultMap="meetingResultMap">
-		SELECT * FROM meeting where meetno = #{meetNo}
+		SELECT  MEETING_TYPE,
+ MEETNO,
+ MEETNAME,
+ PLACE,
+ to_char(MEETDATE,'YYYY-MM-DD') as MEETDATE,
+ TOTALFEE,
+ MANAGENO FROM meeting where meetno = #{meetNo}
 	</select>
 	
 	<!-- 모임목록을 지우기 -->
 	<delete id="deleteMeeting" parameterType="meetingDTO">
-		delete from meeting where meetNo=#{meetNo} and manageNo=#{manageNo}
+		delete from meeting
+		 where meetNo=#{meetNo} and manageNo=#{manageNo}
 	</delete>
 
 	

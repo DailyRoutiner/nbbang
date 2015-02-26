@@ -13,6 +13,7 @@
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
     <title>N-BBANG</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
 	<style type="text/css">
 		.img_button {
         background: url(money1.png) no-repeat;
@@ -195,7 +196,7 @@
                          <form class="form-horizontal style-form" method="post" action = "deleteMember.do">
 											<input type = "hidden" value="deleteMember" name= "command">
 											<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
-											<button type="submit" class="btn btn-theme04 pull-right" name="command" value="deleteMember">회원탈퇴</button>
+											<button type="submit" class="btn btn-danger pull-right" name="command" value="deleteMember">회원탈퇴</button>
 						</form>
       				</div><!-- /showback -->
       			</div><!-- /col-lg-6 -->

@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <!--external css-->
     <link rel="stylesheet" type="text/css" href="assets/css/zabuto_calendar.css">
     
@@ -20,7 +18,7 @@
 								<div id="profile-02">
 									<div class="user">
 										<img src="${sessionScope.dto.mempic }" class="img-circle" width="80" height="80">
-										<h4><i class="fa" style="font-size: large;">${sessionScope.dto.memname }</i></h4>
+										<h4>${sessionScope.dto.memname }</h4>
 									</div>
 								</div>
 					<p>
@@ -29,7 +27,7 @@
 					</ul>
 					<p>
 					<ul class="nav top-menu">
-                    	<form action="payCheck.do" method="get"><input type="submit" style="height:45px; width: 100% ; color: white; font-size: medium; font-weight: 700; " class="btn btn-theme03" value="결제 하기" ></form>
+                    	<form action="payCheck.do" method="post"><input type="submit" style="height:45px; width: 100% ; color: white; font-size: medium; font-weight: 700; " class="btn btn-theme03" value="결제 하기" ></form>
 					</ul>
 							</div><p><!--/panel -->
 					</div>

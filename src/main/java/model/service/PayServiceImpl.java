@@ -47,5 +47,10 @@ public class PayServiceImpl implements PayService {
 	public int insertPayment(PayDTO pd){
 		return payDao.insertPayment(pd);
 	}
+
+	@Override
+	public int memberDelete(int meetNo) {
+		return payDao.memberDelete(meetNo);
+	}
 	
 }

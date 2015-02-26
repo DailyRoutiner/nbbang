@@ -10,6 +10,7 @@
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
     <title>N-BBANG</title>
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
 	<!-- push -->
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
@@ -74,11 +75,11 @@
           		<div class="col-lg-12">
                   <div class="form-panel">
                   	  <h2 class="mb"><i class="fa fa-angle-right"></i> 결제 정보를 입력해 주세요</h2>
-                     <form id="pay" class="form-horizontal style-form" method="post">
+                     <form id="pay" action="pay.do" class="form-horizontal style-form" method="post">
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label"><h3><strong>모임 이름</strong></h3></label>
                               <div class="col-sm-10">
-                                  <input id="meetname" name="meetname" type="text" class="form-control">
+                                  <input id="meetname" name="meetname" type="text" class="form-control" value="${sessionScope.meeting.meetName }">
                               </div>
                           </div>
                           <div class="form-group">
@@ -99,6 +100,7 @@
                                   <input id="carPw" name="carPw" type="password" class="form-control round-form">
                               </div>
                           </div>
+                          <input name="meetno" type="hidden" value="${sessionScope.meeting.meetNo}">
                          <input type="submit" class="btn btn-theme" id="payButton" value="결제하기">
                       </form>
                   </div>
@@ -264,18 +266,22 @@
 				}); 
 			})
 		 	// 결제 하기 
-			$("#payButton").click(function() {
-				$.ajax({
+//			$("#payButton").click(function() {
+				
+				
+				/* $.ajax({
 					url : "pay.do",
 					type : "post",
 					dataType : "text",
 					data : $("#pay").serialize(),
 					success : function(data) {
+						window.document.location.href="valuePass.do";
 					},
 					error : function(data) {
+						alert("2");
 					}
-				}); 
-			})
+				}); */ 
+	//		})
     });
     
     </script>

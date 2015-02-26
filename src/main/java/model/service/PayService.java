@@ -12,4 +12,5 @@ public interface PayService {
 	List<PayDTO> friendSelect(int meetno);
 	int insertPayment(PayDTO pd);
 	List<PayDTO> paySelect(int meetno);
+	int memberDelete(int meetNo);
 }

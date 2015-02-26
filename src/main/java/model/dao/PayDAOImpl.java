@@ -98,5 +98,19 @@ public class PayDAOImpl implements PayDAO {
 		}
 		return result;
 	}
+
+	@Override
+	public int memberDelete(int meetno) {
+		SqlSession session = DBUtil.getSqlSession();
+		boolean flag = false;
+		int result = 0;
+		try {
+			result = session.delete("payment.memberDelete", meetno);	
+			flag = result > 0 ? true : false;
+		} finally {
+			DBUtil.closeSqlSession(flag, session);
+		}
+		return result;
+	}
 	
 }
