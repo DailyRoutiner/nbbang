@@ -19,7 +19,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="메뉴"></div>
               </div>
             <!--logo start-->
-            <form action="login.do" method="post"><input type="image" src="" value="N-BBANG" class = "logo"></form>
+            <a href="home.do" class="logo">N-BBANG</a>
             <!--logo end-->
             <div class="nav notify-row " id="top_menu" >
                 <!--  notification start -->
@@ -91,7 +91,7 @@
 		MemberDTO dto = (MemberDTO)session.getAttribute("dto");
 	  %>	
 	  <!--common script for all pages-->
-    
+    <script src="assets/js/common-scripts.js"></script>
        <script type="text/javascript">
     $(document).ready(function() {
     	var table="";

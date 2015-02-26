@@ -83,7 +83,6 @@
     
     <script src="assets/js/zabuto_calendar.js"></script>	
 	
-	
 	<script type="application/javascript">
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
