@@ -79,10 +79,6 @@ insert into member values (MEMBER_SQ.NEXTVAL,'정수열','1','1','suyeol3@naver.
 insert into member values (MEMBER_SQ.NEXTVAL,'문석민','2','2','moon@naver.com','2','01010','0c1a29c6-ad44-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
 insert into member values (MEMBER_SQ.NEXTVAL,'송지윤','3','3','song@naver.com','3','010232342','0c1a29c6-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
 insert into member values (MEMBER_SQ.NEXTVAL,'최성준','4','4','choi@naver.com','4','010432342','0c1a29c-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
-insert into member values (MEMBER_SQ.NEXTVAL,'후후','5','5','song1@naver.com','5','010532342','0c1a296-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
-insert into member values (MEMBER_SQ.NEXTVAL,'허허','6','6','song2@naver.com','6','010632342','0c1a23c6-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
-insert into member values (MEMBER_SQ.NEXTVAL,'키키','7','7','song3@naver.com','7','010732342','0c1a6c6-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
-insert into member values (MEMBER_SQ.NEXTVAL,'하하','8','8','song4@naver.com','8','010832342','0c1a25c6-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
 
 
 create table meeting(
@@ -120,12 +116,6 @@ create table notification(
 	constraint notification_meetno_fk foreign key(meetno) references meeting(meetno),
 	constraint notification_memno_fk foreign key(memno) references member(memno)
 );
-insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 3 );
-insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 4 );
-insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 5 );
-insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 6 );
-insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 7 );
-insert into notification values(NOTIFICATION_SQ.NEXTVAL, '나나나나', '2015-01-10', 2, 2, 8 );
 
 create table card(
 	cardno number(20) primary key,

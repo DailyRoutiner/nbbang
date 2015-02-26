@@ -64,7 +64,6 @@
 		
 		//회비 추가하기
 		$("#btn").click(function() {
-			alert($("#fee").serialize());
 			$.ajax({
 				url : "insertfee.do",
 				type : "get",
@@ -72,7 +71,6 @@
 				data : $("#fee").serialize(),
 				success : function(data) {
 					if (data == "ok") {
-						alert("추가 성공" +$("#fee").serialize());
 						document.location.reload();
 						//window.document.location.href="valuePass.do";
 					} else {
@@ -80,7 +78,6 @@
 					}
 				},
 				error:function(request,status,error){
-			        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 			    }
 			}); //end of ajax
 		});// 회비 추가 로직 

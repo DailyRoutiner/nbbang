@@ -88,8 +88,8 @@ public class MeetingController {
 			System.out.println("meetno: "+md.getMeetNo());
 			//다시 list값을 뿌려 주기 위해 불러오는 부분..
 	            List<MeetingDTO> list = meetingService.meetingList(((MemberDTO)session.getAttribute("dto")).getMemno());
-	            System.out.println("number : "+((MemberDTO)session.getAttribute("dto")).getMemno());
-	            System.out.println(list +" "+ session.getAttribute("dto"));
+	            System.out.println("membernumber : "+((MemberDTO)session.getAttribute("dto")).getMemno());
+	            session.setAttribute("list", list);
 				mv.addObject("list",list);
 	            mv.setViewName("main");
 				

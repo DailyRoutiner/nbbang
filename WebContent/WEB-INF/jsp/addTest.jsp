@@ -89,8 +89,8 @@
 		                             <td><input type= "checkbox" name="memberIndex" value="${member.memno}">     
 		                             </td>
 		                             <td><img src="${member.mempic}" class="img-circle" width="80" height="80"></td>
-								     <td>${member.memname}</td>
-								     <td>${member.email}</td>
+								     <td><h3>${member.memname}</h3></td>
+								     <td><h3>${member.email}</h3></td>
 		                          </tr>
 		             
 		                          </c:forEach>

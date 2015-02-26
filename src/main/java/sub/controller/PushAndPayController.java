@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import model.domain.MeetingDTO;
 import model.domain.MemberDTO;
 import model.domain.PayDTO;
 import model.domain.PushDTO;
@@ -41,6 +42,7 @@ public class PushAndPayController {
 		int resultPrice=0;
 		int resultTotal=0;
 		ModelAndView mv= new ModelAndView();
+		List<MeetingDTO> list2 = null;
 		for(int i=0;i<list.size();i++)
 		{
 			if(vo.getMeetname().equals(list.get(i).getMeetname()) && vo.getCarPw().equals(list.get(i).getCarPw()))
@@ -50,10 +52,12 @@ public class PushAndPayController {
 				list.get(i).setTotalfee(list.get(i).getTotalfee()-vo.getPrice());
 				list.get(i).setMemno((int)((MemberDTO)session.getAttribute("dto")).getMemno());
 				resultTotal=payService.payMeetUpdate(list.get(i));
+				list2 = meetingService.meetingList(((MemberDTO)session.getAttribute("dto")).getMemno());
 			}
 		}
 			if((resultPrice > 0) && (resultTotal > 0))  
 			{
+				mv.addObject("list", list2);
 				mv.setViewName("main");
 			}
 		return mv;
@@ -62,7 +66,6 @@ public class PushAndPayController {
 	@RequestMapping("/selectMessage.do" )
 	public ModelAndView selectMessage(HttpServletRequest req){
 		HttpSession session = req.getSession();
-		System.out.println("메시지 진입");
 		ModelAndView mv = new ModelAndView();
 		ArrayList<WebPushDTO> wpsBefore = pushService.ResBeforeSelect((int)((MemberDTO)session.getAttribute("dto")).getMemno());// 2=로그인한 유저의 memno
 			mv.addObject("list", wpsBefore);			
@@ -99,7 +102,7 @@ public class PushAndPayController {
 		PushDTO dto = new PushDTO();
 		dto.setCkNo((int)session.getAttribute("receivedMemno"));//상대방의 memno
 		dto.setMemno((int)((MemberDTO)session.getAttribute("dto")).getMemno());
-		dto.setMeetno(1);
+		dto.setMeetno(2);
 				dto.setContent(vo.getContent()); //보내는 메시지
 				if(vo.getAlramtime().equals("")) //db에 보내는 메시지 저장
 				{

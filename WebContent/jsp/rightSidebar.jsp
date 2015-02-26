@@ -11,6 +11,7 @@
       *********************************************************************************************************************************************************** -->                 
                  
                   <div class="col-lg-3 ds">
+                  <div class="row">
                       <!-- USERS ONLINE SECTION -->
 						<h3>받을 사람</h3>
                       <!-- First Member -->
@@ -18,28 +19,31 @@
 							<div class="content-panel pn">
 								<div id="profile-02">
 									<div class="user">
-										<img src="assets/img/friends/fr-06.jpg" class="img-circle" width="80">
-										<h4>DJ SHERMAN</h4>
+										<img src="${sessionScope.dto.mempic }" class="img-circle" width="80">
+										<h4>${sessionScope.dto.memname }</h4>
 									</div>
 								</div>
 					<p>
 					<ul class="nav top-menu">
-						<input type="submit" style="height:35px; width:255px; color: white; font-size: medium; font-weight: 700; " class="btn btn-warning" value="회비 추가" data-toggle="modal" data-target="#myModal2" >
+						<input type="submit" style="height:40px; width:100%; color: white; font-size: medium; font-weight: 700; " class="btn btn-warning" value="회비 추가" data-toggle="modal" data-target="#myModal2" >
 					</ul>
 					<p>
 					<ul class="nav top-menu">
-                    <li><input type="submit" style="height:35px; width:255px; color: white; font-size: medium; font-weight: 700; " class="btn btn-warning" value="결제 하기">
+                    	<form action="push_and_pay.html" method="post"><input type="submit" style="height:35px; width: 100% ; color: white; font-size: medium; font-weight: 700; " class="btn btn-warning" value="결제 하기" ></form>
 					</ul>
-							</div><br><!--/panel -->
+							</div><!--/panel -->
+					</div>
                     <!--COMPLETED ACTIONS DONUTS CHART-->
+                    <div class="row mt">
                     <div class="content-panel pn">
 						<h3>NOTIFICATION</h3>
 						<div id="rightBar" class="desc">
                       </div>
                                      </div>  
                       
-                      
+                      </div>
                       <!-- CALENDAR-->
+                       <div class="row mt">
                         <div id="calendar" class="mb">
                             <div class="panel green-panel no-margin">
                                 <div class="panel-body">
@@ -52,7 +56,7 @@
                                 </div>
                             </div>
                         </div><!-- / calendar -->
-
+						</div>
                   </div><!-- /col-lg-3 -->
                   
                   

@@ -46,7 +46,7 @@ public class MemberController {
 		ModelAndView mv=new ModelAndView("error");
 		HttpSession session=req.getSession();
 		List<MeetingDTO> list = meetingService.meetingList(((MemberDTO)session.getAttribute("dto")).getMemno());
-		mv.addObject("list",list);
+		session.setAttribute("list", list);
 		mv.setViewName("main");	//id=jsonView 객체를 찾아서 JsonView실행
 		return mv;
 	}
@@ -60,7 +60,7 @@ public class MemberController {
 			if(checkDto != null){
 				List<MeetingDTO> list = meetingService.meetingList(checkDto.getMemno());
 				session.setAttribute("dto", checkDto);
-				mv.addObject("list",list);
+				session.setAttribute("list", list);
 				mv.addObject("dto",checkDto );
 				mv.setViewName("main");
 				return mv;
@@ -73,6 +73,7 @@ public class MemberController {
 		JSONObject obj = JSONObject.fromObject(JSONSerializer.toJSON(data));
 		MemberDTO dto = null;
 		List<MeetingDTO> list = null;
+		MemberDTO member = null;
 		 MemberDTO checkDto = memService.memJoinCheck(obj.getString("email"));
 		HttpSession session = req.getSession();
 		ModelAndView mv = new ModelAndView();
@@ -82,9 +83,10 @@ public class MemberController {
 					dto = new MemberDTO(obj.getString("name"), obj.getString("id"), obj.getString("email"), 0);
 					dto.setMempic("https://graph.facebook.com/"+obj.getString("id")+"/picture");
 					memService.insertMember(dto);
-					session.setAttribute("dto", dto);
-					list = meetingService.meetingList(dto.getMemno());
-					mv.addObject("dto", dto);
+					member=memService.memJoinCheck(dto.getEmail());
+					session.setAttribute("dto", member);
+					list = meetingService.meetingList(member.getMemno());
+					mv.addObject("dto", member);
 				}
 			else
 				{
@@ -108,6 +110,7 @@ public class MemberController {
 		JSONObject json = (JSONObject)obj.get("properties");
 		MemberDTO dto = null;
 		List<MeetingDTO> list = null;
+		MemberDTO member = null;
 		 MemberDTO checkDto = memService.memJoinCheck(obj.getString("id"));
 		HttpSession session = req.getSession();
 		ModelAndView mv = new ModelAndView();
@@ -116,9 +119,10 @@ public class MemberController {
 					dto = new MemberDTO(json.getString("nickname"), obj.getString("id"), obj.getString("id"), 0);
 					dto.setMempic(json.getString("profile_image"));
 					memService.insertMember(dto);
-					list = meetingService.meetingList(dto.getMemno());
-					session.setAttribute("dto", dto);
-					mv.addObject("dto", dto);
+					member=memService.memJoinCheck(dto.getEmail());
+					list = meetingService.meetingList(member.getMemno());
+					session.setAttribute("dto", member);
+					mv.addObject("dto", member);
 				}
 			else
 				{
@@ -175,29 +179,6 @@ public class MemberController {
 		ModelAndView mv=new ModelAndView();
 		HttpSession session = req.getSession();
 		mv.setViewName("main");
-		return mv;
-	}
-	@RequestMapping(value="insertfacebook.do", method=RequestMethod.POST)
-	public ModelAndView insertFacebook(@RequestParam("memname") String memname,
-			@RequestParam("mempw") String mempw,
-			@RequestParam("email") String email,
-			@RequestParam("phonenumber") int phonenumber,
-			HttpServletRequest req){
-		MemberDTO dto = new MemberDTO(memname, mempw, email, phonenumber);
-		HttpSession session= req.getSession();
-		ModelAndView mv=new ModelAndView();
-		MemberDTO checkDto=memService.memJoinCheck(email);
-			if(checkDto==null)
-				{
-					memService.insertMember(dto);
-					session.setAttribute("dto", dto);
-					mv.setViewName("main");
-				}
-			else
-				{
-					System.out.println("에러 발생");
-					mv.setViewName("error");
-				}
 		return mv;
 	}
 	

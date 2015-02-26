@@ -85,13 +85,11 @@
 							</div>
 						</div> -->
                   	<div class="row mtbox">
-                  	    <c:forEach items="${requestScope.list}" var="spend">
+                  	    <c:forEach items="${sessionScope.list}" var="spend">
                   		
                   		<div class="col-lg-4 col-md-4 col-sm-4 mb">
                   			<div class="product-panel-2 pn">
 					  			<c:choose>
-					  			
-					  			
 										<c:when test="${spend.meetingType==1}">
 
 										<form action="valuePass.do" method="POST" class="product-panel-2 pn" height="200"> 
@@ -131,8 +129,6 @@
                   		    <div>
                   		    
                   		    </div>
-                  						<%-- <p>장소 : ${spend.place}</p>
-					  			        <p>날짜 : ${spend.meetDate}</p>	 --%>
                   		</div>
                   		
                        </c:forEach>		
