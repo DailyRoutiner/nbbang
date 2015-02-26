@@ -20,7 +20,7 @@
 								<div id="profile-02">
 									<div class="user">
 										<img src="${sessionScope.dto.mempic }" class="img-circle" width="80" height="80">
-										<h4>${sessionScope.dto.memname }</h4>
+										<h4>${sessionScope.meeting.manageNo }</h4>
 									</div>
 								</div>
 					<p>
@@ -29,7 +29,7 @@
 					</ul>
 					<p>
 					<ul class="nav top-menu">
-                    	<form action="push_and_pay.html" method="post"><input type="submit" style="height:35px; width: 100% ; color: white; font-size: medium; font-weight: 700; " class="btn btn-warning" value="결제 하기" ></form>
+                    	<form action="payCheck.do" method="post"><input type="submit" style="height:35px; width: 100% ; color: white; font-size: medium; font-weight: 700; " class="btn btn-warning" value="결제 하기" ></form>
 					</ul>
 							</div><!--/panel -->
 					</div>

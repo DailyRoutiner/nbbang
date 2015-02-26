@@ -1,4 +1,5 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -43,18 +44,12 @@
     
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
 
-
     <!--common script for all pages-->
     <script src="assets/js/common-scripts.js"></script>
    
     <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
     <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
 
-    <!--script for this page-->
-	 <script src="assets/js/chart-master/Chart.js"></script>
-    <script src="assets/js/chartjs-conf.js"></script>	
-	
-	
   </head>
 
   <body>
@@ -64,9 +59,7 @@
       <!-- **********************************************************************************************************************************************************
       TOP BAR CONTENT & NOTIFICATIONS
       *********************************************************************************************************************************************************** -->
-     
      <div id="topLeftBar"></div>
-     
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -81,7 +74,7 @@
           		<div class="col-lg-12">
                   <div class="form-panel">
                   	  <h2 class="mb"><i class="fa fa-angle-right"></i> 결제 정보를 입력해 주세요</h2>
-                     <form action="pay.do" id="pay" class="form-horizontal style-form" method="post">
+                     <form id="pay" class="form-horizontal style-form" method="post">
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label"><h3><strong>모임 이름</strong></h3></label>
                               <div class="col-sm-10">
@@ -106,7 +99,7 @@
                                   <input id="carPw" name="carPw" type="password" class="form-control round-form">
                               </div>
                           </div>
-                         <input type="submit" class="btn btn-theme" id="payButton">
+                         <input type="submit" class="btn btn-theme" id="payButton" value="결제하기">
                       </form>
                   </div>
           		</div><!-- col-lg-12-->      	
@@ -116,7 +109,6 @@
           	<div class="row mt">
           		<div class="col-lg-12">
           			<div class="form-panel">
-                  	        <!-- insert baas.io "id" or "username" -->
 					<input type="hidden" class="form-control __org_id" value="447fa554-aaeb-11e4-8f63-06fd000000c2" placeholder="baas.io ID or Name">
 				<!-- insert Application "id" or "username" -->
 				<input type="hidden" class="form-control __app_id" value="4b789e97-aaeb-11e4-8f63-06fd000000c2" placeholder="Application ID or Name">
@@ -183,9 +175,7 @@
           		</div><!-- /col-lg-12 -->
           	</div><!-- /row -->
           	
-          	
-          	
-		</section><! --/wrapper -->
+		</section><!--/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -273,6 +263,7 @@
 					}
 				}); 
 			})
+		 	// 결제 하기 
 			$("#payButton").click(function() {
 				$.ajax({
 					url : "pay.do",

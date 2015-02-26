@@ -66,8 +66,9 @@
 						        <tr>
 						        <td>
 								<form action="insertMeeting.do" method="post">
-				                    <!-- <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">모임 추가</button>
- -->                                <input type="image" width="50" height="50" src="assets/img/category/add2.png">                                
+								<h3><i class="fa" style="font-size: large;">모임 만들기</i>
+ 		                           <input type="image" width="50" height="50" src="assets/img/category/add2.png">
+ 		                           </h3>                                
                                 </form> 
 						       </td>
                                 </tr>
@@ -101,7 +102,7 @@
                   		                            
                   		                            <h5 class="mt">장소 : ${spend.place}</h5>
 					  			        <h6>날짜 : ${spend.meetDate}</h6>
-					  			        <h5 class="btn btn-small btn-theme04">${spend.meetName} 모임</h5>
+					  			        <h5 class="btn btn-small btn-theme04">${spend.meetName}</h5>
 										</form>
 										
 										</c:when>

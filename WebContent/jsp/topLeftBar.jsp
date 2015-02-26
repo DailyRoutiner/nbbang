@@ -161,7 +161,8 @@
               <ul class="sidebar-menu" id="nav-accordion">
              
               	   <p class="centered"><a href="#" data-toggle="modal" data-target="#myModal"><img src="<%=dto.getMempic()%>" class="img-circle" width="80" height="80"></a></p>
-              	  <h5 class="centered">${sessionScope.dto.memname }</h5>
+              	  <h5 class="centered"> <i class="fa" style="font-size: large;">
+                         ${sessionScope.dto.memname } </i></h5>
               	
                   <li class="mt">
                       <h3><a href="#" data-toggle="modal" data-target="#myModal" style="font-size:30px; font-family: 'Open Sans', sans-serif;" >
@@ -176,7 +177,7 @@
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="push_and_pay.html">
+                      <a href="#">
                       <i class="fa fa-desktop" style="font-size: large;">
                           Meeting</i>
                       </a>

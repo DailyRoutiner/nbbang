@@ -19,6 +19,7 @@ import model.service.PushService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -60,6 +61,18 @@ public class PushAndPayController {
 				mv.setViewName("meeting");
 			}
 		return mv;
+	}
+	// 결제 페이지로 이동
+	@RequestMapping(value="payCheck.do", method=RequestMethod.POST)
+	public ModelAndView payCheck(HttpServletRequest req){
+		HttpSession session = req.getSession();
+		ModelAndView mv = new ModelAndView();
+			// 모임 이름, 사용자에게 보내는 금액, 은행
+			((MeetingDTO)session.getAttribute("meeting")).getMeetName();
+			
+			
+			mv.setViewName("push_and_pay");
+			return mv;
 	}
 	
 	@RequestMapping("/selectMessage.do" )
