@@ -52,7 +52,6 @@ public class MemberController {
 			if(checkDto != null){
 				List<MeetingDTO> list = meetingService.meetingList(checkDto.getMemno());
 				session.setAttribute("dto", checkDto);
-				System.out.println(list);
 				mv.addObject("list",list);
 				mv.addObject("dto",checkDto );
 				mv.setViewName("main");
@@ -65,25 +64,32 @@ public class MemberController {
 													HttpServletRequest req){
 		JSONObject obj = JSONObject.fromObject(JSONSerializer.toJSON(data));
 		MemberDTO dto = null;
-		 MemberDTO checkDto = memService.memJoinCheck((String)obj.get("email"));
+		List<MeetingDTO> list = null;
+		 MemberDTO checkDto = memService.memJoinCheck(obj.getString("email"));
 		HttpSession session = req.getSession();
 		ModelAndView mv = new ModelAndView();
 			if(checkDto == null)
 				{
-					dto = new MemberDTO((String)obj.get("name"), (String)obj.get("id"), (String)obj.get("email"), 0);
-					dto.setMempic("https://graph.facebook.com/"+(String)obj.get("id")+"/picture");
+					System.out.println("새로가입");
+					dto = new MemberDTO(obj.getString("name"), obj.getString("id"), obj.getString("email"), 0);
+					dto.setMempic("https://graph.facebook.com/"+obj.getString("id")+"/picture");
 					memService.insertMember(dto);
 					session.setAttribute("dto", dto);
+					list = meetingService.meetingList(dto.getMemno());
 					mv.addObject("dto", dto);
-					mv.setViewName("main");
 				}
 			else
 				{
-					checkDto.setMempic("https://graph.facebook.com/"+(String)obj.get("id")+"/picture");
+					System.out.println("원래 있던 사람");
+					checkDto.setMempic("https://graph.facebook.com/"+obj.getString("id")+"/picture");
 					session.setAttribute("dto", checkDto);
+					list = meetingService.meetingList(checkDto.getMemno());
+					System.out.println(list + " "+checkDto.getMemno());
 					mv.addObject("dto", checkDto);
 					mv.setViewName("main");
 				}
+			session.setAttribute("list", list);
+			mv.setViewName("main");
 			return mv;
 	}
 	@RequestMapping(value="insertkakaotalk.do", method=RequestMethod.GET)
@@ -92,8 +98,8 @@ public class MemberController {
 		
 		JSONObject obj = JSONObject.fromObject(JSONSerializer.toJSON(data));
 		JSONObject json = (JSONObject)obj.get("properties");
-		System.out.println("data : "+json);
 		MemberDTO dto = null;
+		List<MeetingDTO> list = null;
 		 MemberDTO checkDto = memService.memJoinCheck(obj.getString("id"));
 		HttpSession session = req.getSession();
 		ModelAndView mv = new ModelAndView();
@@ -102,17 +108,19 @@ public class MemberController {
 					dto = new MemberDTO(json.getString("nickname"), obj.getString("id"), obj.getString("id"), 0);
 					dto.setMempic(json.getString("profile_image"));
 					memService.insertMember(dto);
+					list = meetingService.meetingList(dto.getMemno());
 					session.setAttribute("dto", dto);
 					mv.addObject("dto", dto);
-					mv.setViewName("main");
 				}
 			else
 				{
 					checkDto.setMempic(json.getString("profile_image"));
+					list = meetingService.meetingList(checkDto.getMemno());
 					session.setAttribute("dto", checkDto);
 					mv.addObject("dto", checkDto);
-					mv.setViewName("main");
 				}
+			session.setAttribute("list", list);
+			mv.setViewName("main");
 			return mv;
 	}
 	@RequestMapping(value="insertMember.do", method=RequestMethod.POST)
@@ -121,21 +129,28 @@ public class MemberController {
 									@RequestParam("email") String email,
 									@RequestParam("phonenumber") int phonenumber,
 									HttpServletRequest req){
-		MemberDTO dto = new MemberDTO(memname, mempw, email, phonenumber);
+		MemberDTO dto =null;
+		List<MeetingDTO> list = null;
 		HttpSession session= req.getSession();
 		ModelAndView mv=new ModelAndView();
 		MemberDTO checkDto=memService.memJoinCheck(email);
 			if(checkDto==null)
 				{
+					dto = new MemberDTO(memname, mempw, email, phonenumber);
+					dto.setMempic("assets/img/friends/fr-05");
 					memService.insertMember(dto);
+					list = meetingService.meetingList(dto.getMemno());
 					session.setAttribute("dto", dto);
-					mv.setViewName("main");
+					mv.addObject("dto", dto);
 				}
 			else
 				{
-					System.out.println("에러 발생");
-					mv.setViewName("main");
+					list = meetingService.meetingList(checkDto.getMemno());
+					session.setAttribute("dto", checkDto);
+					mv.addObject("dto", checkDto);
 				}
+			session.setAttribute("list", list);
+			mv.setViewName("main");
 			return mv;
 	}
 	@RequestMapping(value="profile.do", method=RequestMethod.POST)
@@ -249,9 +264,7 @@ public class MemberController {
 		
 		System.out.println(result);
 		session.setAttribute("mempic", dto.getMempic());
-	
 		mv.addObject("mempic", dto.getMempic());
-		
 		mv.setViewName("Profile");
 		return mv;
 	}

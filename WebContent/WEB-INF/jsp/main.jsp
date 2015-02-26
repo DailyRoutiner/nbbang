@@ -68,8 +68,8 @@
 								<form action="insertMeeting.do" method="post">
 				                    <!-- <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">모임 추가</button>
  -->                                <input type="image" width="50" height="50" src="assets/img/category/add2.png">                                
+                                </form> 
 						       </td>
-						 
                                 </tr>
                                 </table>						
 							</div>
@@ -85,7 +85,7 @@
 							</div>
 						</div> -->
                   	<div class="row mtbox">
-                  	    <c:forEach items="${requestScope.list}" var="spend">
+                  	    <c:forEach items="${sessionScope.list}" var="spend">
                   		
                   		<div class="col-lg-4 col-md-4 col-sm-4 mb">
                   			<div class="product-panel-2 pn">
@@ -93,6 +93,12 @@
 					  			
 					  			
 										<c:when test="${spend.meetingType==1}">
+
+										<form action="valuePass.do" method="POST"> 
+												    <input type="image" src="assets/img/category/payback.png" width="150" height="150" class="img_button">
+				                                    <input type="hidden" name="manageNo" style="font-size: large;" value="${spend.manageNo}">
+                  		                            <input type="hidden" name="meetDate" style="font-size: large;"value="${spend.meetDate}">
+
 										
 										<form action="valuePass.do" method="POST" class="product-panel-2 pn" height="200"> 
 										

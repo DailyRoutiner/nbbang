@@ -5,7 +5,7 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
   <link href="assets/css/bootstrap.css" rel="stylesheet">
-  
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
@@ -150,31 +150,33 @@
               	  <h5 class="centered">${sessionScope.dto.memname }</h5>
               	
                   <li class="mt">
-                      <a href="#" data-toggle="modal" data-target="#myModal">
-                          <i class="fa fa-dashboard"></i>
-                          <span>회원 관리</span>
-                      </a>
+                      <h3><a href="#" data-toggle="modal" data-target="#myModal" style="font-size:30px; font-family: 'Open Sans', sans-serif;" >
+                       <i class="fa fa-dashboard" style="font-size: large;" >
+                          Member</i>
+                      </a></h3>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>회비 관리</span>
+                      <a href="javascript:;">
+                            <i class="fa fa-desktop" style="font-size: large;">
+                          Payment</i>
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-book"></i>
-                          <span>모임 관리</span>
+                      <a href="javascript:;">
+                          <i class="fa fa-book" style="font-size: large;">
+                          Meeting</i>
                       </a>
                       <ul class="sub">
-                          <li><a  href="push_and_pay.html">결제 & 메시지</a></li>
+                          <li>
+                          <a  href="push_and_pay.html" style="font-size: large;">Payment & Message</a>
+                          </li>
                       </ul>
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>설정</span>
+                          <i class="fa fa-cogs" style="font-size: large;">
+                          Set Up</i>
                       </a>
                   </li>
 

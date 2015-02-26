@@ -165,25 +165,31 @@
       					 <h4><i class="fa fa-angle-right"></i> Login Account</h4>
       					  
                       <form class="form-horizontal style-form" method="post">
-                      	<div class="form-group">
-                              <label class="col-md-6 col-sm-20 control-label">Phone Number</label>
-                               <a class="col-sm-6" data-toggle="modal" data-target="#phonenumber">휴대폰 번호 설정</a>
+                      	<div class="form-group" align="left" style="left: 30px">
+                              <label class="col-md-6 col-sm-20 control-label">
+                              	<img src="assets/img/phone.png">
+                              Phone Number</label>
+                               <a class="col-md-6 col-sm-6 control-label" data-toggle="modal" data-target="#phonenumber" style="text-decoration: none;" >휴대폰 번호 설정</a>
                           </div>
-                          <div class="form-group">
-                              <label class="col-sm-6 col-sm-6 control-label">Card PassWord</label>
-                              <a class="col-sm-6" data-toggle="modal" data-target="#cardpassword">카드번호 변경</a>
+                          <div class="form-group" align="left" >
+                              <label class="col-sm-6 col-sm-6 control-label">
+                              	<img src="assets/img/card.png">
+                              Card PassWord</label>
+                              <a class="col-md-6 col-sm-6 control-label" data-toggle="modal" data-target="#cardpassword" style="text-decoration: none;">카드번호 변경</a>
                           </div>
-                          <div class="form-group">
-                              <label class="col-sm-6 col-sm-20 control-label">비밀번호 설정</label>
-                               <a class="col-sm-6" data-toggle="modal" data-target="#password">비밀번호 변경</a>
+                          <div class="form-group" align="left">
+                              <label class="col-sm-6 col-sm-20 control-label"><img src="assets/img/password.png">PassWord Setting</label>
+                              
+                               <a class="col-md-6 col-sm-6 control-label" data-toggle="modal" data-target="#password" style="text-decoration: none;">비밀번호 변경</a>
                           </div>
-                          <div class="form-group">
-                              <label class="col-sm-6 col-sm-20 control-label">ACCOUNT</label>
-                            <a class="col-sm-6" data-toggle="modal" data-target="#account">계좌번호 설정</a>
+                          <div class="form-group" align="left">
+                              <label class="col-sm-6 col-sm-20 control-label"><img src="assets/img/account.png">ACCOUNT</label>
+                              
+                            <a class="col-md-6 col-sm-6 control-label" data-toggle="modal" data-target="#account" style="text-decoration: none;">계좌번호 설정</a>
                           </div>
-                              <div class="form-group">
-                              <label class="col-sm-6 col-sm-6 control-label">DEVICE ID</label>
-                              <a class="col-sm-6" data-toggle="modal" data-target="#deviceid">Device ID 설정</a>
+                              <div class="form-group" align="left">
+                              <label class="col-sm-6 col-sm-6 control-label"><img src="assets/img/device.png">DEVICE ID</label>
+                              <a class="col-md-6 col-sm-6 control-label" data-toggle="modal" data-target="#deviceid">Device ID 설정</a>
                               </div>
                           </div>
                         </form>
