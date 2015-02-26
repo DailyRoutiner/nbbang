@@ -33,34 +33,36 @@ public class PushAndPayController {
 	private PayService payService;
 	
 	@RequestMapping("/pay.do")
-	@ResponseBody
-	public String paying(PayDTO vo){
-		System.out.println(vo);
+	public ModelAndView paying(PayDTO vo,HttpServletRequest req){
+		HttpSession session=req.getSession();
 		List<PayDTO> list=payService.paySelect();
+		System.out.println("모든 값 : "+list.get(0).getCarPw());
 		String resultMsg="no";
 		int resultPrice=0;
 		int resultTotal=0;
-		
+		ModelAndView mv= new ModelAndView();
 		for(int i=0;i<list.size();i++)
 		{
-			if(vo.getAccount().equals(list.get(i).getAccount()) && vo.getCarPw().equals(list.get(i).getCarPw()))
+			if(vo.getMeetname().equals(list.get(i).getMeetname()) && vo.getCarPw().equals(list.get(i).getCarPw()))
 			{
 				list.get(i).setPrice(list.get(i).getPrice()-vo.getPrice());
 				resultPrice=payService.payUpdate(list.get(i));
 				list.get(i).setTotalfee(list.get(i).getTotalfee()-vo.getPrice());
+				list.get(i).setMemno((int)((MemberDTO)session.getAttribute("dto")).getMemno());
 				resultTotal=payService.payMeetUpdate(list.get(i));
 			}
 		}
 			if((resultPrice > 0) && (resultTotal > 0))  
 			{
-				resultMsg = "ok";
+				mv.setViewName("main");
 			}
-		return resultMsg;
+		return mv;
 	}
 	
 	@RequestMapping("/selectMessage.do" )
 	public ModelAndView selectMessage(HttpServletRequest req){
 		HttpSession session = req.getSession();
+		System.out.println("메시지 진입");
 		ModelAndView mv = new ModelAndView();
 		ArrayList<WebPushDTO> wpsBefore = pushService.ResBeforeSelect((int)((MemberDTO)session.getAttribute("dto")).getMemno());// 2=로그인한 유저의 memno
 			mv.addObject("list", wpsBefore);			

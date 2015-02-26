@@ -18,7 +18,47 @@ public class PayDTO implements Serializable{
 	int meetno;
 	int meetingType;
 	String deviceId;
+	String meetname;
 	
+	public PayDTO(String memName, String memPw, String email, String account,
+			String phoneNumber, String carPw, String memPic, String payCheck,
+			int payNo, int price, int memno, int totalfee, int meetno,
+			int meetingType, String deviceId, String meetname) {
+		super();
+		this.memName = memName;
+		this.memPw = memPw;
+		this.email = email;
+		this.account = account;
+		this.phoneNumber = phoneNumber;
+		this.carPw = carPw;
+		this.memPic = memPic;
+		this.payCheck = payCheck;
+		this.payNo = payNo;
+		this.price = price;
+		this.memno = memno;
+		this.totalfee = totalfee;
+		this.meetno = meetno;
+		this.meetingType = meetingType;
+		this.deviceId = deviceId;
+		this.meetname = meetname;
+	}
+
+	public int getPayNo() {
+		return payNo;
+	}
+
+	public void setPayNo(int payNo) {
+		this.payNo = payNo;
+	}
+
+	public String getMeetname() {
+		return meetname;
+	}
+
+	public void setMeetname(String meetname) {
+		this.meetname = meetname;
+	}
+
 	public PayDTO() {}
 
 	public PayDTO(int memno) {
@@ -37,26 +77,6 @@ public class PayDTO implements Serializable{
 		this.totalfee = totalfee2;
 	}
 
-	public PayDTO(String memName, String memPw, String email, String account,
-			String phoneNumber, String carPw, String memPic, String payCheck,
-			int price, int memno, int totalfee, int meetno, int meetingType,
-			String deviceId) {
-		super();
-		this.memName = memName;
-		this.memPw = memPw;
-		this.email = email;
-		this.account = account;
-		this.phoneNumber = phoneNumber;
-		this.carPw = carPw;
-		this.memPic = memPic;
-		this.payCheck = payCheck;
-		this.price = price;
-		this.memno = memno;
-		this.totalfee = totalfee;
-		this.meetno = meetno;
-		this.meetingType = meetingType;
-		this.deviceId = deviceId;
-	}
 
 	public String getMemName() {
 		return memName;
@@ -172,13 +192,42 @@ public class PayDTO implements Serializable{
 
 	@Override
 	public String toString() {
-		return "PayDTO [memName=" + memName + ", memPw=" + memPw + ", email="
-				+ email + ", account=" + account + ", phoneNumber="
-				+ phoneNumber + ", carPw=" + carPw + ", memPic=" + memPic
-				+ ", payCheck=" + payCheck + ", price=" + price + ", memno="
-				+ memno + ", totalfee=" + totalfee + ", meetno=" + meetno
-				+ ", meetingType=" + meetingType + ", deviceId=" + deviceId
-				+ "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("PayDTO [memName=");
+		builder.append(memName);
+		builder.append(", memPw=");
+		builder.append(memPw);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", account=");
+		builder.append(account);
+		builder.append(", phoneNumber=");
+		builder.append(phoneNumber);
+		builder.append(", carPw=");
+		builder.append(carPw);
+		builder.append(", memPic=");
+		builder.append(memPic);
+		builder.append(", payCheck=");
+		builder.append(payCheck);
+		builder.append(", payNo=");
+		builder.append(payNo);
+		builder.append(", price=");
+		builder.append(price);
+		builder.append(", memno=");
+		builder.append(memno);
+		builder.append(", totalfee=");
+		builder.append(totalfee);
+		builder.append(", meetno=");
+		builder.append(meetno);
+		builder.append(", meetingType=");
+		builder.append(meetingType);
+		builder.append(", deviceId=");
+		builder.append(deviceId);
+		builder.append(", meetname=");
+		builder.append(meetname);
+		builder.append("]");
+		return builder.toString();
 	}
+
 
 }

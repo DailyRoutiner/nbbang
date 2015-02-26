@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="EMAIL" property="email" />
 		<result column="ACCOUNT" property="account" />
 		<result column="PHONENUMBER" property="phoneNumber" />
-		<result column="CARPW" property="carPw" />
+		<result column="CARDPW" property="carPw" />
 		<result column="PAYCHECK" property="payCheck" />
 		<result column="PRICE" property="price" />
 		<result column="MEMNO" property="memno" />
@@ -21,6 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="MEETNO" property="meetno" />
 		<result column="DEVICEID" property="deviceId" />
         <result column="MEMPIC" property="memPic" />
+        <result column="MEETNAME" property="meetname" />
 	</resultMap>
 
     <select id="paySelect" resultMap="payResultMap">
@@ -32,18 +33,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from pay_info where meetno = #{meetno}
 	</select>
 
-	<!-- 결제했을 때 총액 업데이트 --> 
+	<!-- 결제했을 때 총액 업데이트(모임이름으로 업데이트) --> 
 	<update id="payMeetUpdate" parameterType="payVo">
 		update meeting
 		set TOTALFEE = #{totalfee}
-		where MEETNO = (select MEETNO from payment where MEMNO = #{memno})
+		where MEETNAME = #{meetname}
 	</update>
 	
-	 <!-- 결제 했을 때 자신의 금액 업데이트 -->
+	 <!-- 결제 했을 때 자신의 금액 업데이트 (모임이름으로 찾은 미팅넘버와 세션의 멤버넘버로 업데이트) -->
 	<update id="payUpdate" parameterType="payVo">
 		update payment
 		set PRICE = #{price}
-		where MEMNO = #{memno}
+		where MEMNO = #{memno} and MEETNO=#{meetno}
 	</update>
 	
 	<!-- 모임에 있는 멤버들 회비 정해주기 -->

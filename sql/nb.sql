@@ -75,14 +75,14 @@ create table member(
 	mempic varchar2(200)
 );
 
-insert into member values (MEMBER_SQ.NEXTVAL,'정수열','1','1','suyeol3@naver.com','1','01024234','82cfe0b7-b9b8-11e4-86a9-06a6fa0000b9','2');
-insert into member values (MEMBER_SQ.NEXTVAL,'문석민','2','2','moon@naver.com','2','01010','0c1a29c6-ad44-11e4-9c06-06a6fa0000b9','3');
-insert into member values (MEMBER_SQ.NEXTVAL,'송지윤','3','3','song@naver.com','3','010232342','0c1a29c6-ader-11e4-9c06-06a6fa0000b9','4');
-insert into member values (MEMBER_SQ.NEXTVAL,'최성준','4','4','choi@naver.com','4','010432342','0c1a29c-ader-11e4-9c06-06a6fa0000b9','4');
-insert into member values (MEMBER_SQ.NEXTVAL,'후후','5','5','song1@naver.com','5','010532342','0c1a296-ader-11e4-9c06-06a6fa0000b9','4');
-insert into member values (MEMBER_SQ.NEXTVAL,'허허','6','6','song2@naver.com','6','010632342','0c1a23c6-ader-11e4-9c06-06a6fa0000b9','4');
-insert into member values (MEMBER_SQ.NEXTVAL,'키키','7','7','song3@naver.com','7','010732342','0c1a6c6-ader-11e4-9c06-06a6fa0000b9','4');
-insert into member values (MEMBER_SQ.NEXTVAL,'하하','8','8','song4@naver.com','8','010832342','0c1a25c6-ader-11e4-9c06-06a6fa0000b9','4');
+insert into member values (MEMBER_SQ.NEXTVAL,'정수열','1','1','suyeol3@naver.com','1','01024234','82cfe0b7-b9b8-11e4-86a9-06a6fa0000b9','assets/img/friends/fr-05.jpg');
+insert into member values (MEMBER_SQ.NEXTVAL,'문석민','2','2','moon@naver.com','2','01010','0c1a29c6-ad44-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
+insert into member values (MEMBER_SQ.NEXTVAL,'송지윤','3','3','song@naver.com','3','010232342','0c1a29c6-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
+insert into member values (MEMBER_SQ.NEXTVAL,'최성준','4','4','choi@naver.com','4','010432342','0c1a29c-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
+insert into member values (MEMBER_SQ.NEXTVAL,'후후','5','5','song1@naver.com','5','010532342','0c1a296-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
+insert into member values (MEMBER_SQ.NEXTVAL,'허허','6','6','song2@naver.com','6','010632342','0c1a23c6-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
+insert into member values (MEMBER_SQ.NEXTVAL,'키키','7','7','song3@naver.com','7','010732342','0c1a6c6-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
+insert into member values (MEMBER_SQ.NEXTVAL,'하하','8','8','song4@naver.com','8','010832342','0c1a25c6-ader-11e4-9c06-06a6fa0000b9','assets/img/friends/fr-05.jpg');
 
 
 create table meeting(
@@ -96,7 +96,6 @@ create table meeting(
 );
 
 insert into meeting values (1,MEETING_SQ.NEXTVAL,'kodb','db진흥원','2015-02-25',50000,2);
-insert into meeting values (1,MEETING_SQ.NEXTVAL,'kodb','영등포','2015-02-25',80000,2);
 
 
 create table payment(
@@ -110,8 +109,6 @@ create table payment(
 );
 
 insert into payment values (PAYMENT_SQ.NEXTVAL,'ok',10000,2,2);
-insert into payment values (PAYMENT_SQ.NEXTVAL,'ok',20000,2,5);
-insert into payment values (PAYMENT_SQ.NEXTVAL,'no',330000,2,7);
 
 create table notification(
 	notificationno number(20) primary key,
@@ -160,7 +157,8 @@ P.PRICE,
 T.MEETING_TYPE,
 P.MEETNO,
 T.TOTALFEE, 
-M.DEVICEID
+M.DEVICEID,
+T.MEETNAME
   FROM MEMBER M, PAYMENT P,MEETING T
   WHERE M.MEMNO = P.MEMNO AND T.MEETNO = P.MEETNO;
   

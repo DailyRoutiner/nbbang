@@ -371,18 +371,10 @@
       <!--footer end-->
   </section>
 
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
 
 
-    <!--common script for all pages-->
-    <script src="assets/js/common-scripts.js"></script>
 
-    <!--script for this page-->
-    <script type="text/javascript" src="assets/js/gritter/js/jquery.gritter.js"></script>
-    <script type="text/javascript" src="assets/js/gritter-conf.js"></script>
     <script type="text/javascript">
       //custom select box
 
@@ -405,7 +397,6 @@
 					} */
 				},
 				error : function(data) {
-					alert(data + ' : 사진 등록 실패');
 				}
 			}); 
 		})

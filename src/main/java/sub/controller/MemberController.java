@@ -160,6 +160,36 @@ public class MemberController {
 		mv.setViewName("Profile");
 		return mv;
 	}
+	@RequestMapping(value="mainMove.do", method=RequestMethod.POST)
+	public ModelAndView moveMove(HttpServletRequest req){
+		ModelAndView mv=new ModelAndView();
+		HttpSession session = req.getSession();
+		mv.setViewName("main");
+		return mv;
+	}
+	@RequestMapping(value="insertfacebook.do", method=RequestMethod.POST)
+	public ModelAndView insertFacebook(@RequestParam("memname") String memname,
+			@RequestParam("mempw") String mempw,
+			@RequestParam("email") String email,
+			@RequestParam("phonenumber") int phonenumber,
+			HttpServletRequest req){
+		MemberDTO dto = new MemberDTO(memname, mempw, email, phonenumber);
+		HttpSession session= req.getSession();
+		ModelAndView mv=new ModelAndView();
+		MemberDTO checkDto=memService.memJoinCheck(email);
+			if(checkDto==null)
+				{
+					memService.insertMember(dto);
+					session.setAttribute("dto", dto);
+					mv.setViewName("main");
+				}
+			else
+				{
+					System.out.println("에러 발생");
+					mv.setViewName("error");
+				}
+		return mv;
+	}
 	
 	/*@RequestMapping(value="updateMember.do", method=RequestMethod.POST)
 	public ModelAndView updateMember(@RequestParam("email") String email,
