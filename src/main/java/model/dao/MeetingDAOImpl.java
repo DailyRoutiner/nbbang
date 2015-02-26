@@ -72,6 +72,18 @@ public class MeetingDAOImpl implements MeetingDAO {
 	}
 	
 	@Override
+	public MeetingDTO meetSelectNum(int meetno){
+		SqlSession session = DBUtil.getSqlSession();
+		MeetingDTO md2=null;
+		try {
+			md2 = session.selectOne("MEETING.meetSelect", meetno);
+		} finally {
+			session.close();
+		}
+		return md2;
+	}
+	
+	@Override
 	public List<MeetingDTO> meetingList(MeetingDTO md) {
 		SqlSession session = DBUtil.getSqlSession();
 		List<MeetingDTO> meetingList = null;

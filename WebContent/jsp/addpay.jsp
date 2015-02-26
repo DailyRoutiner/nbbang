@@ -22,7 +22,7 @@
                               <label> 총 회비 : <input id="totalfee" type="text" name="totalfee" class="form-control" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)'>원</label>
                           </div>
                         <input type="hidden" name="count" value="${sessionScope.count }"> 
-                        <input type="hidden" name="meetno" value="${sessionScope. }"> 
+                        <input type="hidden" name="meetno" value="${sessionScope.meeting.meetNo}"> 
                       </form>
           			</div><!-- /form-panel -->
           		</div><!-- /col-lg-12 -->
@@ -62,7 +62,7 @@
 			$("input:text[name=price]").val($("input:text[name=totalfee]").val() / $("input:hidden[name=count]").val()); 
 		});
 		
-		//추가하기
+		//회비 추가하기
 		$("#btn").click(function() {
 			alert($("#fee").serialize());
 			$.ajax({
@@ -73,7 +73,8 @@
 				success : function(data) {
 					if (data == "ok") {
 						alert("추가 성공" +$("#fee").serialize());
-						$("input[type=text]").val(""); //text박스 모두 지우기
+						document.location.reload();
+						//window.document.location.href="valuePass.do";
 					} else {
 						alert("추가 실패");
 					}

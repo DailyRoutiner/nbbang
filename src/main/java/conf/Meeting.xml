@@ -29,6 +29,10 @@
 		SELECT * FROM meeting where manageNo=#{manageNo} and meetNo = (select max(meetNo) from meeting where manageNo=#{manageNo})
 	</select>
 	
+	<select id="meetSelect" parameterType="int" resultMap="meetingResultMap">
+		SELECT * FROM meeting where meetno = #{meetNo}
+	</select>
+	
 	<!-- 모임목록을 지우기 -->
 	<delete id="deleteMeeting" parameterType="meetingDTO">
 		delete from meeting where meetNo=#{meetNo} and manageNo=#{manageNo}

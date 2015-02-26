@@ -13,4 +13,5 @@ public interface MeetingService {
 	MeetingDTO selectMeetNo(MeetingDTO md);
 	List<MeetingDTO> meetingList(MeetingDTO md);
 	int deleteMeeting(MeetingDTO md);
+	MeetingDTO meetSelectNum(int meetno);
 }

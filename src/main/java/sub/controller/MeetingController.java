@@ -35,6 +35,7 @@ public class MeetingController {
 	private MemberService memService;
 
 	// 회비 추가 기능 
+	@ResponseBody
 	@RequestMapping("/insertfee.do")
 	public String insertPay(@RequestParam("price") int price, @RequestParam("totalfee") int totalfee, @RequestParam("meetno") int meetno){
 		System.out.println(">>>>>>>>>" +price + totalfee + meetno);
@@ -130,17 +131,18 @@ public class MeetingController {
 	List<PayDTO> pd =null;
 	ModelAndView mv=new ModelAndView();
 	HttpSession session = req.getSession();
+	MeetingDTO mt = meetingService.meetSelectNum(meetNo);
 	// 들어간 모임이 내가 관리자인지 아닌지를 체크
 	if(((MemberDTO)session.getAttribute("dto")).getMemno() == manageNo){
-		pd = payService.friendSelect(meetNo);
+		pd = payService.friendSelect(meetNo);	//친구들 불러오기
 		System.out.println("관리자 입니다");
 	}else{
 		pd = payService.friendSelect(meetNo);
 		System.out.println("사용자 입니다");
 	//	count(meetNo,session);
 	}
+	session.setAttribute("meeting", mt);
 	session.setAttribute("count",pd.size());
-	session.setAttribute("meetno", meetNo);
 	mv.addObject("list", pd);
 	mv.setViewName("meeting");
 	return mv;
