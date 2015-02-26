@@ -45,13 +45,31 @@
                     </li>
                     
                      <li id="header_inbox_bar" class="dropdown">
+                     <form action="profile.do" method="post">
                         <input type="image" width="30" height="30" src="assets/img/category/People.png"> 
+                     </form>
                      </li>
+                     
+                     
                     <li id="header_inbox_bar" class="dropdown">
                         &nbsp;&nbsp;&nbsp;
                      </li>
+                     
                      <li id="header_inbox_bar" class="dropdown">
+                     <form action="profile.do" method="post">
                         <input type="image" width="25" height="25" src="assets/img/category/pay.png"> 
+                     </form>
+                     </li>
+                     
+                     
+                     <li id="header_inbox_bar" class="dropdown">
+                        &nbsp;&nbsp;&nbsp;
+                     </li>
+                     
+                     <li id="header_inbox_bar" class="dropdown">
+                     <form action="profile.do" method="post">
+                        <input type="image" width="25" height="25" src="assets/img/category/power.png"> 
+                     </form>
                      </li>
                      
                      <!-- inbox dropdown end -->                     
