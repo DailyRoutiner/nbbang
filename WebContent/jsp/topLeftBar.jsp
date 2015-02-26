@@ -19,7 +19,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="메뉴"></div>
               </div>
             <!--logo start-->
-            <a herf="home.do" class="logo">N-BBANG</a>
+            <a href="home.do" class="logo">N-BBANG</a>
             <!--logo end-->
             <div class="nav notify-row " id="top_menu" >
                 <!--  notification start -->
