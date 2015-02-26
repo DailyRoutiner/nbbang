@@ -145,6 +145,13 @@ public class MemberController {
 		mv.setViewName("Profile");
 		return mv;
 	}
+	@RequestMapping(value="mainMove.do", method=RequestMethod.POST)
+	public ModelAndView moveMove(HttpServletRequest req){
+		ModelAndView mv=new ModelAndView();
+		HttpSession session = req.getSession();
+		mv.setViewName("main");
+		return mv;
+	}
 	@RequestMapping(value="insertfacebook.do", method=RequestMethod.POST)
 	public ModelAndView insertFacebook(@RequestParam("memname") String memname,
 			@RequestParam("mempw") String mempw,

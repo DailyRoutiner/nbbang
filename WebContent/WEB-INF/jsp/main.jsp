@@ -65,15 +65,9 @@
 						        <table>
 						        <tr>
 						        <td>
-<<<<<<< HEAD
 								<form action="insertMeeting.do" method="post">
 				                    <!-- <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">모임 추가</button>
  -->                                <input type="image" width="50" height="50" src="assets/img/category/add2.png">                                
-=======
-								<form action="insertMeeting.do" method="POST">
-				                    <button type="submit" class="btn btn-info" name="command" value="addFromSpendList">모임 추가</button>
->>>>>>> branch 'Choi' of https://github.com/ponmons/nbbang.git
-                                </form> 
 						       </td>
 						 
                                 </tr>
@@ -93,8 +87,8 @@
                   	<div class="row mtbox">
                   	    <c:forEach items="${requestScope.list}" var="spend">
                   		
-                  		<div class="col-md-6 col-sm-5 box0">
-                  			<div class="box1">
+                  		<div class="col-lg-4 col-md-4 col-sm-4 mb">
+                  			<div class="product-panel-2 pn">
 					  			<c:choose>
 					  			
 					  			

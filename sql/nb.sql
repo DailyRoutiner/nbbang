@@ -96,7 +96,6 @@ create table meeting(
 );
 
 insert into meeting values (1,MEETING_SQ.NEXTVAL,'kodb','db진흥원','2015-02-25',50000,2);
-insert into meeting values (1,MEETING_SQ.NEXTVAL,'kodb','영등포','2015-02-25',80000,2);
 
 
 create table payment(
@@ -110,8 +109,6 @@ create table payment(
 );
 
 insert into payment values (PAYMENT_SQ.NEXTVAL,'ok',10000,2,2);
-insert into payment values (PAYMENT_SQ.NEXTVAL,'ok',20000,2,5);
-insert into payment values (PAYMENT_SQ.NEXTVAL,'no',330000,2,7);
 
 create table notification(
 	notificationno number(20) primary key,
@@ -160,7 +157,8 @@ P.PRICE,
 T.MEETING_TYPE,
 P.MEETNO,
 T.TOTALFEE, 
-M.DEVICEID
+M.DEVICEID,
+T.MEETNAME
   FROM MEMBER M, PAYMENT P,MEETING T
   WHERE M.MEMNO = P.MEMNO AND T.MEETNO = P.MEETNO;
   
