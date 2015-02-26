@@ -13,13 +13,13 @@
                   <div class="col-lg-3 ds">
                   <div class="row">
                       <!-- USERS ONLINE SECTION -->
-						<h3>받을 사람</h3>
+						<h3>${sessionScope.meeting.meetName }</h3>
                       <!-- First Member -->
                    		<!-- PROFILE 02 PANEL -->
 							<div class="content-panel pn">
 								<div id="profile-02">
 									<div class="user">
-										<img src="${sessionScope.dto.mempic }" class="img-circle" width="80">
+										<img src="${sessionScope.dto.mempic }" class="img-circle" width="80" height="80">
 										<h4>${sessionScope.dto.memname }</h4>
 									</div>
 								</div>
@@ -38,8 +38,8 @@
                     <div class="content-panel pn">
 						<h3>NOTIFICATION</h3>
 						<div id="rightBar" class="desc">
-                      </div>
-                                     </div>  
+                        </div>
+                       </div>  
                       
                       </div>
                       <!-- CALENDAR-->

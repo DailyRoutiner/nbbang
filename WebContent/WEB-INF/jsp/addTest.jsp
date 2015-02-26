@@ -40,7 +40,7 @@
           		<div class="col-md-12">
                   <div class="content-panel" >
                   	 <div class="wrapper">
-                  	  <h4 class="mb"><i class="fa fa-angle-right"></i>모임을 추가해 주세요.</h4>
+                  	  <h4 class="mb"><i class="fa fa-angle-right"></i> 모임을 추가해 주세요.</h4>
                               
                    			<label class="col-sm-2 col-sm-2 control-label">유형</label>
 								<div class="col-sm-10">
@@ -73,7 +73,7 @@
 				<div class="row mt">
 	                  <div class="col-md-12">
 	                  	  <div class="content-panel">
-	                  	  	  <h4><i class="fa fa-angle-right"></i>모임에 추가할 친구를 선택하세오</h4>
+	                  	  	  <h4><i class="fa fa-angle-right"></i> 모임에 추가할 친구를 선택하세요</h4>
 	                  	  	
 		                      <table class="table">
 		                    
@@ -107,7 +107,7 @@
 	                  <div class="col-md-12">
 	                     <center>
 	                                    <input type="hidden" name = "meetNo" value='${requestScope.meetNo}'>
-										<button type="submit" class="btn btn-info" name="command" value="addSpend">추가</button>
+										<button type="submit" class="btn btn-info" name="command" value="addSpend">모임 추가</button>
 										<button type="button" class="btn btn-default" onclick="history.back()">취소</button>
 						</center>
 						</div>

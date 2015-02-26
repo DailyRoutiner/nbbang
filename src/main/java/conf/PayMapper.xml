@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 
     <select id="paySelect" resultMap="payResultMap">
-		select * from pay_info
+		select * from pay_info where meetno = #{meetno}
 	</select> 
 	
 	<!-- 모임에서 친구 목록 가져오기 -->

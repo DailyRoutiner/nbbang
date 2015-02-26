@@ -143,13 +143,13 @@
                              <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Name</label>
                               <div class="col-sm-10">
-                                  <input type="text" class="form-control" name="memname">
+                                  <input type="text" class="form-control" name="memname" placeholder="${sessionScope.dto.memname}">
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Email</label>
                          <!--      <div class="col-sm-10"> -->
-                              <h3><%=dto.getEmail() %></h3>
+                              <h4><%=dto.getEmail() %></h4>
                          		<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
                               <!-- </div> -->	
                           	</div>
@@ -167,28 +167,26 @@
                       <form class="form-horizontal style-form" method="post">
                       	<div class="form-group" align="left" style="left: 30px">
                               <label class="col-md-6 col-sm-20 control-label">
-                              	<img src="assets/img/phone.png">
-                              Phone Number</label>
+                              <img src="assets/img/phone.png"></label>
                                <a class="col-md-6 col-sm-6 control-label" data-toggle="modal" data-target="#phonenumber" style="text-decoration: none;" >휴대폰 번호 설정</a>
                           </div>
                           <div class="form-group" align="left" >
                               <label class="col-sm-6 col-sm-6 control-label">
-                              	<img src="assets/img/card.png">
-                              Card PassWord</label>
+                              <img src="assets/img/card.png"></label>
                               <a class="col-md-6 col-sm-6 control-label" data-toggle="modal" data-target="#cardpassword" style="text-decoration: none;">카드번호 변경</a>
                           </div>
                           <div class="form-group" align="left">
-                              <label class="col-sm-6 col-sm-20 control-label"><img src="assets/img/password.png">PassWord Setting</label>
+                              <label class="col-sm-6 col-sm-20 control-label"><img src="assets/img/password.png"></label>
                               
                                <a class="col-md-6 col-sm-6 control-label" data-toggle="modal" data-target="#password" style="text-decoration: none;">비밀번호 변경</a>
                           </div>
                           <div class="form-group" align="left">
-                              <label class="col-sm-6 col-sm-20 control-label"><img src="assets/img/account.png">ACCOUNT</label>
+                              <label class="col-sm-6 col-sm-20 control-label"><img src="assets/img/account.png"></label>
                               
                             <a class="col-md-6 col-sm-6 control-label" data-toggle="modal" data-target="#account" style="text-decoration: none;">계좌번호 설정</a>
                           </div>
                               <div class="form-group" align="left">
-                              <label class="col-sm-6 col-sm-6 control-label"><img src="assets/img/device.png">DEVICE ID</label>
+                              <label class="col-sm-6 col-sm-6 control-label"><img src="assets/img/device.png"></label>
                               <a class="col-md-6 col-sm-6 control-label" data-toggle="modal" data-target="#deviceid">Device ID 설정</a>
                               </div>
                           </div>
@@ -197,7 +195,7 @@
                          <form class="form-horizontal style-form" method="post" action = "deleteMember.do">
 											<input type = "hidden" value="deleteMember" name= "command">
 											<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
-											<button type="submit" class="btn btn-info" name="command" value="deleteMember">탈퇴</button>
+											<button type="submit" class="btn btn-theme04 pull-right" name="command" value="deleteMember">회원탈퇴</button>
 						</form>
       				</div><!-- /showback -->
       			</div><!-- /col-lg-6 -->
@@ -207,29 +205,30 @@
       </section><!-- /MAIN CONTENT -->
 		<!-- 전화번호 변경 모달 -->
  				 <div class="modal fade" id="phonenumber" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						  <div class="modal-dialog">
-						    <div class="modal-content" style="height:200px">
+				  <div class="modal-dialog">
+						    <div class="modal-content">
 						      <div class="modal-header">
 						        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						        <h4 class="modal-title" id="myModalLabel">휴대번호 설정</h4>
+						        <h4 class="modal-title" id="myModalLabel">휴대폰 번호 설정</h4>
 						      </div>
 						      <div class="modal-body">
 						          	<!-- BASIC FORM ELELEMNTS -->
                   					<div class="form-panel">
                      					 <form class="form-horizontal style-form" method="post" action = "updatePhone.do">
-											<input type = "hidden" value="updatePhone" name= "command">
+											<input type = "hidden" value="updateCardPassWord" name= "command">
         									<div class="form-group">
-        						<label class="col-sm-3 col-sm-6 control-label">휴대폰번호</label>
-        						<div class="col-sm-10">
-                              		<input type="text" class="form-control" name="phonenumber">
-                              		<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
-                              	</div>
-                              	<br>
-          							<div class="col-sm-10">
-          							<button type="submit" class="btn btn-info" name="command" value="updatePhone">확인</button>
-          							</div>
-						      </div>
-						     </form>
+        										<label class="col-sm-3 col-sm-6 control-label">휴대폰 번호</label>
+        										<br><br>
+        									<div class="col-sm-10">
+                              					<input type="text" class="form-control" name="phonenumber" placeholder="${sessionScope.dto.phonenumber}">
+                              					<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
+                              					<br>
+                              				</div>
+          									<div class="col-sm-10">
+          										<button type="submit" class="btn btn-info" name="command" value="updateCardPassWord">확인</button>
+          									</div>
+						      		</div>
+						     	</form>
 						    </div>
 						   </div>
 						 </div>
@@ -252,7 +251,7 @@
         										<label class="col-sm-3 col-sm-6 control-label">카드비밀번호</label>
         										<br><br>
         									<div class="col-sm-10">
-                              					<input type="text" class="form-control" name="cardpw">
+                              					<input type="password" class="form-control" name="cardpw" placeholder="${sessionScope.dto.cardpw}" >
                               					<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
                               					<br>
                               				</div>
@@ -283,7 +282,7 @@
         										<label class="col-sm-3 col-sm-6 control-label"  >비밀번호</label>
         										<br><br>
         									<div class="col-sm-10">
-                              					<input type="text" class="form-control" name="mempw">
+                              					<input type="password" class="form-control" name="mempw" placeholder="${sessionScope.dto.mempw}">
                               					<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
                               					<br>
                               				</div>
@@ -313,7 +312,7 @@
         									<div class="form-group">
         						<label class="col-sm-3 col-sm-6 control-label">계좌번호 설정</label>
         						<div class="col-sm-10">
-                              		<input type="text" class="form-control" name="account">
+                              		<input type="text" class="form-control" name="account" placeholder="${sessionScope.dto.account}">
                               			<input type="hidden" class="form-control" name="email" value = "${sessionScope.id}">
                               	</div>
                               	<br>
@@ -340,11 +339,11 @@
                   					<div class="form-panel">
                      					 <form class="form-horizontal style-form" method="post" action = "updateDeviceId.do">
 												<!-- <input type = "hidden" value="updateDeviceId" name= "deviceid"> -->
-												<input type="hidden" class="form-control" name="email" >
+												<input type="hidden" class="form-control" name="email"  >
         									<div class="form-group">
         						<label class="col-sm-3 col-sm-6 control-label">Device ID 설정</label>
         						<div class="col-sm-10">
-                              		<input type="text" class="form-control" name="deviceid">
+                              		<input type="text" class="form-control" name="deviceid" placeholder="${sessionScope.dto.deviceid}">
                               	</div>
                               	<br>
           							<div class="col-sm-10">

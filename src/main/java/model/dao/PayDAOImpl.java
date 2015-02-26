@@ -15,13 +15,13 @@ import util.DBUtil;
 public class PayDAOImpl implements PayDAO {
 
 	@Override
-	public List<PayDTO> paySelect() {
+	public List<PayDTO> paySelect(int meetno) {
 		SqlSession session = null;
 		List<PayDTO> list = null;
 		
 		try {
 			session = DBUtil.getSqlSession();
-			list = session.selectList("payment.paySelect");
+			list = session.selectList("payment.paySelect", meetno);
 		} finally {
 			DBUtil.closeSqlSession(session);
 		}

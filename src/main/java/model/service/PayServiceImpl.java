@@ -19,8 +19,8 @@ public class PayServiceImpl implements PayService {
 	
 
 	@Override
-	public List<PayDTO> paySelect() {
-		return payDao.paySelect();
+	public List<PayDTO> paySelect(int meetno) {
+		return payDao.paySelect(meetno);
 	}
 	
 	@Override

@@ -169,16 +169,15 @@
                           Member</i>
                       </a></h3>
                   </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;">
-                            <i class="fa fa-desktop" style="font-size: large;">
+                 <li class="sub-menu">
+                      <a href="push_and_pay.html">
+                      <i class="fa fa-desktop" style="font-size: large;">
                           Payment</i>
                       </a>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;">
-                          <i class="fa fa-book" style="font-size: large;">
+                      <a href="push_and_pay.html">
+                      <i class="fa fa-desktop" style="font-size: large;">
                           Meeting</i>
                       </a>
                       <ul class="sub">

@@ -54,7 +54,7 @@ body {
                  	<div class="col-md-4 mb">
 								<div class="grey-panel pn">
 							<div class="grey-header">
-								<h4>${spend.memName}</h4>
+								<h4>회원</h4>
 							</div>
 							<p><img src="${spend.memPic }" class="img-circle" width="80" height="80"></p>
 							<p><h4>${spend.memName}</h4></p>
@@ -101,7 +101,7 @@ body {
       
       <!--footer start-->
       <footer class="site-footer">
-          <div class="text-center"> 2015 - NBBANG <a href="login.do#" class="go-top">
+          <div class="text-center"> 2015 - NBBANG <a href="ValuePass.do#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>

@@ -36,8 +36,9 @@ public class PushAndPayController {
 	@RequestMapping("/pay.do")
 	public ModelAndView paying(PayDTO vo,HttpServletRequest req){
 		HttpSession session=req.getSession();
-		List<PayDTO> list=payService.paySelect();
-		System.out.println("모든 값 : "+list.get(0).getCarPw());
+		// payment 에서 meetno으로 된 리스트 가져오기 
+		System.out.println("meetno : " + vo.getMeetno());
+		List<PayDTO> list=payService.paySelect(vo.getMeetno());
 		String resultMsg="no";
 		int resultPrice=0;
 		int resultTotal=0;
@@ -52,13 +53,11 @@ public class PushAndPayController {
 				list.get(i).setTotalfee(list.get(i).getTotalfee()-vo.getPrice());
 				list.get(i).setMemno((int)((MemberDTO)session.getAttribute("dto")).getMemno());
 				resultTotal=payService.payMeetUpdate(list.get(i));
-				list2 = meetingService.meetingList(((MemberDTO)session.getAttribute("dto")).getMemno());
 			}
 		}
 			if((resultPrice > 0) && (resultTotal > 0))  
 			{
-				mv.addObject("list", list2);
-				mv.setViewName("main");
+				mv.setViewName("meeting");
 			}
 		return mv;
 	}
@@ -88,7 +87,6 @@ public class PushAndPayController {
 					System.out.println(vo);
 					result=memberInfo.get(i).getDeviceid();
 					session.setAttribute("receivedMemno", memberInfo.get(i).getMemno());
-					
 				}
 		}
 		return result;
